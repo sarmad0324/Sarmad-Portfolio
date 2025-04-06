@@ -1,12 +1,10 @@
 "use client";
-import SectionHeading from "./section-heading";
 import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import { useSectionInView } from "@/lib/useInView";
 import { BsWhatsapp } from 'react-icons/bs';
 import { BsEnvelope } from 'react-icons/bs';
-import { styles } from "../styles";
 import { EarthCanvas } from "./canvas";
 import { slideIn } from "../lib/motion";
 import Swal from "sweetalert2"; // For popups, make sure to install this package
@@ -19,7 +17,7 @@ const Contact = () => {
   const [email, setEmail] = useState("");
   const [comment, setComment] = useState("");
   const [role, setRole] = useState("Select an Option");
-  const [errors, setErrors] = useState({});
+
   const [loading, setLoading] = useState(false); // New loading state
 
   const clearForm = () => {
@@ -60,7 +58,7 @@ const Contact = () => {
         "2_HnGR0qPrdrYw7Mp"
       )
       .then(
-        (response) => {
+        () => {
           Swal.fire({
             title: "Success!",
             text: `Thanks ${name} for submitting the form, we will get in touch with you soon!`,
@@ -70,7 +68,7 @@ const Contact = () => {
           clearForm();
           setLoading(false); // Reset loading state after successful submission
         },
-        (error) => {
+        () => {
           Swal.fire({
             title: "Error!",
             text: "Oops! Something went wrong. Please try again.",

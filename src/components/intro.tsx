@@ -6,7 +6,7 @@ import Boy from '../../public/dp.png'
 import Link from 'next/link'
 import { BsLinkedin } from 'react-icons/bs'
 import { FaGithubSquare } from 'react-icons/fa'
-import { Mail } from 'lucide-react'
+
 import { motion } from 'framer-motion'
 import { Fade } from 'react-awesome-reveal'
 import { useSectionInView } from '@/lib/useInView'
