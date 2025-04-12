@@ -25,7 +25,7 @@ const Contact = () => {
     setComment("");
     setEmail("");
     setRole("Select an Option");
-    setErrors({});
+   
   };
   const validateForm = () => {
     let formErrors = {};
@@ -35,7 +35,7 @@ const Contact = () => {
     if (!comment.trim()) formErrors.comment = "Message is required";
     if (role === "---") formErrors.role = "Please select an enquiry type";
 
-    setErrors(formErrors);
+   
     return Object.keys(formErrors).length === 0;
   };
 
@@ -171,7 +171,7 @@ const Contact = () => {
 
             <button
               type="submit"
-              className="bg-gray-700 py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary mx-auto lg:mx-0"
+              className="bg-gray-700 dark:bg-gray-900 py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary mx-auto lg:mx-0"
             >
               {loading ? "Sending..." : "Send"}
             </button>
