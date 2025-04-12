@@ -60,5 +60,12 @@ export const projectsData: ProjectInfo[] = [
         tags: ["React", "Tailwind CSS", "Appwrite", "REST API"],
         imageUrl: '/image4.png',
         link: 'https://www.google.com'
-        }
+        },
+        {
+            title: 'Little Lemon Restaurant',
+            description: 'ittle Lemon Website features a smooth booking process, real-time availability updates, and an easy-to-navigate interface.',
+            tags: ["React", "Tailwind CSS", "Node.js", "REST API"],
+            imageUrl: '/image4.png',
+            link: 'https://www.google.com'
+            }
 ]

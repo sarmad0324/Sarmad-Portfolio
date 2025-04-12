@@ -84,7 +84,7 @@ const Contact = () => {
     <div
       ref={ref}
       id="contact"
-      className="container mx-auto border rounded-xl dark:border-white/[0.2] border-black/[0] bg-gray-200 dark:bg-gray-700g px-4 py-16 md:py-24 lg:py-32 text-neutral-600 dark:text-white "
+      className="container mx-auto border rounded-xl dark:border-white/[0.2] border-black/[0] bg-gray-200 dark:bg-gray-700 px-4 py-16 md:py-24 lg:py-32 text-neutral-600 dark:text-white "
     >
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
         <motion.div
