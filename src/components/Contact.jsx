@@ -189,16 +189,22 @@ const Contact = () => {
       </div>
       <hr className="w-4/5 m-auto border-textSecondary mt-10" />
         <div className="p-2 w-full pt-8 mt-8 border-t border-gray-900 text-center">
-          <div className="flex gap-x-10 justify-center">
-          <span className="flex gap-x-3 items-center">
-          <BsEnvelope /> <a className="text-gray-400" href="mailto:sarmadirfan78@gmail.com"> sarmadirfan78@gmail.com</a>
-          </span>
-          <span className="flex gap-x-3 items-center">
-          <BsWhatsapp /> <a className="text-gray-400" href="mailto:sarmadirfan78@gmail.com">0336 8486356</a>
-          </span>
+          <div className="flex flex-col sm:flex-row gap-y-4 sm:gap-x-10 justify-center">
+            <span className="flex gap-x-3 items-center justify-center">
+              <BsEnvelope /> 
+              <a className="text-gray-400 text-sm sm:text-base" href="mailto:sarmadirfan78@gmail.com">
+                sarmadirfan78@gmail.com
+              </a>
+            </span>
+            <span className="flex gap-x-3 items-center justify-center">
+              <BsWhatsapp /> 
+              <a className="text-gray-400 text-sm sm:text-base" href="tel:+923368486356">
+                0336 8486356
+              </a>
+            </span>
           </div>
           
-          <p>Sarmad Irfan | © 2024</p>
+          <p className="mt-4 text-sm sm:text-base">Sarmad Irfan | © 2024</p>
         </div>
     </div>
   );
