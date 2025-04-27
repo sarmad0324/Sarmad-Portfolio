@@ -95,6 +95,8 @@ export default function Services() {
         }
     ]
 
+    const [isPaused, setIsPaused] = React.useState(false);
+
     return (
         <section
   ref={ref}
@@ -111,25 +113,36 @@ export default function Services() {
       clickable: true,
       dynamicBullets: true,
     }}
-    speed={1000}
+    speed={800}
     autoplay={{
-      delay: 1000,
+      delay: 3000,
       disableOnInteraction: false,
+      pauseOnMouseEnter: true,
     }}
     className="pb-8 sm:pb-12"
+    onSlideChange={() => {
+      if (isPaused) {
+        setIsPaused(false);
+      }
+    }}
   >
     {services.map((service, index) => (
       <SwiperSlide key={index}>
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{
-            delay: index * 0.1,
-            duration: 0.6,
+            delay: index * 0.15,
+            duration: 0.8,
             type: "spring",
-            stiffness: 80,
+            stiffness: 100,
+            damping: 15,
+            mass: 0.5
           }}
-          className="relative group flex justify-center mx-auto w-[330px] md:w-[500px] lg:w-[700px] xl:w-[800px]"
+          className="relative group flex justify-center mx-auto w-[330px] md:w-[500px] lg:w-[700px] xl:w-[800px] cursor-pointer"
+          onClick={() => setIsPaused(!isPaused)}
+          onMouseEnter={() => setIsPaused(true)}
+          onMouseLeave={() => setIsPaused(false)}
         >
           <div className="absolute inset-0 overflow-hidden rounded-xl sm:rounded-2xl z-0">
             <div
@@ -158,9 +171,15 @@ export default function Services() {
                 <motion.li
                   key={i}
                   className="flex items-start gap-2 sm:gap-3 dark:text-gray-200 text-neutral-600 text-xs sm:text-sm md:text-base"
-                  initial={{ opacity: 0, x: -20 }}
+                  initial={{ opacity: 0, x: -10 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ delay: i * 0.1 }}
+                  transition={{ 
+                    delay: i * 0.15,
+                    duration: 0.6,
+                    type: "spring",
+                    stiffness: 100,
+                    damping: 15
+                  }}
                 >
                   <div className="mt-0.5 p-0.5 sm:p-1 rounded-full bg-gradient-to-br dark:from-gray-700 dark:to-gray-800 from-gray-100 to-gray-200">
                     <FiCheck className="w-3 h-3 sm:w-4 sm:h-4 text-neutral-600 dark:text-white" />
