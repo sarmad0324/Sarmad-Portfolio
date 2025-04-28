@@ -15,8 +15,30 @@ const sora = Sora({
 
 
 export const metadata: Metadata = {
-  title: "Sarmad Portfolio",
-  description: "Personal Portfolio",
+  title: "Sarmad Irfan - Portfolio",
+  description: "Explore the official portfolio of Sarmad Irfan, featuring professional web and mobile app development projects built with React, React-Native, Next.js, and modern technologies.",
+  keywords: "Sarmad Irfan, Developer Portfolio, Web Development, App Development, React Developer, Next.js Developer, Full Stack Developer",
+  authors: [{ name: "Sarmad Irfan" }],
+  creator: "Sarmad Irfan",
+  publisher: "Sarmad Irfan",
+  robots: "index, follow",
+  openGraph: {
+    title: "Sarmad Irfan - Portfolio",
+    description: "Explore the official portfolio of Sarmad Irfan, featuring professional web and mobile app development projects built with React, Next.js, and modern technologies.",
+    url: "https://sarmadirfan.com",
+    siteName: "Sarmad Irfan Portfolio",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Sarmad Irfan - Web & App Developer Portfolio",
+    description: "Explore the official portfolio of Sarmad Irfan, featuring professional web and mobile app development projects built with React, Next.js, and modern technologies.",
+  },
+  alternates: {
+    canonical: "https://sarmadirfan.com",
+  },
+  metadataBase: new URL("https://sarmadirfan.com"),
 };
 
 export default function RootLayout({
