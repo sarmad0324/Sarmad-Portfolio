@@ -21,6 +21,9 @@ export const metadata: Metadata = {
   creator: "Sarmad Irfan",
   publisher: "Sarmad Irfan",
   robots: "index, follow",
+  verification: {
+    google: "FGaNKbTbKnR33p0Pq9aVSamdAX0bYwTsERX1dZBjCrA",
+  },
   openGraph: {
     title: "Sarmad Irfan - Web & App Developer Portfolio",
     description: "Explore the official portfolio of Sarmad Irfan, featuring professional web and mobile app development projects built with React, Next.js, and modern technologies.",
