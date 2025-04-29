@@ -63,6 +63,24 @@ export default function RootLayout({
             gtag('config', 'G-05BX1H3XYB');
           `}
         </Script>
+        <Script type="application/ld+json">
+{`
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Sarmad Irfan",
+  "url": "https://sarmadirfan.com",
+  "sameAs": [
+    "https://www.linkedin.com/in/sarmad-irfan",
+    "https://github.com/sarmad0324"
+  ],
+  "jobTitle": "Web & App Developer",
+  "worksFor": {
+    "@type": "Software Agency",
+    "name": "Freelance / Sarmad Irfan Agency"
+  }`
+}
+</Script>
+        <link rel="icon" href="/favicon.ico" />
       </head>
       <ThemeContextProvider>
         <body
