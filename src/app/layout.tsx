@@ -82,6 +82,21 @@ export default function RootLayout({
     }
   `}
 </Script>
+<Script id="site-structured-data" type="application/ld+json">
+{`
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Sarmad Irfan",
+    "url": "https://sarmadirfan.com",
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": "https://sarmadirfan.com/?s={search_term_string}",
+      "query-input": "required name=search_term_string"
+    }
+  }
+`}
+</Script>
         <link rel="icon" href="/favicon.ico" />
       </head>
       <ThemeContextProvider>
