@@ -5,7 +5,7 @@ import clsx from 'clsx'
 import { Link } from '@/lib/types'
 import { useActiveSectionContext } from '@/containers/active-section'
 import { motion } from 'framer-motion'
-import { FaDownload, FaRegFilePdf } from 'react-icons/fa'
+import { FaRegFilePdf } from 'react-icons/fa'
 
 type HeaderProps = { links: Link[] };
 

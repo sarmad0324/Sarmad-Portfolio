@@ -3,7 +3,6 @@
 import Image from 'next/image'
 import React from 'react'
 import Boy from '../../public/dp.png'
-import Link from 'next/link'
 import { BsLinkedin } from 'react-icons/bs'
 import { FaGithubSquare } from 'react-icons/fa'
 
