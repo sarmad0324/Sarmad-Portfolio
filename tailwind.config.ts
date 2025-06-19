@@ -14,7 +14,18 @@ const config: Config = {
    },
       fontFamily:{
         Sora:[`var(--font-sora)`,`sans-serif`]
-      }
+      },
+      colors: {
+        // Only keeping used colors
+        darkBlack: '#000000',
+        darkGray1: '#2E2E2E',
+        darkGray2: '#4B4B4B',
+        darkGray3: '#7D7D7D',
+        light1: '#F8FAFC',
+        light2: '#D9EAFD',
+        light3: '#BCCCDC',
+        light4: '#9AA6B2',
+      },
     },
   },
   plugins: [],

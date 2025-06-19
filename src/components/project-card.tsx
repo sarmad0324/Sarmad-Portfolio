@@ -4,6 +4,7 @@ import { ProjectInfo } from "@/lib/types";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import { CardBody, CardContainer, CardItem } from "./ui/3d-card";
+import { FiArrowRight } from 'react-icons/fi';
 
 type ProjectProps = ProjectInfo;
 
@@ -12,6 +13,7 @@ export default function Project({
   description,
   tags,
   imageUrl,
+  link,
 }: ProjectProps) {
     const ref = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({
@@ -35,17 +37,17 @@ export default function Project({
 
     <CardContainer
     className="inter-var ">
-      <CardBody className="bg-gray-50  relative group/card  dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-gray-700 dark:border-white/[0.2] border-black/[0.1] w-auto sm:w-[30rem] h-auto rounded-xl p-4 border  ">     
+      <CardBody className="bg-light1 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-darkGray1 dark:border-darkGray2 border-light3 w-auto sm:w-[30rem] h-auto rounded-xl p-4 border  ">     
        <CardItem
           translateZ="50"
-          className="text-xl font-bold text-neutral-600 dark:text-white"
+          className="text-light4 font-bold text-xl dark:text-darkGray3"
         >
          {title}
         </CardItem>
         <CardItem
           as="p"
           translateZ="60"
-          className="text-neutral-500 text-sm max-w-sm mt-2 dark:text-neutral-300"
+          className="text-light3 text-sm max-w-sm mt-2 dark:text-darkGray3"
         >
    {description}
         </CardItem>
@@ -54,7 +56,7 @@ export default function Project({
             src={imageUrl}
             height={1000}
             width={1000}
-            className="h-[400px] w-full object-cover rounded-xl group-hover/card:shadow-xl"
+            className="h-[400px] w-full object-cover rounded-xl group-hover/card:shadow-xl bg-light2 dark:bg-darkBlack"
             alt="thumbnail"
           />
         </CardItem>
@@ -68,13 +70,26 @@ export default function Project({
             {tags.map((tag, index) => (
              <li
           key={index}
-               className="bg-black/[0.7] px-3 py-1 dark:bg-gray-800 text-[0.7rem] uppercase tracking-wider text-white rounded-full dark:text-white/70"
+               className="bg-light4 px-3 py-1 dark:bg-darkGray2 text-[0.7rem] uppercase tracking-wider text-dark1 rounded-full dark:text-darkGray3"
               >
                  {tag}
               </li>
             ))}
           </ul>
           </CardItem>
+          {/* View Project Link/Button */}
+          {link && link !== '#' && (
+            <CardItem
+              translateZ={20}
+              as="a"
+              href={link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 inline-block px-6 py-2 rounded-full bg-darkGray2 text-white shadow-lg font-bold text-sm tracking-wide transition-all duration-200 hover:bg-darkGray3 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-darkGray2 dark:bg-darkGray3 dark:text-light1 dark:hover:bg-darkGray2 flex items-center gap-2"
+            >
+              View Project <FiArrowRight className="ml-1 text-lg" />
+            </CardItem>
+          )}
 </CardBody>
 
     </CardContainer>

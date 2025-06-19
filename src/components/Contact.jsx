@@ -84,7 +84,7 @@ const Contact = () => {
     <div
       ref={ref}
       id="contact"
-      className="container mx-auto border rounded-xl dark:border-white/[0.2] border-black/[0] bg-gray-200 dark:bg-gray-700 px-4 py-16 md:py-24 lg:py-32 text-neutral-600 dark:text-white "
+      className="container mx-auto border rounded-xl dark:border-darkGray2 border-light4 bg-light2 dark:bg-darkGray1 px-4 py-16 md:py-24 lg:py-32 text-light4 dark:text-darkGray3"
     >
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
         <motion.div
@@ -120,7 +120,7 @@ const Contact = () => {
                 required
                 onChange={(e) => setName(e.target.value)}
                 placeholder="What's your good name?"
-                className="bg-tertiary py-4 px-6 placeholder:text-secondary rounded-lg outline-none border-none font-medium"
+                className="bg-light1 text-light4 border border-light3 dark:bg-darkBlack dark:text-darkGray3 dark:border-darkGray2 py-4 px-6 placeholder:text-light4 dark:placeholder:text-darkGray3 rounded-lg outline-none font-medium"
               />
             </label>
             <label className="flex flex-col">
@@ -132,7 +132,7 @@ const Contact = () => {
                 required
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="What's your email address?"
-                className="bg-tertiary py-4 px-6 placeholder:text-secondary  rounded-lg outline-none border-none font-medium"
+                className="bg-light1 text-light4 border border-light3 dark:bg-darkBlack dark:text-darkGray3 dark:border-darkGray2 py-4 px-6 placeholder:text-light4 dark:placeholder:text-darkGray3 rounded-lg outline-none font-medium"
               />
             </label>
             <label className="flex flex-col">
@@ -143,7 +143,7 @@ const Contact = () => {
                 name="role"
                 value={role}
                 onChange={(e) => setRole(e.target.value)}
-                className="bg-tertiary py-4 px-6  placeholder:text-secondary rounded-lg outline-none border-none font-medium"
+                className="bg-light1 text-light4 border border-light3 dark:bg-darkBlack dark:text-darkGray3 dark:border-darkGray2 py-4 px-6 placeholder:text-light4 dark:placeholder:text-darkGray3 rounded-lg outline-none font-medium"
                 required
               >
                 <option value="">- Select an option -</option>
@@ -165,13 +165,13 @@ const Contact = () => {
                 value={comment}
                 onChange={(e) => setComment(e.target.value)}
                 placeholder="What you want to say?"
-                className="bg-tertiary py-4 px-6 placeholder:text-secondary  rounded-lg outline-none border-none font-medium"
+                className="bg-light1 text-light4 border border-light3 dark:bg-darkBlack dark:text-darkGray3 dark:border-darkGray2 py-4 px-6 placeholder:text-light4 dark:placeholder:text-darkGray3 rounded-lg outline-none font-medium"
               />
             </label>
 
             <button
               type="submit"
-              className="bg-gray-700 dark:bg-gray-900 py-3 px-8 rounded-xl outline-none w-fit text-white font-bold shadow-md shadow-primary mx-auto lg:mx-0"
+              className="bg-light4 text-dark1 dark:bg-darkGray2 dark:text-darkBlack py-3 px-8 rounded-xl outline-none w-fit font-bold shadow-md mx-auto lg:mx-0 hover:bg-light3 dark:hover:bg-darkGray1 transition"
             >
               {loading ? "Sending..." : "Send"}
             </button>
@@ -204,7 +204,7 @@ const Contact = () => {
             </span>
           </div>
           
-          <p className="mt-4 text-sm sm:text-base">Sarmad Irfan | © 2024</p>
+          <p className="mt-4 text-sm sm:text-base">Sarmad Irfan | © 2025</p>
         </div>
     </div>
   );

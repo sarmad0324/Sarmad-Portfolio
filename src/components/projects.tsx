@@ -1,6 +1,5 @@
 "use client"
-import { projectsData } from "@/lib/data";
-import SectionHeading from "./section-heading";
+import { projectsData } from "@/lib/data"
 import Project from "./project-card";
 import { useSectionInView } from "@/lib/useInView";
 
@@ -11,9 +10,9 @@ export default function Projects (){
     return(
         <section     ref={ref}
         id="projects" className="scroll-mt-28 mb-28 mt-20">
-            <SectionHeading>
-                My Projects
-            </SectionHeading>
+             <h2 className="text-3xl font-bold uppercase mb-12 text-center">
+          My Projects
+        </h2>
             <div>
                 {
                     projectsData.map((project,index)=>(
