@@ -84,7 +84,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             {
               "@context": "https://schema.org",
               "@type": "WebSite",
-              "name": "Sarmad",
+              "name": "Sarmad Irfan – Software Engineer",
               "url": "https://sarmadirfan.com",
               "potentialAction": {
                 "@type": "SearchAction",
