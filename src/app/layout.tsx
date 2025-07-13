@@ -15,7 +15,7 @@ const sora = Sora({
 });
 
 export const metadata: Metadata = {
-  title: "Sarmad Irfan – Software Engineer",
+  title: "Sarmad Irfan – Software Engineer & AI Specialist",
   description: "Explore the official portfolio of Sarmad Irfan, CEO of SyntexLeap, showcasing web and mobile app development projects built with React, React-Native, Next.js, and modern technologies.",
   keywords: "Sarmad Irfan, SyntexLeap, Software Engineer, Web Development, App Development, React, Next.js",
   authors: [{ name: "Sarmad Irfan" }],
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     google: "FGaNKbTbKnR33p0Pq9aVSamdAX0bYwTsERX1dZBjCrA",
   },
   openGraph: {
-    title: "Sarmad Irfan – Software Engineer",
+    title: "Sarmad Irfan – Software Engineer & AI Specialist",
     description: "Explore the official portfolio of Sarmad Irfan, CEO of SyntexLeap, showcasing web and mobile app development projects built with React, React-Native, Next.js, and modern technologies.",
     url: "https://sarmadirfan.com",
     siteName: "Sarmad Irfan",
@@ -35,7 +35,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sarmad Irfan – Software Engineer",
+    title: "Sarmad Irfan – Software Engineer & AI Specialist",
     description: "Explore the official portfolio of Sarmad Irfan, CEO of SyntexLeap, showcasing web and mobile app development projects built with React, React-Native, Next.js, and modern technologies.",
   },
   alternates: {
