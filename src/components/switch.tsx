@@ -21,7 +21,7 @@ export default function Switch({
   };
 
   return (
-    <div className="fixed bottom-5 right-5">
+    <div className="fixed bottom-5 left-5">
       <div className="relative flex items-center justify-center w-[3rem] h-[3rem]">
         <AnimatePresence>
           {isHovered && (
@@ -40,7 +40,7 @@ export default function Switch({
         </AnimatePresence>
 
         <motion.button
-          className="flex items-center justify-center w-[3rem] h-[3rem] bg-white text-gray-800 rounded-full shadow-lg drop-shadow-lg backdrop-blur-[0.5rem] transition-all duration-300 ease-in-out hover:bg-gray-300 dark:bg-gray-800 dark:text-white"
+          className="flex items-center justify-center w-[3rem] h-[3rem] bg-white text-gray-800 rounded-full shadow-lg drop-shadow-lg backdrop-blur-[0.5rem] transition-all duration-300 ease-in-out hover:bg-gray-300 dark:bg-gray-800 dark:text-white cursor-pointer"
           variants={switchVariants}
           initial={{ scale: 1, opacity: 1 }} 
           whileHover="hover"
@@ -48,7 +48,7 @@ export default function Switch({
           onMouseLeave={() => setisHovered(false)}
           onClick={setActiveButton}
         >
-          <p className="font-semibold">{activeButton}</p>
+          <span className="font-semibold text-lg">{activeButton}</span>
         </motion.button>
       </div>
     </div>

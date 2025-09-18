@@ -11,7 +11,7 @@ import Swal from "sweetalert2"; // For popups, make sure to install this package
 import "sweetalert2/dist/sweetalert2.min.css";
 
 const Contact = () => {
-  const { ref } = useSectionInView("#contact", 1);
+  const {ref} = useSectionInView("#contact")
   const form = useRef();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -84,7 +84,7 @@ const Contact = () => {
     <div
       ref={ref}
       id="contact"
-      className="container mx-auto border rounded-xl dark:border-darkGray2 border-light4 bg-light2 dark:bg-darkGray1 px-4 py-16 md:py-24 lg:py-32 text-light4 dark:text-darkGray3"
+      className="container mx-auto px-4 py-16 md:py-24 lg:py-32 text-light4 dark:text-darkGray3"
     >
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
         <motion.div
@@ -101,7 +101,7 @@ const Contact = () => {
 
           <h3
             className={
-              "text-3xl font-medium capitalize mb-8 lg:text-left text-center "
+              "text-4xl sm:text-5xl font-bold mb-8 lg:text-left text-center text-primary dark:text-white"
             }
           >
             Contact Me
@@ -109,10 +109,10 @@ const Contact = () => {
           <form
             onSubmit={handleSubmit}
             ref={form}
-            className="mt-12 flex flex-col gap-8"
+            className="mt-12 flex flex-col gap-6"
           >
             <label className="flex flex-col">
-              <span className=" font-medium mb-4">Your Name</span>
+              <span className="text-sm font-semibold mb-2 text-primary dark:text-primary">Your Name</span>
               <input
                 type="text"
                 name="name"
@@ -120,11 +120,11 @@ const Contact = () => {
                 required
                 onChange={(e) => setName(e.target.value)}
                 placeholder="What's your good name?"
-                className="bg-light1 text-light4 border border-light3 dark:bg-darkBlack dark:text-darkGray3 dark:border-darkGray2 py-4 px-6 placeholder:text-light4 dark:placeholder:text-darkGray3 rounded-lg outline-none font-medium"
+                className="bg-white dark:bg-darkGray1 text-gray-900 dark:text-gray-100 border border-gray-200 dark:border-darkGray2 py-3 px-4 placeholder:text-gray-500 dark:placeholder:text-gray-400 rounded-lg outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all duration-200"
               />
             </label>
             <label className="flex flex-col">
-              <span className="font-medium mb-4">Your email</span>
+              <span className="text-sm font-semibold mb-2 text-primary dark:text-primary">Your email</span>
               <input
                 type="email"
                 name="email"
@@ -132,18 +132,18 @@ const Contact = () => {
                 required
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="What's your email address?"
-                className="bg-light1 text-light4 border border-light3 dark:bg-darkBlack dark:text-darkGray3 dark:border-darkGray2 py-4 px-6 placeholder:text-light4 dark:placeholder:text-darkGray3 rounded-lg outline-none font-medium"
+                className="bg-white dark:bg-darkGray1 text-gray-900 dark:text-gray-100 border border-gray-200 dark:border-darkGray2 py-3 px-4 placeholder:text-gray-500 dark:placeholder:text-gray-400 rounded-lg outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all duration-200"
               />
             </label>
             <label className="flex flex-col">
-              <span className=" font-medium mb-4">
+              <span className="text-sm font-semibold mb-2 text-primary dark:text-primary">
                 Type of Enquiry
               </span>
               <select
                 name="role"
                 value={role}
                 onChange={(e) => setRole(e.target.value)}
-                className="bg-light1 text-light4 border border-light3 dark:bg-darkBlack dark:text-darkGray3 dark:border-darkGray2 py-4 px-6 placeholder:text-light4 dark:placeholder:text-darkGray3 rounded-lg outline-none font-medium"
+                className="bg-white dark:bg-darkGray1 text-gray-900 dark:text-gray-100 border border-gray-200 dark:border-darkGray2 py-3 px-4 rounded-lg outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all duration-200"
                 required
               >
                 <option value="">- Select an option -</option>
@@ -157,23 +157,23 @@ const Contact = () => {
               </select>
             </label>
             <label className="flex flex-col">
-              <span className=" font-medium mb-4">Your Message</span>
+              <span className="text-sm font-semibold mb-2 text-primary dark:text-primary">Your Message</span>
               <textarea
-                rows={7}
+                rows={6}
                 name="comment"
                 required
                 value={comment}
                 onChange={(e) => setComment(e.target.value)}
                 placeholder="What you want to say?"
-                className="bg-light1 text-light4 border border-light3 dark:bg-darkBlack dark:text-darkGray3 dark:border-darkGray2 py-4 px-6 placeholder:text-light4 dark:placeholder:text-darkGray3 rounded-lg outline-none font-medium"
+                className="bg-white dark:bg-darkGray1 text-gray-900 dark:text-gray-100 border border-gray-200 dark:border-darkGray2 py-3 px-4 placeholder:text-gray-500 dark:placeholder:text-gray-400 rounded-lg outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all duration-200 resize-none"
               />
             </label>
 
             <button
               type="submit"
-              className="bg-light3 text-dark1 dark:bg-darkGray2 dark:text-darkBlack py-3 px-8 rounded-xl outline-none w-fit font-bold shadow-md mx-auto lg:mx-0 hover:bg-light3 dark:hover:bg-darkGray1 transition"
+              className="bg-primary hover:bg-primary/90 text-white py-3 px-8 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-200 w-fit mx-auto lg:mx-0 focus:ring-2 focus:ring-primary/50 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed border-2 border-primary"
             >
-              {loading ? "Sending..." : "Send"}
+              {loading ? "Sending..." : "Send Message"}
             </button>
 
           </form>

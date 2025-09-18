@@ -4,8 +4,9 @@ import Image from 'next/image'
 import React from 'react'
 import Boy from '../../public/dp.png'
 import { BsLinkedin } from 'react-icons/bs'
-import { FaGithubSquare } from 'react-icons/fa'
-
+import { FaGithubSquare, FaRocket, FaEnvelope } from 'react-icons/fa'
+import { PulsatingButton } from './magicui/pulsating-button'
+import { BoxReveal } from './magicui/box-reveal'
 import { motion } from 'framer-motion'
 import { Fade } from 'react-awesome-reveal'
 import { useSectionInView } from '@/lib/useInView'
@@ -13,27 +14,13 @@ import { useSectionInView } from '@/lib/useInView'
 
 export default function Intro(){
     const {ref} = useSectionInView("#home",0.5)
+    
     return(
         <section
         ref={ref}        
-        id='home' className='mb-28 max-w-[75rem] text-center sm:mb-0 ' >
+        id='home' className='mb-60 max-w-[75rem] text-center sm:mb-0 relative' >
             <div className='flex items-center justify-center' >
                 <div className='relative'>
-                    {/* Centered radial glow background effect */}
-                    <div
-                      aria-hidden="true"
-                      className="absolute left-1/2 top-1/2 z-0 w-[420px] h-[420px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-2xl opacity-60 select-none pointer-events-none"
-                      style={{
-                        background: 'radial-gradient(circle, #BCCCDC 0%, #F8FAFC 60%, transparent 100%)'
-                      }}
-                    />
-                    <div
-                      aria-hidden="true"
-                      className="absolute left-1/2 top-1/2 z-0 w-[420px] h-[420px] -translate-x-1/2 -translate-y-1/2 rounded-full blur-2xl opacity-40 select-none pointer-events-none"
-                      style={{
-                        background: 'radial-gradient(circle, #7D7D7D 0%, #2E2E2E 60%, transparent 100%)'
-                      }}
-                    />
                     <motion.div
                     initial={{opacity:0,scale:0}}
                     animate={{opacity:1,scale:1}}
@@ -41,59 +28,115 @@ export default function Intro(){
                         type:'spring',
                         stiffness:125,
                         damping:10,
-                        duration:0.2,
+                        duration:0.8
                     }}
+                    className="relative"
                     >
-                        <Image
-                        src={Boy}
-                        width='400'
-                        height='400'
-                        alt='portrait'
-                        quality="100"
-                        priority={true}
-                        className='rounded-full shadow-xl object-cover'
-                        />
+                        <div className="relative group">
+                            <Image
+                            src={Boy}
+                            width='400'
+                            height='400'
+                            alt='portrait'
+                            quality="100"
+                            priority={true}
+                            className='rounded-full shadow-xl object-cover transition-all duration-300 group-hover:scale-105 border-4 border-primary/20'
+                            />
+                        </div>
                     </motion.div>
                 </div>
             </div>
+            
             <Fade direction='up' delay={400} cascade damping={1e-1} triggerOnce={true} >
-
-            <h1 className='mb-4 mt-4 px-4 text-3xl sm:text-5xl font-bold'>
-                Sarmad Irfan
-            </h1>
-            <p className='text-lg sm:text-2xl font-medium mb-2'>Software Engineer – Web, Mobile & AI</p>
-            <p className='text-base sm:text-lg mb-6'>Building fast, functional, future-ready digital products.</p>
-            </Fade>
-            <div className='flex flex-col sm:flex-row items-center justify-center gap-4 px-4 text-lg font-medium'>
-                <a
-                    href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Meeting+with+Sarmad+Irfan&details=Let's+discuss+your+project+or+collaboration!&location=Google+Meet+or+your+preferred+platform&add=sarmadirfan78%40gmail.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className='group bg-darkGray2 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 hover:bg-darkGray3 transition-all duration-200 border-2 border-darkGray2 shadow-lg focus:outline-none focus:ring-2 focus:ring-darkGray2 dark:bg-darkGray3 dark:text-light1 dark:border-darkGray2 dark:hover:bg-darkGray2 mb-2 sm:mb-0'
+                <motion.div
+                    initial={{ y: 50, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ delay: 0.6, duration: 0.8 }}
                 >
+                    <BoxReveal boxColor="#7C3AED" duration={0.5}>
+                        <h1 className='mb-4 mt-4 px-4 text-4xl sm:text-6xl font-bold text-primary dark:text-white'>
+                        Hi, I'm Sarmad Irfan
+                        </h1>
+                    </BoxReveal>
+                    
+                    <BoxReveal boxColor="#6B7280" duration={0.5} delay={0.2}>
+                        <motion.p 
+                            className='text-xl sm:text-3xl font-semibold mb-3 text-secondary dark:text-darkGray3'
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            transition={{ delay: 0.8, duration: 0.6 }}
+                        >
+                            Software Engineer turned Entrepreneur
+                        </motion.p>
+                    </BoxReveal>
+                    
+                    <BoxReveal boxColor="#9CA3AF" duration={0.5} delay={0.4}>
+                        <motion.p 
+                            className='text-lg sm:text-xl mb-4 text-secondary dark:text-darkGray3 max-w-2xl mx-auto leading-relaxed'
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ delay: 1, duration: 0.6 }}
+                        >
+                            Building <span className="font-semibold text-primary">fast</span>, <span className="font-semibold text-secondary">functional</span>, <span className="font-semibold text-accent">future-ready</span> digital products that make a difference.
+                        </motion.p>
+                    </BoxReveal>
+                    
+                    
+                </motion.div>
+            </Fade>
+            
+            <motion.div 
+                className='flex flex-col sm:flex-row items-center justify-center gap-6 px-4 text-lg font-medium'
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 1.2, duration: 0.6 }}
+            >
+                <PulsatingButton
+                    variant="primary"
+                    size="lg"
+                    onClick={() => window.open("https://calendar.google.com/calendar/render?action=TEMPLATE&text=Meeting+with+Sarmad+Irfan&details=Let's+discuss+your+project+or+collaboration!&location=Google+Meet+or+your+preferred+platform&add=sarmadirfan78%40gmail.com", "_blank")}
+                >
+                    <FaRocket />
                     Book a Meeting
-                </a>
-                <div className='flex gap-2'>
-                    <a
-                        className='bg-gray-200 p-3 text-gray-700 flex items-center gap-2 rounded-full hover:bg-gray-300 focus:scale-110 hover:scale-110 active:scale-105 transition border border-gray-300 dark:bg-darkGray1 dark:text-darkGray3 dark:hover:bg-darkGray2 dark:hover:text-darkBlack'
-                        href='https://www.linkedin.com/in/sarmad-irfan/'
+                </PulsatingButton>
+                
+                <div className='flex gap-4'>
+                    <motion.a
+                        className='group p-4 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full hover:bg-primary hover:text-white transition-all duration-300 hover:scale-110'
+                        href='https://www.linkedin.com/in/sarmad-irfan78/'
                         target='_blank'
                         rel='noopener noreferrer'
                         aria-label='LinkedIn'
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}
                     >
-                        <BsLinkedin/>
-                    </a>
-                    <a
-                        className='bg-gray-200 p-3 text-gray-700 flex items-center gap-2 rounded-full hover:bg-gray-300 focus:scale-110 hover:scale-110 active:scale-105 transition border border-gray-300 dark:bg-darkGray1 dark:text-darkGray3 dark:hover:bg-darkGray2 dark:hover:text-darkBlack'
+                        <BsLinkedin className="text-xl" />
+                    </motion.a>
+                    
+                    <motion.a
+                        className='group p-4 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full hover:bg-secondary hover:text-white transition-all duration-300 hover:scale-110'
                         href='https://github.com/sarmad0324'
                         target='_blank'
                         rel='noopener noreferrer'
                         aria-label='GitHub'
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}
                     >
-                        <FaGithubSquare/>
-                    </a>
+                        <FaGithubSquare className="text-xl" />
+                    </motion.a>
+                    
+                    <motion.a
+                        className='group p-4 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full hover:bg-accent hover:text-white transition-all duration-300 hover:scale-110'
+                        href='mailto:sarmadirfan@syntaxleap.com'
+                        aria-label='Email'
+                        whileHover={{ scale: 1.1 }}
+                        whileTap={{ scale: 0.9 }}
+                        target='_blank'
+                    >
+                        <FaEnvelope className="text-xl" />
+                    </motion.a>
                 </div>
-            </div>
+            </motion.div>
         </section>
     )
 }
