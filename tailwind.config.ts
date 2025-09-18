@@ -16,31 +16,23 @@ const config: Config = {
         Sora:[`var(--font-sora)`,`sans-serif`]
       },
       colors: {
-        // Enhanced color palette
+        // Simplified color palette - only black, white, gray, purple
         darkBlack: '#000000',
-        darkGray1: '#2E2E2E',
-        darkGray2: '#4B4B4B',
-        darkGray3: '#7D7D7D',
-        light1: '#F8FAFC',
-        light2: '#D9EAFD',
-        light3: '#BCCCDC',
-        light4: '#9AA6B2',
-        // New vibrant colors
-        primary: '#6366F1',
-        secondary: '#8B5CF6',
-        accent: '#EC4899',
-        success: '#10B981',
-        warning: '#F59E0B',
-        error: '#EF4444',
-        // Gradient colors
-        gradientStart: '#667eea',
-        gradientMiddle: '#764ba2',
-        gradientEnd: '#f093fb',
-        // Neon colors
-        neonBlue: '#00D4FF',
-        neonPurple: '#B537F2',
-        neonPink: '#FF006B',
-        neonGreen: '#39FF14',
+        darkGray1: '#1F1F1F',
+        darkGray2: '#404040',
+        darkGray3: '#6B6B6B',
+        light1: '#FFFFFF',
+        light2: '#F5F5F5',
+        light3: '#E5E5E5',
+        light4: '#9CA3AF',
+        // Simplified colors
+        primary: '#7C3AED', // Purple
+        secondary: '#6B7280', // Gray
+        accent: '#9CA3AF', // Light gray
+        success: '#6B7280', // Gray instead of green
+        warning: '#6B7280', // Gray instead of yellow
+        error: '#6B7280', // Gray instead of red
+        // Removed gradient and neon colors
       },
       animation: {
         'float': 'float 6s ease-in-out infinite',
@@ -60,8 +52,8 @@ const config: Config = {
           '50%': { transform: 'translateY(-20px)' },
         },
         glow: {
-          '0%': { boxShadow: '0 0 5px #6366F1, 0 0 10px #6366F1, 0 0 15px #6366F1' },
-          '100%': { boxShadow: '0 0 10px #8B5CF6, 0 0 20px #8B5CF6, 0 0 30px #8B5CF6' },
+          '0%': { boxShadow: '0 0 5px #7C3AED, 0 0 10px #7C3AED, 0 0 15px #7C3AED' },
+          '100%': { boxShadow: '0 0 10px #7C3AED, 0 0 20px #7C3AED, 0 0 30px #7C3AED' },
         },
         wiggle: {
           '0%, 100%': { transform: 'rotate(-3deg)' },

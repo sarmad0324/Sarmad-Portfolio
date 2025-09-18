@@ -8,34 +8,25 @@ import { motion } from 'framer-motion'
 import { FaRegFilePdf, FaDownload, FaGraduationCap } from 'react-icons/fa'
 import { HiSparkles } from 'react-icons/hi'
 
+// Smooth scroll function
+const smoothScrollTo = (elementId: string) => {
+    const element = document.querySelector(elementId);
+    if (element) {
+        element.scrollIntoView({
+            behavior: 'smooth',
+            block: 'start',
+        });
+    }
+};
+
 type HeaderProps = { links: Link[] };
 
 export default function Header({ links }: HeaderProps) {
     const { activeSection, setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
     return (
         <header className='hidden md:flex items-center justify-between fixed z-[999] w-full mt-6 px-8'>
-            {/* Left: Logo/Name with animation */}
-            <motion.div
-                initial={{ x: -100, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                transition={{ duration: 0.6, type: "spring", stiffness: 100 }}
-            >
-                <NextLink 
-                    href="#home" 
-                    className="group relative text-2xl font-bold bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent hover:scale-105 transition-all duration-300 px-4 py-2 rounded-xl"
-                >
-                    <span className="relative z-10">Sarmad Irfan</span>
-                    <motion.div
-                        className="absolute -top-1 -right-1 text-sm"
-                        animate={{ rotate: [0, 15, -15, 0] }}
-                        transition={{ duration: 3, repeat: Infinity }}
-                    >
-                        <HiSparkles className="text-accent opacity-70" />
-                    </motion.div>
-                    {/* Hover glow effect */}
-                    <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-primary/10 via-secondary/10 to-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300 -z-10"></div>
-                </NextLink>
-            </motion.div>
+            {/* Left: Empty space */}
+            <div className="w-32"></div>
             
             {/* Center: Enhanced Nav Links with glass morphism */}
             <motion.div
@@ -53,16 +44,16 @@ export default function Header({ links }: HeaderProps) {
                             className='flex items-center justify-center relative'
                             key={link.hash}
                         >
-                            <NextLink
+                            <button
                                 className={clsx(
-                                    "relative flex items-center justify-center px-4 py-2 rounded-full transition-all duration-300 hover:scale-105",
+                                    "relative flex items-center justify-center px-4 py-2 rounded-full transition-all duration-300 hover:scale-105 cursor-pointer",
                                     {
                                         "text-white": activeSection === link.hash,
                                         "text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary": activeSection !== link.hash
                                     }
                                 )}
-                                href={link.hash}
                                 onClick={() => {
+                                    smoothScrollTo(link.hash);
                                     setActiveSection(link.hash);
                                     setTimeOfLastClick(Date.now())
                                 }}
@@ -87,7 +78,7 @@ export default function Header({ links }: HeaderProps) {
                                     >
                                     </motion.span>
                                 )}
-                            </NextLink>
+                            </button>
                         </motion.li>
                     ))}
                 </ul>
@@ -103,14 +94,10 @@ export default function Header({ links }: HeaderProps) {
                     href='https://drive.google.com/file/d/12sBGdNtcSZqLIlianFkNjwE3FBS-TY5m/view?usp=drive_link'
                     target='_blank'
                     rel='noopener noreferrer'
-                    className='group relative flex items-center gap-3 px-6 py-3 rounded-full font-semibold text-white overflow-hidden transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-2xl'
+                    className='group relative flex items-center gap-3 px-6 py-3 rounded-full font-semibold text-white overflow-hidden transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-2xl bg-primary hover:bg-primary/90 focus:ring-2 focus:ring-primary/50 focus:outline-none'
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                 >
-                    {/* Animated background */}
-                    <div className="absolute inset-0 bg-gradient-to-r from-primary via-secondary to-accent"></div>
-                    <div className="absolute inset-0 bg-gradient-to-r from-primary via-secondary to-accent opacity-0 group-hover:opacity-100 blur-md transition-opacity duration-300"></div>
-                    
                     {/* Content */}
                     <span className="relative z-10 flex items-center gap-2">
                         <motion.div

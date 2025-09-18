@@ -1,7 +1,7 @@
 import Intro from "../components/intro";
 import Services from "@/components/services";
 import Projects from "@/components/projects";
-
+import ClientReviews from "@/components/client-reviews";
 import Contact from "../components/Contact"
 
 export default function Home() {
@@ -10,7 +10,7 @@ export default function Home() {
       <Intro/>
       <Services/>
       <Projects/>
-      
+      <ClientReviews/>
       <Contact />
     </main>
   );

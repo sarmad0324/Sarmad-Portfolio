@@ -7,6 +7,8 @@ import ThemeSwitch from "@/components/theme-controller";
 import ThemeContextProvider from "@/components/theme-context";
 import Script from "next/script";
 import AnimatedCursor from '@/components/AnimatedCursor';
+import { Meteors } from '@/components/magicui/meteors';
+import { RetroGrid } from '@/components/magicui/retro-grid';
 
 const sora = Sora({
   subsets: ['latin'],
@@ -97,11 +99,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="icon" href="/favicon.ico" />
       </head>
       <ThemeContextProvider>
-        <body className={`${sora.variable} font-Sora flex flex-col bg-light1 text-light4 relative dark:bg-darkBlack dark:text-darkGray3 antialiased`}>
+        <body className={`${sora.variable} font-Sora flex flex-col bg-light1 text-light4 relative dark:bg-darkBlack dark:text-darkGray3 antialiased retro-grid-bg`}>
           <AnimatedCursor />
+          <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
+            <Meteors number={50} />
+            <RetroGrid />
+          </div>
           <Providers>
             <Navbar />
-            {children}
+            <div className="relative z-10">
+              {children}
+            </div>
             <ThemeSwitch />
           </Providers>
         </body>

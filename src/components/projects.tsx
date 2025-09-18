@@ -5,6 +5,7 @@ import { useSectionInView } from "@/lib/useInView";
 import { motion } from "framer-motion";
 import { FaCode, FaEye, FaGithub, FaRocket } from "react-icons/fa";
 import { HiSparkles } from "react-icons/hi";
+import { BoxReveal } from './magicui/box-reveal';
 
 export default function Projects (){
     const {ref} = useSectionInView("#projects")
@@ -13,12 +14,8 @@ export default function Projects (){
         <section     
             ref={ref}
             id="projects" 
-            className="scroll-mt-28 mb-28 mt-20 px-6 py-20 relative overflow-hidden bg-gradient-to-br from-light2 via-light1 to-light3 dark:from-darkGray1 dark:via-darkBlack dark:to-darkGray2"
+            className="scroll-mt-28 mb-28 mt-20 px-6 py-32 relative"
         >
-            {/* Animated background */}
-            <div className="absolute inset-0 particle-bg opacity-20"></div>
-            <div className="absolute top-0 right-0 w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-pulse"></div>
-            <div className="absolute bottom-0 left-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse" style={{animationDelay: '2s'}}></div>
             
             <div className="max-w-7xl mx-auto relative z-10">
                 {/* Section Header */}
@@ -29,22 +26,24 @@ export default function Projects (){
                     viewport={{ once: true }}
                     className="text-center mb-16"
                 >
-                    <motion.h2 
-                        className="text-5xl sm:text-6xl font-bold mb-6 relative inline-block"
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        whileInView={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.6, delay: 0.2 }}
-                        viewport={{ once: true }}
-                    >
-                        <span className="holographic">My Projects</span>
-                        <motion.div
-                            className="absolute -top-4 -right-4 text-2xl"
-                            animate={{ rotate: [0, 15, -15, 0] }}
-                            transition={{ duration: 3, repeat: Infinity }}
+                    <BoxReveal boxColor="#7C3AED" duration={0.5}>
+                        <motion.h2 
+                            className="text-5xl sm:text-6xl font-bold mb-6 relative inline-block cursor-pointer"
+                            initial={{ opacity: 0, scale: 0.8 }}
+                            whileInView={{ opacity: 1, scale: 1 }}
+                            transition={{ duration: 0.6, delay: 0.2 }}
+                            viewport={{ once: true }}
                         >
-                            <FaCode className="text-primary" />
-                        </motion.div>
-                    </motion.h2>
+                            <span className="holographic">My Projects</span>
+                            <motion.div
+                                className="absolute -top-4 -right-4 text-2xl"
+                                animate={{ rotate: [0, 15, -15, 0] }}
+                                transition={{ duration: 3, repeat: Infinity }}
+                            >
+                                <FaCode className="text-primary" />
+                            </motion.div>
+                        </motion.h2>
+                    </BoxReveal>
                     
                     <motion.p
                         className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto"

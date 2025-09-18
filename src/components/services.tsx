@@ -4,8 +4,12 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { FaCode, FaMobile, FaRobot, FaGlobe, FaLaptopCode, FaRocket, FaLightbulb } from 'react-icons/fa';
 import { HiSparkles } from 'react-icons/hi';
+import { useSectionInView } from '@/lib/useInView';
+import { BoxReveal } from './magicui/box-reveal';
 
 const ServicesSection = () => {
+  const { ref } = useSectionInView("#services", 0.5);
+  
   const services = [
     {
       icon: FaCode,
@@ -38,7 +42,7 @@ const ServicesSection = () => {
   ];
 
   return (
-    <section id="services" className="px-6 py-20 relative overflow-hidden bg-gradient-to-br from-light1 via-light2 to-light3 dark:from-darkBlack dark:via-darkGray1 dark:to-darkGray2">
+    <section ref={ref} id="services" className="px-6 py-20 relative overflow-hidden bg-gradient-to-br from-light1 via-light2 to-light3 dark:from-darkBlack dark:via-darkGray1 dark:to-darkGray2">
       {/* Animated background */}
       <div className="absolute inset-0 particle-bg opacity-30"></div>
       <div className="absolute top-0 left-0 w-96 h-96 bg-primary/10 rounded-full blur-3xl animate-pulse"></div>
@@ -121,16 +125,20 @@ const ServicesSection = () => {
                   
                   {/* Content */}
                   <div className="relative z-10">
-                    <motion.h3 
-                      className="text-2xl font-bold mb-4 bg-gradient-to-r from-gray-800 to-gray-600 dark:from-white dark:to-gray-300 bg-clip-text text-transparent group-hover:from-primary group-hover:to-secondary transition-all duration-300"
-                      whileHover={{ scale: 1.05 }}
-                    >
-                      {service.title}
-                    </motion.h3>
+                    <BoxReveal boxColor="#6366F1" duration={0.5} delay={service.delay + 0.2}>
+                      <motion.h3 
+                        className="text-2xl font-bold mb-4 bg-gradient-to-r from-gray-800 to-gray-600 dark:from-white dark:to-gray-300 bg-clip-text text-transparent group-hover:from-primary group-hover:to-secondary transition-all duration-300"
+                        whileHover={{ scale: 1.05 }}
+                      >
+                        {service.title}
+                      </motion.h3>
+                    </BoxReveal>
                     
-                    <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-6 group-hover:text-gray-700 dark:group-hover:text-gray-200 transition-colors duration-300">
-                      {service.description}
-                    </p>
+                    <BoxReveal boxColor="#8B5CF6" duration={0.5} delay={service.delay + 0.4}>
+                      <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-6 group-hover:text-gray-700 dark:group-hover:text-gray-200 transition-colors duration-300">
+                        {service.description}
+                      </p>
+                    </BoxReveal>
                     
                     {/* CTA Button */}
                     <motion.a

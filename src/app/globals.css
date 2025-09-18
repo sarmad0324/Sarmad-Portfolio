@@ -121,38 +121,24 @@
   animation: gradientShift 8s ease infinite;
 }
 
+/* Simplified solid colors - no gradients */
 .neon-gradient {
-  background: linear-gradient(45deg, #00D4FF, #B537F2, #FF006B, #39FF14);
-  background-size: 400% 400%;
-  animation: gradientShift 6s ease infinite;
+  background: #7C3AED; /* Purple */
 }
 
 .aurora-gradient {
-  background: linear-gradient(45deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #f5576c 75%, #4facfe 100%);
-  background-size: 400% 400%;
-  animation: gradientShift 10s ease infinite;
+  background: #6B7280; /* Gray */
 }
 
 .cosmic-gradient {
-  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 25%, #8360c3 50%, #2ebf91 75%, #00c9ff 100%);
-  background-size: 400% 400%;
-  animation: gradientShift 12s ease infinite;
+  background: #9CA3AF; /* Light gray */
 }
 
 .holographic {
-  background: linear-gradient(45deg, #ff0080, #ff8c00, #40e0d0, #ee82ee, #9370db);
-  background-size: 400% 400%;
-  animation: gradientShift 8s ease infinite;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  color: #7C3AED; /* Purple text */
 }
 
-@keyframes gradientShift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
+/* Removed gradientShift animation - no longer needed */
 
 /* Glowing effects */
 .glow-text {
@@ -244,6 +230,73 @@
   text-indent: -9999em;
   animation: mulShdSpin 1.1s infinite ease;
   transform: translateZ(0);
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
+}
+
+@keyframes marquee-vertical {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(calc(-100% - var(--gap)));
+  }
+}
+
+.animate-marquee {
+  animation: marquee var(--duration) linear infinite;
+}
+
+.animate-marquee-vertical {
+  animation: marquee-vertical var(--duration) linear infinite;
+}
+
+@keyframes meteor-effect {
+  to {
+    transform: translateY(-200px) translateX(-200px);
+  }
+}
+
+.animate-meteor-effect {
+  animation: meteor-effect linear infinite;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 20s linear infinite;
+}
+
+.hover\:pause-animation:hover {
+  animation-play-state: paused;
+}
+
+/* Retro Grid Background - Purple */
+.retro-grid-bg {
+  background-image:
+    linear-gradient(rgba(124, 58, 237, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(124, 58, 237, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: grid-move 20s linear infinite;
+}
+
+@keyframes grid-move {
+  0% { background-position: 0 0; }
+  100% { background-position: 50px 50px; }
 }
 
 @keyframes mulShdSpin {

@@ -40,14 +40,14 @@ export default function Project({
       <CardBody className="bg-light1 relative group/card dark:hover:shadow-2xl dark:hover:shadow-emerald-500/[0.1] dark:bg-darkGray1 dark:border-darkGray2 border-light3 w-auto sm:w-[30rem] h-auto rounded-xl p-4 border  ">     
        <CardItem
           translateZ="50"
-          className="text-light4 font-bold text-xl dark:text-darkGray3"
+          className="text-gray-900 dark:text-darkGray3 font-bold text-xl"
         >
          {title}
         </CardItem>
         <CardItem
           as="p"
           translateZ="60"
-          className="text-light3 text-sm max-w-sm mt-2 dark:text-darkGray3"
+          className="text-gray-700 dark:text-darkGray3 text-sm max-w-sm mt-2"
         >
    {description}
         </CardItem>
@@ -70,7 +70,7 @@ export default function Project({
             {tags.map((tag, index) => (
              <li
           key={index}
-               className="bg-light4 px-3 py-1 dark:bg-darkGray2 text-[0.7rem] uppercase tracking-wider text-dark1 rounded-full dark:text-darkGray3"
+               className="bg-primary/10 text-primary px-3 py-1 text-[0.7rem] uppercase tracking-wider rounded-full border border-primary/20"
               >
                  {tag}
               </li>
@@ -85,7 +85,7 @@ export default function Project({
               href={link}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-4 inline-block px-6 py-2 rounded-full bg-darkGray2 text-white shadow-lg font-bold text-sm tracking-wide transition-all duration-200 hover:bg-darkGray3 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-darkGray2 dark:bg-darkGray3 dark:text-light1 dark:hover:bg-darkGray2 flex items-center gap-2"
+              className="mt-4 inline-flex px-6 py-2 rounded-full bg-primary hover:bg-primary/90 text-white shadow-lg font-bold text-sm tracking-wide transition-all duration-200 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-primary items-center gap-2"
             >
               View Project <FiArrowRight className="ml-1 text-lg" />
             </CardItem>
