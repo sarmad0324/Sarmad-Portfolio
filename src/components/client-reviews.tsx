@@ -3,8 +3,6 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { useSectionInView } from '@/lib/useInView'
-import Marquee from './magicui/marquee'
-import { Meteors } from './magicui/meteors'
 import { BoxReveal } from './magicui/box-reveal'
 import { cn } from '@/lib/utils'
 
@@ -85,7 +83,7 @@ const ReviewCard = ({
         
         {/* Review Body */}
         <blockquote className="text-sm leading-relaxed text-gray-700 dark:text-gray-300">
-          "{body}"
+          &ldquo;{body}&rdquo;
         </blockquote>
         
         {/* Project Badge */}

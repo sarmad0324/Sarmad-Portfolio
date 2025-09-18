@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaCode, FaMobile, FaRobot, FaGlobe, FaLaptopCode, FaRocket, FaLightbulb } from 'react-icons/fa';
+import { FaCode, FaMobile, FaRobot, FaLaptopCode, FaRocket, FaLightbulb } from 'react-icons/fa';
 import { HiSparkles } from 'react-icons/hi';
 import { useSectionInView } from '@/lib/useInView';
 import { BoxReveal } from './magicui/box-reveal';
@@ -147,7 +147,7 @@ const ServicesSection = () => {
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                     >
-                      <span>Let's Talk</span>
+                      <span>Let&apos;s Talk</span>
                       <FaRocket className="text-sm group-hover:animate-bounce" />
                     </motion.a>
                   </div>
@@ -188,7 +188,7 @@ const ServicesSection = () => {
               Ready to Start Your Project?
             </motion.h3>
             <p className="text-xl text-gray-600 dark:text-gray-300 mb-6">
-              Let's turn your vision into reality with cutting-edge technology and innovative solutions.
+              Let&apos;s turn your vision into reality with cutting-edge technology and innovative solutions.
             </p>
             <motion.a
               href="#contact"

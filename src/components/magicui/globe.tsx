@@ -25,6 +25,7 @@ export function Globe({ className }: GlobeProps) {
     function animate() {
       time += 0.01;
       
+      if (!ctx || !canvas) return;
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       
       // Draw globe

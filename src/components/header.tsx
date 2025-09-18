@@ -1,12 +1,10 @@
 "use client"
 import React from 'react'
-import NextLink from 'next/link'
 import clsx from 'clsx'
 import { Link } from '@/lib/types'
 import { useActiveSectionContext } from '@/containers/active-section'
 import { motion } from 'framer-motion'
-import { FaRegFilePdf, FaDownload, FaGraduationCap } from 'react-icons/fa'
-import { HiSparkles } from 'react-icons/hi'
+import { FaDownload, FaGraduationCap } from 'react-icons/fa'
 
 // Smooth scroll function
 const smoothScrollTo = (elementId: string) => {

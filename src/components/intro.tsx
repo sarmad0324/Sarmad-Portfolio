@@ -55,7 +55,7 @@ export default function Intro(){
                 >
                     <BoxReveal boxColor="#7C3AED" duration={0.5}>
                         <h1 className='mb-4 mt-4 px-4 text-4xl sm:text-6xl font-bold text-primary dark:text-white'>
-                        Hi, I'm Sarmad Irfan
+                        Hi, I&apos;m Sarmad Irfan
                         </h1>
                     </BoxReveal>
                     
