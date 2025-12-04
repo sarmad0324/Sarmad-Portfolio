@@ -3,8 +3,7 @@
 import React from 'react'
 import { motion } from 'framer-motion'
 import { useSectionInView } from '@/lib/useInView'
-import { BoxReveal } from './magicui/box-reveal'
-import { cn } from '@/lib/utils'
+import { FaStar } from 'react-icons/fa'
 
 const reviews = [
   {
@@ -37,9 +36,6 @@ const reviews = [
   }
 ]
 
-// Use all reviews in a single row
-const allReviews = reviews
-
 const ReviewCard = ({
   name,
   role,
@@ -54,46 +50,38 @@ const ReviewCard = ({
   project: string
 }) => {
   return (
-    <figure
-      className={cn(
-        "relative h-full w-80 cursor-pointer overflow-hidden rounded-xl border p-6 mx-4",
-        // light styles
-        "border-gray-200 bg-white/90 hover:bg-white shadow-lg",
-        // dark styles
-        "dark:border-gray-700 dark:bg-gray-800/90 dark:hover:bg-gray-800 dark:shadow-xl",
-      )}
-    >
-      <div className="flex flex-col gap-4">
+    <div className="relative h-full w-80 cursor-pointer overflow-hidden rounded-xl border p-6 mx-4 bg-white dark:bg-darkGray2 border-borderGray dark:border-darkGray3 shadow-lg hover:shadow-xl transition-all duration-300">
+      <div className="flex flex-col gap-4 h-full">
         {/* Header */}
-        <div className="flex items-center justify-between">
+        <div className="flex items-start justify-between mb-2">
           <div className="flex flex-col">
-            <figcaption className="text-lg font-semibold dark:text-white">
+            <h4 className="text-lg font-bold text-textDark dark:text-white">
               {name}
-            </figcaption>
+            </h4>
             <p className="text-sm font-medium text-primary dark:text-primary/80">
               {role}
             </p>
           </div>
           <div className="flex items-center gap-1">
             {[...Array(rating)].map((_, i) => (
-              <span key={i} className="text-yellow-400 text-lg">★</span>
+              <FaStar key={i} className="text-yellow-400 text-sm" />
             ))}
           </div>
         </div>
         
         {/* Review Body */}
-        <blockquote className="text-sm leading-relaxed text-gray-700 dark:text-gray-300">
+        <blockquote className="text-sm leading-relaxed text-textDark/70 dark:text-gray-300 flex-grow">
           &ldquo;{body}&rdquo;
         </blockquote>
         
         {/* Project Badge */}
-        <div className="flex justify-end">
-          <span className="px-3 py-1 text-xs font-medium bg-primary/10 text-primary rounded-full">
+        <div className="flex justify-end pt-2">
+          <span className="px-3 py-1 text-xs font-semibold bg-primary/10 text-primary rounded-full border border-primary/20">
             {project}
           </span>
         </div>
       </div>
-    </figure>
+    </div>
   )
 }
 
@@ -104,24 +92,22 @@ export default function ClientReviews() {
     <section 
       ref={ref} 
       id="reviews" 
-      className="py-32 relative"
+      className="py-20 md:py-32 relative bg-bgWarm dark:bg-darkGray1"
     >
-      
-      <div className="max-w-7xl mx-auto relative z-10">
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
         {/* Section Title */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          viewport={{ once: true }}
+          className="text-center mb-16 md:mb-20"
         >
-          <BoxReveal boxColor="#7C3AED" duration={0.5}>
-            <h2 className="text-4xl sm:text-5xl font-bold mb-4 bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
-              Client Reviews
-            </h2>
-          </BoxReveal>
-          <p className="text-lg text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            What our clients say about working with us
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 text-textDark dark:text-white">
+            What Clients <span className="text-primary">Say</span>
+          </h2>
+          <p className="text-xl text-textDark/70 dark:text-gray-300 max-w-2xl mx-auto">
+            Don't just take my word for it. Here's what clients have to say about working with me.
           </p>
         </motion.div>
 
@@ -129,7 +115,7 @@ export default function ClientReviews() {
         <div className="relative overflow-hidden">
           <div className="flex space-x-8 animate-scroll hover:pause-animation">
             {/* First set of reviews */}
-            {allReviews.map((review, index) => (
+            {reviews.map((review, index) => (
               <div
                 key={`${review.name}-${index}`}
                 className="flex-shrink-0 w-80"
@@ -138,7 +124,7 @@ export default function ClientReviews() {
               </div>
             ))}
             {/* Duplicate for seamless loop */}
-            {allReviews.map((review, index) => (
+            {reviews.map((review, index) => (
               <div
                 key={`${review.name}-${index}-duplicate`}
                 className="flex-shrink-0 w-80"
@@ -148,6 +134,30 @@ export default function ClientReviews() {
             ))}
           </div>
         </div>
+
+        {/* Trust Indicators */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          viewport={{ once: true }}
+          className="mt-16 text-center"
+        >
+          <div className="inline-flex flex-col sm:flex-row gap-6 items-center justify-center text-textDark/60 dark:text-gray-400 text-sm">
+            <div className="flex items-center gap-2">
+              <span className="text-2xl">✓</span>
+              <span>100% Client Satisfaction</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="text-2xl">✓</span>
+              <span>On-Time Delivery</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="text-2xl">✓</span>
+              <span>Dedicated Support</span>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   )

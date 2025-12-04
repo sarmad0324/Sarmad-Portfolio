@@ -13,26 +13,30 @@ const config: Config = {
 "gradient-conic":"conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops)) "
    },
       fontFamily:{
-        Sora:[`var(--font-sora)`,`sans-serif`]
+        Sora:[`var(--font-sora)`,`sans-serif`],
+        Inter: [`var(--font-inter)`, 'sans-serif'],
       },
       colors: {
-        // Simplified color palette - only black, white, gray, purple
+        // Modern Agency Portfolio Color Palette
         darkBlack: '#000000',
         darkGray1: '#1F1F1F',
         darkGray2: '#404040',
         darkGray3: '#6B6B6B',
         light1: '#FFFFFF',
         light2: '#F5F5F5',
-        light3: '#E5E5E5',
+        light3: '#E6E6E6',
         light4: '#9CA3AF',
-        // Simplified colors
-        primary: '#7C3AED', // Purple
-        secondary: '#6B7280', // Gray
-        accent: '#9CA3AF', // Light gray
-        success: '#6B7280', // Gray instead of green
-        warning: '#6B7280', // Gray instead of yellow
-        error: '#6B7280', // Gray instead of red
-        // Removed gradient and neon colors
+        // Brand colors from spec
+        primary: '#FF6A3D', // Warm orange
+        secondary: '#3DBF7A', // Fresh green
+        accent: '#3DBF7A', // Green accent
+        success: '#3DBF7A', // Green for success
+        warning: '#FF6A3D', // Orange for warning
+        error: '#FF6A3D', // Orange for errors
+        // Background colors
+        bgWarm: '#FFF9F4', // Warm background
+        textDark: '#444444', // Dark text
+        borderGray: '#E6E6E6', // Light gray borders
       },
       animation: {
         'float': 'float 6s ease-in-out infinite',

@@ -65,14 +65,14 @@ export default function Header({ links }: HeaderProps) {
                                             damping: 30,
                                         }}
                                         layoutId='activeSection'
-                                        className='absolute inset-0 bg-gradient-to-r from-primary via-secondary to-accent rounded-full -z-10 glow-box'
+                                        className='absolute inset-0 bg-primary rounded-full -z-10 glow-box'
                                     >
                                     </motion.span>
                                 )}
                                 {/* Hover effect for non-active items */}
                                 {link.hash !== activeSection && (
                                     <motion.span
-                                        className='absolute inset-0 bg-gradient-to-r from-primary/20 via-secondary/20 to-accent/20 rounded-full opacity-0 hover:opacity-100 transition-opacity duration-300 -z-10'
+                                        className='absolute inset-0 bg-primary/20 rounded-full opacity-0 hover:opacity-100 transition-opacity duration-300 -z-10'
                                     >
                                     </motion.span>
                                 )}

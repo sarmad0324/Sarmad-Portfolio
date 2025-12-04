@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Sora } from "next/font/google"
+import { Inter } from "next/font/google"
 import "./globals.css";
 import Providers from "@/containers/providers";
 import Navbar from "@/components/navbar";
@@ -7,19 +7,17 @@ import ThemeSwitch from "@/components/theme-controller";
 import ThemeContextProvider from "@/components/theme-context";
 import Script from "next/script";
 import AnimatedCursor from '@/components/AnimatedCursor';
-import { Meteors } from '@/components/magicui/meteors';
-import { RetroGrid } from '@/components/magicui/retro-grid';
 
-const sora = Sora({
+const inter = Inter({
   subsets: ['latin'],
-  variable: '--font-sora',
-  weight: ['100','200','300','400','500','600','700','800']
+  variable: '--font-inter',
+  weight: ['400', '500', '600', '700', '800', '900']
 });
 
 export const metadata: Metadata = {
   title: "Sarmad Irfan – Software Engineer & AI Specialist",
-  description: "Explore the official portfolio of Sarmad Irfan, CEO of SyntexLeap, showcasing web and mobile app development projects built with React, React-Native, Next.js, and modern technologies.",
-  keywords: "Sarmad Irfan, SyntexLeap, Software Engineer, Web Development, App Development, React, Next.js",
+  description: "Transform your business with AI-powered web and mobile solutions. Full-stack development, AI integration, and automation services for businesses and startups. Get a quote today.",
+  keywords: "AI web development, mobile app development, business solutions, startup development, AI integration, automation, custom software development, React, Next.js, React Native",
   authors: [{ name: "Sarmad Irfan" }],
   creator: "Sarmad Irfan",
   publisher: "Sarmad Irfan",
@@ -49,62 +47,55 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className="!scroll-smooth">
-      <head>
-        <Script
-          strategy="afterInteractive"
-          src="https://www.googletagmanager.com/gtag/js?id=G-05BX1H3XYB"
-        />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-05BX1H3XYB');
-          `}
-        </Script>
-        <Script id="structured-data" type="application/ld+json">
-          {`
-            {
-              "@context": "https://schema.org",
-              "@type": "Person",
-              "name": "Sarmad Irfan",
-              "url": "https://sarmadirfan.com",
-              "sameAs": [
-                "https://www.linkedin.com/in/sarmad-irfan",
-                "https://github.com/sarmad0324"
-              ],
-              "jobTitle": "Software Engineer & CEO",
-              "worksFor": {
-                "@type": "Organization",
-                "name": "SyntexLeap"
-              }
-            }
-          `}
-        </Script>
-        <Script id="site-structured-data" type="application/ld+json">
-          {`
-            {
-              "@context": "https://schema.org",
-              "@type": "WebSite",
-              "name": "Sarmad Irfan – Software Engineer",
-              "url": "https://sarmadirfan.com",
-              "potentialAction": {
-                "@type": "SearchAction",
-                "target": "https://sarmadirfan.com/?s={search_term_string}",
-                "query-input": "required name=search_term_string"
-              }
-            }
-          `}
-        </Script>
-        <link rel="icon" href="/favicon.ico" />
-      </head>
       <ThemeContextProvider>
-        <body className={`${sora.variable} font-Sora flex flex-col bg-light1 text-light4 relative dark:bg-darkBlack dark:text-darkGray3 antialiased retro-grid-bg`}>
+        <body className={`${inter.variable} font-Inter flex flex-col bg-bgWarm text-textDark relative dark:bg-darkBlack dark:text-darkGray3 antialiased`}>
+          <Script
+            strategy="afterInteractive"
+            src="https://www.googletagmanager.com/gtag/js?id=G-05BX1H3XYB"
+          />
+          <Script id="google-analytics" strategy="afterInteractive">
+            {`
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-05BX1H3XYB');
+            `}
+          </Script>
+          <Script id="structured-data" type="application/ld+json">
+            {`
+              {
+                "@context": "https://schema.org",
+                "@type": "Person",
+                "name": "Sarmad Irfan",
+                "url": "https://sarmadirfan.com",
+                "sameAs": [
+                  "https://www.linkedin.com/in/sarmad-irfan",
+                  "https://github.com/sarmad0324"
+                ],
+                "jobTitle": "Software Engineer & CEO",
+                "worksFor": {
+                  "@type": "Organization",
+                  "name": "SyntexLeap"
+                }
+              }
+            `}
+          </Script>
+          <Script id="site-structured-data" type="application/ld+json">
+            {`
+              {
+                "@context": "https://schema.org",
+                "@type": "WebSite",
+                "name": "Sarmad Irfan – Software Engineer",
+                "url": "https://sarmadirfan.com",
+                "potentialAction": {
+                  "@type": "SearchAction",
+                  "target": "https://sarmadirfan.com/?s={search_term_string}",
+                  "query-input": "required name=search_term_string"
+                }
+              }
+            `}
+          </Script>
           <AnimatedCursor />
-          <div className="fixed inset-0 overflow-hidden pointer-events-none z-0">
-            <Meteors number={50} />
-            <RetroGrid />
-          </div>
           <Providers>
             <Navbar />
             <div className="relative z-10">
