@@ -3,7 +3,7 @@ import Image from "next/image";
 import { ProjectInfo } from "@/lib/types";
 import { motion } from "framer-motion";
 import { FiArrowRight, FiChevronDown, FiChevronUp } from 'react-icons/fi';
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 
 type ProjectProps = ProjectInfo;
 

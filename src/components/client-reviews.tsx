@@ -107,7 +107,7 @@ export default function ClientReviews() {
             What Clients <span className="text-primary">Say</span>
           </h2>
           <p className="text-xl text-textDark/70 dark:text-gray-300 max-w-2xl mx-auto">
-            Don't just take my word for it. Here's what clients have to say about working with me.
+            Don&apos;t just take my word for it. Here&apos;s what clients have to say about working with me.
           </p>
         </motion.div>
 

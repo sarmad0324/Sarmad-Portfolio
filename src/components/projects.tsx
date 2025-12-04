@@ -27,7 +27,7 @@ export default function Projects (){
                         Featured <span className="text-primary">Case Studies</span>
                     </h2>
                     <p className="text-lg text-textDark/60 dark:text-gray-400 max-w-2xl mx-auto">
-                        Real projects, real results. Explore how I've helped businesses solve complex challenges.
+                        Real projects, real results. Explore how I&apos;ve helped businesses solve complex challenges.
                     </p>
                 </motion.div>
                 
@@ -51,7 +51,7 @@ export default function Projects (){
                             Ready to Start Your Project?
                         </h3>
                         <p className="text-lg text-textDark/70 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
-                            Let's discuss how we can build something amazing together.
+                            Let&apos;s discuss how we can build something amazing together.
                         </p>
                         <motion.a
                             href="#contact"

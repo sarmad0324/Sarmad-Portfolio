@@ -99,10 +99,10 @@ const Contact = () => {
             Get in Touch
           </p>
           <h3 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 text-textDark dark:text-white">
-            Let's <span className="text-primary">Build Something</span> Together
+            Let&apos;s <span className="text-primary">Build Something</span> Together
           </h3>
           <p className="text-xl text-textDark/70 dark:text-gray-300 max-w-2xl mx-auto">
-            Have a project in mind? Get a free quote and consultation. I'm here to help bring your vision to life.
+            Have a project in mind? Get a free quote and consultation. I&apos;m here to help bring your vision to life.
           </p>
         </motion.div>
 

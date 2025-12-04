@@ -60,7 +60,7 @@ export default function About() {
                         Who I Am & <span className="text-primary">What I Do</span>
                     </h2>
                     <p className="text-xl text-textDark/70 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
-                        I'm not just a developer—I'm your partner in building digital solutions that drive real business results.
+                        I&apos;m not just a developer—I&apos;m your partner in building digital solutions that drive real business results.
                     </p>
                 </motion.div>
 
@@ -96,17 +96,17 @@ export default function About() {
                     >
                         <div>
                             <h3 className="text-3xl md:text-4xl font-bold mb-4 text-textDark dark:text-white">
-                                Hi, I'm <span className="text-primary">Sarmad Irfan</span>
+                                Hi, I&apos;m <span className="text-primary">Sarmad Irfan</span>
                             </h3>
                             <div className="space-y-4 text-lg text-textDark/80 dark:text-gray-300 leading-relaxed">
                                 <p>
-                                    I'm a Software Engineer turned Entrepreneur, and the founder of SyntexLeap—an AI-focused development agency that helps businesses and startups build transformative digital products.
+                                    I&apos;m a Software Engineer turned Entrepreneur, and the founder of SyntexLeap—an AI-focused development agency that helps businesses and startups build transformative digital products.
                                 </p>
                                 <p>
                                     With over a decade of combined experience in web development, mobile apps, and AI integration, I specialize in turning complex business challenges into elegant, scalable solutions. My approach combines technical expertise with a deep understanding of what drives business growth.
                                 </p>
                                 <p>
-                                    Whether you're a startup looking to launch your first product or an established business seeking to innovate with AI and automation, I work as an extension of your team to deliver results that matter.
+                                    Whether you&apos;re a startup looking to launch your first product or an established business seeking to innovate with AI and automation, I work as an extension of your team to deliver results that matter.
                                 </p>
                             </div>
                         </div>
@@ -184,7 +184,7 @@ export default function About() {
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                         >
-                            Let's Discuss Your Project
+                            Let&apos;s Discuss Your Project
                             <FaRocket className="text-lg" />
                         </motion.a>
                         <motion.a
