@@ -27,16 +27,23 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Sarmad Irfan – Software Engineer & AI Specialist",
-    description: "Explore the official portfolio of Sarmad Irfan, CEO of SyntexLeap, showcasing web and mobile app development projects built with React, React-Native, Next.js, and modern technologies.",
+    description: "AI-powered web & mobile solutions for businesses and startups. Explore case studies, services, and how I help teams ship fast, scalable products.",
     url: "https://sarmadirfan.com",
     siteName: "Sarmad Irfan",
     locale: "en_US",
     type: "website",
+    images: [
+      {
+        url: "/hero-profile-2.jpeg",
+        alt: "Sarmad Irfan – Software Engineer & AI Specialist",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Sarmad Irfan – Software Engineer & AI Specialist",
-    description: "Explore the official portfolio of Sarmad Irfan, CEO of SyntexLeap, showcasing web and mobile app development projects built with React, React-Native, Next.js, and modern technologies.",
+    description: "AI-powered web & mobile solutions for businesses and startups. Explore case studies, services, and how I help teams ship fast, scalable products.",
+    images: ["/hero-profile-2.jpeg"],
   },
   alternates: {
     canonical: "https://sarmadirfan.com",

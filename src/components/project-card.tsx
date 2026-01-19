@@ -1,11 +1,15 @@
 "use client"
 import Image from "next/image";
 import { ProjectInfo } from "@/lib/types";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { FiArrowRight, FiChevronDown, FiChevronUp } from 'react-icons/fi';
-import { useState, useRef } from "react";
+import { useState, useCallback } from "react";
 
-type ProjectProps = ProjectInfo;
+type ProjectProps = ProjectInfo & {
+  index?: number;
+  expandedIndex?: number | null;
+  onToggleExpand?: (index: number) => void;
+};
 
 export default function Project({
   title,
@@ -16,26 +20,35 @@ export default function Project({
   tags,
   imageUrl,
   link,
+  index = 0,
+  expandedIndex,
+  onToggleExpand,
 }: ProjectProps) {
-    const cardRef = useRef<HTMLDivElement>(null);
     const [isHovered, setIsHovered] = useState(false);
-    const [isExpanded, setIsExpanded] = useState(false);
+    
+    // Determine if this card is expanded based on parent state or local state
+    const isExpanded = expandedIndex === index;
+    
+    // Generate a stable unique ID for this card based on title
+    const cardId = `project-${title.toLowerCase().replace(/\s+/g, '-')}-${index}`;
     
     // Get first sentence or 120 characters for preview
     const previewText = description.length > 120 
         ? description.substring(0, 120).trim() + '...'
         : description;
 
-    const handleToggleCaseStudy = (e: React.MouseEvent<HTMLButtonElement>) => {
+    const handleToggleCaseStudy = useCallback((e: React.MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
         e.stopPropagation();
-        setIsExpanded(prev => !prev);
-    };
+        if (onToggleExpand) {
+            onToggleExpand(index);
+        }
+    }, [index, onToggleExpand]);
 
   return (
-    <div ref={cardRef} className="h-full" data-project-title={title} data-project-id={title.toLowerCase().replace(/\s+/g, '-')}>
+    <div className="h-full" data-project-title={title} data-project-id={cardId}>
       <motion.div
-          className="group h-full"
+          className="h-full"
           onHoverStart={() => setIsHovered(true)}
           onHoverEnd={() => setIsHovered(false)}
           initial={{ opacity: 0, y: 20 }}
@@ -64,7 +77,9 @@ export default function Project({
           {/* Content */}
           <div className="flex flex-col flex-grow p-6">
             {/* Title */}
-            <h3 className="text-xl font-bold mb-3 text-textDark dark:text-white line-clamp-2 group-hover:text-primary transition-colors duration-300">
+            <h3 className={`text-xl font-bold mb-3 line-clamp-2 transition-colors duration-300 ${
+              isHovered ? 'text-primary' : 'text-textDark dark:text-white'
+            }`}>
               {title}
             </h3>
             
@@ -105,7 +120,7 @@ export default function Project({
                   aria-expanded={isExpanded}
                   data-expanded={isExpanded}
                   data-project-title={title}
-                  id={`case-study-btn-${title.replace(/\s+/g, '-').toLowerCase()}`}
+                  id={`case-study-btn-${cardId}`}
                 >
                   <span className="text-sm font-bold text-primary dark:text-primary">
                     View Case Study
@@ -117,36 +132,39 @@ export default function Project({
                   )}
                 </button>
 
-                {isExpanded && (
-                  <motion.div
-                    initial={{ opacity: 0, height: 0 }}
-                    animate={{ opacity: 1, height: "auto" }}
-                    exit={{ opacity: 0, height: 0 }}
-                    transition={{ duration: 0.3 }}
-                    className="space-y-4 text-textDark/70 dark:text-gray-300 border-t border-borderGray/50 dark:border-darkGray3/50 pt-4"
-                  >
-                    {problem && (
-                      <div>
-                        <h4 className="font-bold text-primary mb-2 text-sm">Problem:</h4>
-                        <p className="text-sm leading-relaxed">{problem}</p>
-                      </div>
-                    )}
-                    
-                    {solution && (
-                      <div>
-                        <h4 className="font-bold text-secondary mb-2 text-sm">Solution:</h4>
-                        <p className="text-sm leading-relaxed">{solution}</p>
-                      </div>
-                    )}
-                    
-                    {outcome && (
-                      <div>
-                        <h4 className="font-bold text-secondary mb-2 text-sm">Outcome:</h4>
-                        <p className="text-sm leading-relaxed">{outcome}</p>
-                      </div>
-                    )}
-                  </motion.div>
-                )}
+                <AnimatePresence mode="wait">
+                  {isExpanded && (
+                    <motion.div
+                      key={`case-study-content-${cardId}`}
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="space-y-4 text-textDark/70 dark:text-gray-300 border-t border-borderGray/50 dark:border-darkGray3/50 pt-4"
+                    >
+                      {problem && (
+                        <div>
+                          <h4 className="font-bold text-primary mb-2 text-sm">Problem:</h4>
+                          <p className="text-sm leading-relaxed">{problem}</p>
+                        </div>
+                      )}
+                      
+                      {solution && (
+                        <div>
+                          <h4 className="font-bold text-secondary mb-2 text-sm">Solution:</h4>
+                          <p className="text-sm leading-relaxed">{solution}</p>
+                        </div>
+                      )}
+                      
+                      {outcome && (
+                        <div>
+                          <h4 className="font-bold text-secondary mb-2 text-sm">Outcome:</h4>
+                          <p className="text-sm leading-relaxed">{outcome}</p>
+                        </div>
+                      )}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
             )}
 

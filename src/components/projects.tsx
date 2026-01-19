@@ -4,9 +4,15 @@ import Project from "./project-card";
 import { useSectionInView } from "@/lib/useInView";
 import { motion } from "framer-motion";
 import { FaArrowRight } from "react-icons/fa";
+import { useState, useCallback } from "react";
 
 export default function Projects (){
     const {ref} = useSectionInView("#projects")
+    const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
+    
+    const handleToggleExpand = useCallback((index: number) => {
+        setExpandedIndex(prev => prev === index ? null : index);
+    }, []);
     
     return(
         <section     
@@ -34,7 +40,13 @@ export default function Projects (){
                 {/* Projects Grid - 3 columns on desktop, 2 on tablet, 1 on mobile */}
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
                     {projectsData.map((project, index) => (
-                        <Project key={`project-${project.title}-${index}`} {...project} />
+                        <Project 
+                            key={`project-${project.title}-${index}`} 
+                            {...project} 
+                            index={index}
+                            expandedIndex={expandedIndex}
+                            onToggleExpand={handleToggleExpand}
+                        />
                     ))}
                 </div>
                 

@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import React from 'react'
-import Boy from '../../public/dp.png'
+import HeroProfile from '../../public/hero-profile-2.jpeg'
 import { BsLinkedin } from 'react-icons/bs'
 import { FaGithubSquare, FaEnvelope, FaArrowRight } from 'react-icons/fa'
 import { motion } from 'framer-motion'
@@ -92,6 +92,18 @@ export default function Intro(){
                         >
                             View Case Studies
                         </motion.a>
+
+                        <motion.a
+                            href='https://calendly.com/sarmadirfan78/30min'
+                            target='_blank'
+                            rel='noopener noreferrer'
+                            className='inline-flex items-center justify-center gap-2 px-8 py-4 bg-secondary text-white rounded-lg font-semibold text-lg hover:bg-secondary/90 transition-all duration-300 shadow-lg hover:shadow-xl'
+                            whileHover={{ scale: 1.05 }}
+                            whileTap={{ scale: 0.95 }}
+                        >
+                            Book a Call
+                            <FaArrowRight className='transition-transform' />
+                        </motion.a>
                     </motion.div>
 
                     {/* Social Links */}
@@ -152,15 +164,17 @@ export default function Intro(){
                         
                         <div className='relative group'>
                             <div className='absolute inset-0 bg-gradient-to-r from-primary to-secondary rounded-full blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-300'></div>
-                            <Image
-                                src={Boy}
-                                width='500'
-                                height='500'
-                                alt='Sarmad Irfan - Software Engineer & AI Specialist'
-                                quality="100"
-                                priority={true}
-                                className='relative rounded-full shadow-2xl object-cover transition-all duration-300 group-hover:scale-105 border-8 border-white dark:border-darkGray1'
-                            />
+                            <div className='relative w-[350px] h-[350px] sm:w-[400px] sm:h-[400px] md:w-[450px] md:h-[450px] lg:w-[500px] lg:h-[500px] rounded-full overflow-hidden shadow-2xl border-8 border-white dark:border-darkGray1 group-hover:scale-105 transition-all duration-300'>
+                                <Image
+                                    src={HeroProfile}
+                                    fill
+                                    alt='Sarmad Irfan - Software Engineer & AI Specialist'
+                                    quality="100"
+                                    priority={true}
+                                    className='object-cover scale-80 md:scale-100'
+                                    style={{ objectPosition: 'center 15%' }}
+                                />
+                            </div>
                         </div>
                     </div>
                 </motion.div>
