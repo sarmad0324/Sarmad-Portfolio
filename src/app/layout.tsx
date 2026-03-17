@@ -3,10 +3,8 @@ import { Inter } from "next/font/google"
 import "./globals.css";
 import Providers from "@/containers/providers";
 import Navbar from "@/components/navbar";
-import ThemeSwitch from "@/components/theme-controller";
-import ThemeContextProvider from "@/components/theme-context";
 import Script from "next/script";
-import AnimatedCursor from '@/components/AnimatedCursor';
+import MobileCta from "@/components/mobile-cta";
 
 const inter = Inter({
   subsets: ['latin'],
@@ -57,9 +55,8 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="!scroll-smooth">
-      <ThemeContextProvider>
-        <body className={`${inter.variable} font-Inter flex flex-col bg-bgWarm text-textDark relative dark:bg-darkBlack dark:text-darkGray3 antialiased`}>
+    <html lang="en" className="dark !scroll-smooth">
+        <body className={`${inter.variable} font-Inter flex flex-col bg-darkBlack text-gray-200 relative antialiased`}>
           <Script
             strategy="afterInteractive"
             src="https://www.googletagmanager.com/gtag/js?id=G-05BX1H3XYB"
@@ -106,16 +103,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               }
             `}
           </Script>
-          <AnimatedCursor />
           <Providers>
             <Navbar />
             <div className="relative z-10">
               {children}
             </div>
-            <ThemeSwitch />
+            <MobileCta />
           </Providers>
         </body>
-      </ThemeContextProvider>
     </html>
   );
 }

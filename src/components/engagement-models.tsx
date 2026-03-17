@@ -6,21 +6,21 @@ import { useSectionInView } from "@/lib/useInView";
 const models = [
   {
     title: "Product Audit / Technical Review",
-    summary: "For founders who need clarity before spending more engineering time.",
-    includes: "Architecture review, bottleneck mapping, delivery risk analysis, and a concrete execution plan.",
-    fit: "Best when shipping is slow or quality issues keep repeating.",
+    summary: "Clarify delivery risks before spending more engineering cycles.",
+    includes: "Architecture review, bottleneck mapping, and an execution plan.",
+    fit: "Best when shipping slows down or quality issues repeat.",
   },
   {
     title: "2-4 Week Build Sprint",
-    summary: "Focused implementation window for a critical product milestone.",
-    includes: "Feature delivery across web/mobile/backend, integration work, and weekly delivery checkpoints.",
-    fit: "Best for MVP milestones, urgent launches, and deadline-driven product work.",
+    summary: "Focused implementation for a key milestone.",
+    includes: "Feature delivery across web/mobile/backend with weekly checkpoints.",
+    fit: "Best for MVP milestones and urgent launches.",
   },
   {
     title: "Monthly Technical Partner",
-    summary: "Ongoing embedded execution for lean teams that need senior technical ownership.",
-    includes: "Prioritization support, hands-on development, stabilization, and delivery leadership.",
-    fit: "Best for startups that need continuity without hiring full-time senior engineering immediately.",
+    summary: "Ongoing embedded execution for lean teams.",
+    includes: "Prioritization, hands-on development, stabilization, and delivery leadership.",
+    fit: "Best for teams needing continuity without a full-time senior hire.",
   },
 ];
 
@@ -28,19 +28,19 @@ export default function EngagementModels() {
   const { ref } = useSectionInView("#engagement", 0.4);
 
   return (
-    <section ref={ref} id="engagement" className="px-6 py-20 md:py-28 bg-white dark:bg-darkGray1">
+    <section ref={ref} id="engagement" className="px-6 py-16 md:py-20 bg-darkBlack">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-14"
+          className="text-center mb-10"
         >
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-textDark dark:text-white mb-4">
-            How We Can <span className="text-primary">Work Together</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3">
+            Engagement <span className="text-primary">Models</span>
           </h2>
-          <p className="max-w-3xl mx-auto text-lg text-textDark/70 dark:text-gray-300">
-            Clear engagement models so founders can pick the right execution format quickly.
+          <p className="max-w-2xl mx-auto text-base text-gray-300">
+            Structured options designed for founders and lean product teams.
           </p>
         </motion.div>
 
@@ -52,15 +52,15 @@ export default function EngagementModels() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.08 }}
               viewport={{ once: true }}
-              className="rounded-2xl border border-borderGray dark:border-darkGray3 bg-bgWarm dark:bg-darkGray2 p-7"
+              className="rounded-2xl border border-darkGray3 bg-darkGray1/70 p-6"
             >
-              <h3 className="text-2xl font-bold text-textDark dark:text-white">{model.title}</h3>
-              <p className="text-textDark/75 dark:text-gray-300 mt-4 leading-relaxed">{model.summary}</p>
-              <p className="text-textDark/70 dark:text-gray-400 mt-3 leading-relaxed">
-                <span className="font-semibold text-textDark dark:text-white">Includes:</span> {model.includes}
+              <h3 className="text-xl font-bold text-white">{model.title}</h3>
+              <p className="text-gray-300 mt-3 text-sm leading-relaxed">{model.summary}</p>
+              <p className="text-gray-400 mt-2 text-sm leading-relaxed">
+                <span className="font-semibold text-gray-200">Includes:</span> {model.includes}
               </p>
-              <p className="text-textDark/70 dark:text-gray-400 mt-3 leading-relaxed">
-                <span className="font-semibold text-textDark dark:text-white">Good fit:</span> {model.fit}
+              <p className="text-gray-400 mt-2 text-sm leading-relaxed">
+                <span className="font-semibold text-gray-200">Good fit:</span> {model.fit}
               </p>
             </motion.article>
           ))}

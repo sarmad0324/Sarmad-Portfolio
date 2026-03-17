@@ -38,19 +38,19 @@ export default function ProofSection() {
   const { ref } = useSectionInView("#reviews", 0.45);
 
   return (
-    <section ref={ref} id="reviews" className="px-6 py-20 md:py-28 bg-bgWarm dark:bg-darkGray1">
+    <section ref={ref} id="reviews" className="px-6 py-16 md:py-20 bg-darkBlack">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-12"
+          className="text-center mb-10"
         >
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-textDark dark:text-white mb-4">
-            Trusted by Teams That <span className="text-primary">Need Real Execution</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3">
+            Proof from <span className="text-primary">Real Product Teams</span>
           </h2>
-          <p className="max-w-3xl mx-auto text-lg text-textDark/70 dark:text-gray-300">
-            Curated proof from product teams where delivery quality and ownership mattered.
+          <p className="max-w-2xl mx-auto text-base text-gray-300">
+            A few signals from teams that trusted me with meaningful execution work.
           </p>
         </motion.div>
 
@@ -62,13 +62,13 @@ export default function ProofSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.08 }}
               viewport={{ once: true }}
-              className="rounded-2xl border border-borderGray dark:border-darkGray3 bg-white dark:bg-darkGray2 p-6"
+              className="rounded-2xl border border-darkGray3 bg-darkGray1/70 p-5"
             >
-              <p className="text-textDark/80 dark:text-gray-300 leading-relaxed">
+              <p className="text-gray-300 leading-relaxed text-sm">
                 &ldquo;{item.quote}&rdquo;
               </p>
               <div className="mt-6">
-                <p className="font-bold text-textDark dark:text-white">{item.name}</p>
+                <p className="font-bold text-white">{item.name}</p>
                 <p className="text-sm text-primary">
                   {item.role}, {item.company}
                 </p>
@@ -81,9 +81,9 @@ export default function ProofSection() {
           {proofStrip.map((signal) => (
             <div
               key={signal}
-              className="rounded-xl border border-borderGray dark:border-darkGray3 bg-white/80 dark:bg-darkGray2 px-4 py-3"
+              className="rounded-xl border border-darkGray3 bg-darkGray1/70 px-4 py-3"
             >
-              <p className="text-sm text-textDark/70 dark:text-gray-400">{signal}</p>
+              <p className="text-sm text-gray-400">{signal}</p>
             </div>
           ))}
         </div>

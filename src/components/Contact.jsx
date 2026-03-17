@@ -5,8 +5,6 @@ import emailjs from "@emailjs/browser";
 import { useSectionInView } from "@/lib/useInView";
 import { BsWhatsapp } from 'react-icons/bs';
 import { BsEnvelope } from 'react-icons/bs';
-import { EarthCanvas } from "./canvas";
-import { slideIn } from "../lib/motion";
 import Swal from "sweetalert2"; // For popups, make sure to install this package
 import "sweetalert2/dist/sweetalert2.min.css";
 
@@ -84,7 +82,7 @@ const Contact = () => {
     <div
       ref={ref}
       id="contact"
-      className="container mx-auto px-6 py-16 md:py-24 lg:py-32 bg-white dark:bg-darkBlack"
+      className="container mx-auto px-6 py-16 md:py-20 bg-darkBlack"
     >
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
@@ -98,26 +96,23 @@ const Contact = () => {
           <p className="text-sm uppercase tracking-wider text-primary font-semibold mb-4">
             Final Step
           </p>
-          <h3 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 text-textDark dark:text-white">
+          <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 text-white">
             Need help shipping, fixing, or scaling a product?
           </h3>
-          <p className="text-xl text-textDark/70 dark:text-gray-300 max-w-2xl mx-auto">
-            Let&apos;s talk through your product bottleneck. Share where execution is stuck, what you need to ship, and what outcomes matter most.
+          <p className="text-base text-gray-300 max-w-2xl mx-auto">
+            Share what is blocked, what needs to ship next, and your timeline.
           </p>
         </motion.div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-        <motion.div
-          variants={slideIn("left", "tween", 0.2, 1)}
-          className="p-8 rounded-2xl bg-bgWarm dark:bg-darkGray2 border border-borderGray dark:border-darkGray3"
-        >
+      <div className="grid grid-cols-1 gap-8">
+        <motion.div className="p-7 rounded-2xl bg-darkGray1/70 border border-darkGray3">
           <form
             onSubmit={handleSubmit}
             ref={form}
-            className="flex flex-col gap-6"
+            className="grid grid-cols-1 md:grid-cols-2 gap-5"
           >
-            <label className="flex flex-col">
-              <span className="text-sm font-semibold mb-2 text-textDark dark:text-white">Your Name</span>
+            <label className="flex flex-col md:col-span-1">
+              <span className="text-sm font-semibold mb-2 text-white">Your Name</span>
               <input
                 type="text"
                 name="name"
@@ -125,11 +120,11 @@ const Contact = () => {
                 required
                 onChange={(e) => setName(e.target.value)}
                 placeholder="John Doe"
-                className="bg-white dark:bg-darkGray1 text-textDark dark:text-gray-100 border border-borderGray dark:border-darkGray3 py-3 px-4 placeholder:text-textDark/40 dark:placeholder:text-gray-500 rounded-lg outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all duration-200"
+                className="bg-darkBlack text-gray-100 border border-darkGray3 py-3 px-4 placeholder:text-gray-500 rounded-lg outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all duration-200"
               />
             </label>
-            <label className="flex flex-col">
-              <span className="text-sm font-semibold mb-2 text-textDark dark:text-white">Your Email</span>
+            <label className="flex flex-col md:col-span-1">
+              <span className="text-sm font-semibold mb-2 text-white">Your Email</span>
               <input
                 type="email"
                 name="email"
@@ -137,18 +132,18 @@ const Contact = () => {
                 required
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="john@example.com"
-                className="bg-white dark:bg-darkGray1 text-textDark dark:text-gray-100 border border-borderGray dark:border-darkGray3 py-3 px-4 placeholder:text-textDark/40 dark:placeholder:text-gray-500 rounded-lg outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all duration-200"
+                className="bg-darkBlack text-gray-100 border border-darkGray3 py-3 px-4 placeholder:text-gray-500 rounded-lg outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all duration-200"
               />
             </label>
-            <label className="flex flex-col">
-              <span className="text-sm font-semibold mb-2 text-textDark dark:text-white">
+            <label className="flex flex-col md:col-span-2">
+              <span className="text-sm font-semibold mb-2 text-white">
                 Project Type
               </span>
               <select
                 name="role"
                 value={role}
                 onChange={(e) => setRole(e.target.value)}
-                className="bg-white dark:bg-darkGray1 text-textDark dark:text-gray-100 border border-borderGray dark:border-darkGray3 py-3 px-4 rounded-lg outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all duration-200"
+                className="bg-darkBlack text-gray-100 border border-darkGray3 py-3 px-4 rounded-lg outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all duration-200"
                 required
               >
                 <option value="">- Select engagement need -</option>
@@ -160,45 +155,37 @@ const Contact = () => {
                 <option value="Other">Other</option>
               </select>
             </label>
-            <label className="flex flex-col">
-              <span className="text-sm font-semibold mb-2 text-textDark dark:text-white">Project Details</span>
+            <label className="flex flex-col md:col-span-2">
+              <span className="text-sm font-semibold mb-2 text-white">Project Details</span>
               <textarea
-                rows={6}
+                rows={5}
                 name="comment"
                 required
                 value={comment}
                 onChange={(e) => setComment(e.target.value)}
                 placeholder="What are you building, where is it blocked, and what timeline are you working with?"
-                className="bg-white dark:bg-darkGray1 text-textDark dark:text-gray-100 border border-borderGray dark:border-darkGray3 py-3 px-4 placeholder:text-textDark/40 dark:placeholder:text-gray-500 rounded-lg outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all duration-200 resize-none"
+                className="bg-darkBlack text-gray-100 border border-darkGray3 py-3 px-4 placeholder:text-gray-500 rounded-lg outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all duration-200 resize-none"
               />
             </label>
 
             <button
               type="submit"
               disabled={loading}
-              className="bg-primary hover:bg-primary/90 text-white py-4 px-8 rounded-lg font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-200 w-full focus:ring-2 focus:ring-primary/50 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed"
+              className="md:col-span-2 bg-primary hover:bg-primary/90 text-white py-3.5 px-8 rounded-lg font-semibold text-base transition-colors w-full focus:ring-2 focus:ring-primary/50 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {loading ? "Sending..." : "Book a Strategy Call"}
             </button>
 
           </form>
         </motion.div>
-
-        <motion.div
-          variants={slideIn("right", "tween", 0.2, 1)}
-          className="w-full h-[350px] sm:h-[400px] md:h-[550px] lg:h-full"
-        >
-          <EarthCanvas />
-        </motion.div>
-
       </div>
 
       {/* Contact Info & Footer */}
-      <div className="mt-16 pt-12 border-t border-borderGray dark:border-darkGray2">
+      <div className="mt-12 pt-8 border-t border-darkGray3">
         <div className="flex flex-col sm:flex-row gap-y-6 sm:gap-x-12 justify-center items-center mb-8">
           <motion.a
             href="mailto:sarmadirfan@syntaxleap.com"
-            className="flex gap-3 items-center text-textDark/70 dark:text-gray-400 hover:text-primary transition-colors"
+            className="flex gap-3 items-center text-gray-400 hover:text-primary transition-colors"
             whileHover={{ scale: 1.05 }}
           >
             <BsEnvelope className="text-xl" />
@@ -206,7 +193,7 @@ const Contact = () => {
           </motion.a>
           <motion.a
             href="tel:+923368486356"
-            className="flex gap-3 items-center text-textDark/70 dark:text-gray-400 hover:text-primary transition-colors"
+            className="flex gap-3 items-center text-gray-400 hover:text-primary transition-colors"
             whileHover={{ scale: 1.05 }}
           >
             <BsWhatsapp className="text-xl" />
@@ -214,7 +201,7 @@ const Contact = () => {
           </motion.a>
         </div>
         
-        <p className="text-center text-textDark/60 dark:text-gray-500 text-sm">
+        <p className="text-center text-gray-500 text-sm">
           © 2025 Sarmad Irfan. All rights reserved.
         </p>
       </div>

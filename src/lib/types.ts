@@ -1,6 +1,7 @@
 import {links} from "./data";
 export type SectionName = (typeof links ) [number]["hash"];
 export type ProjectInfo = {
+    slug:string;
     title:string;
     description:string;
     context?: string;

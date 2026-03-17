@@ -27,7 +27,7 @@ return(
         initial="visible"
         whileTap="tap"
         whileHover="hover"
-        className="bg-white w-[3rem] h-[3rem] drop-shadow backdrop-blur-[0.5rem] border border-slate-400 dark:border-white border-opacity-40 shadow-2xl rounded-full flex items-center justify-center dark:bg-gray-950" >
+        className="bg-darkGray1 w-[3rem] h-[3rem] drop-shadow backdrop-blur-[0.5rem] border border-darkGray3 shadow-2xl rounded-full flex items-center justify-center" >
             <Hamburger 
             toggled={isOpen}
             toggle={setisOpen}
@@ -39,7 +39,7 @@ return(
     <motion.div
     variants={menuList}
     initial="start"
-    animate="visible" className="w-full bg-white drop-shadow border border-slate-400 dark:border-white border-opacity-60 shadow-2xl rounded-2xl flex flex-col items-center justify-center dark:bg-gray-950 p-1" >
+    animate="visible" className="w-full bg-darkGray1 drop-shadow border border-darkGray3 shadow-2xl rounded-2xl flex flex-col items-center justify-center p-1" >
     {links.map((link,index)=>(
         <motion.div 
    className="w-full"
@@ -49,18 +49,19 @@ return(
         >
             <NextLink
             className={clsx(
-                "flex w-full items-center justify-center px-3 py-3 hover:text-gray-950 transition dark:text-gray-500 dark:hover:text-gray-300 cursor-pointer",
+                "flex w-full items-center justify-center px-3 py-3 transition text-gray-400 hover:text-primary cursor-pointer",
                 {
-                  "text-gray-950 bg-slate-200 dark:text-gray-200 dark:bg-gray-700 rounded":activeSection === link.hash,
+                  "text-white bg-darkGray3 rounded":activeSection === link.hash,
                   "rounded-t-xl round":index === 0,
                   "rounded-b-xl round":index === links.length -1,
 
                 }
             )}
-            href={link.hash}
+            href={`/${link.hash}`}
             onClick={()=>{
                 setActiveSection(link.hash);
                 setTimeOfLastClick(Date.now());
+                setisOpen(false);
             }}
             >
                 {link.nameEng}

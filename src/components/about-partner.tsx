@@ -9,53 +9,57 @@ export default function AboutPartner() {
   const { ref } = useSectionInView("#about", 0.45);
 
   const points = [
-    "I am product-focused first: I care about what ships, what breaks, and what drives progress.",
-    "I have delivered production work for international clients across logistics, fintech, service platforms, and operations-heavy products.",
-    "I work hands-on in the codebase and stay close to product decisions so delivery and business priorities stay aligned.",
-    "When scope expands, I can collaborate with my small team at SyntaxLeap to increase execution capacity without losing quality.",
+    "Product-focused execution across web, mobile, backend, and integrations.",
+    "International delivery experience across logistics, fintech, and service products.",
+    "Hands-on coding + technical decision support for founders and lean teams.",
+    "Can expand capacity with my small team at SyntaxLeap when scope grows.",
   ];
 
   return (
-    <section ref={ref} id="about" className="px-6 py-20 md:py-28 bg-white dark:bg-darkGray1">
+    <section ref={ref} id="about" className="px-6 py-16 md:py-20 bg-darkBlack">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-          <div className="relative">
-            <div className="absolute inset-0 bg-gradient-to-r from-primary/30 to-secondary/30 rounded-2xl blur-2xl"></div>
-            <Image
-              src={Boy}
-              width={560}
-              height={560}
-              alt="Sarmad Irfan"
-              className="relative rounded-2xl border border-borderGray dark:border-darkGray3 object-cover w-full h-auto"
-            />
-          </div>
+          <Image
+            src={Boy}
+            width={560}
+            height={560}
+            alt="Sarmad Irfan"
+            className="rounded-2xl border border-darkGray3 object-cover w-full h-auto"
+          />
         </motion.div>
 
         <motion.div
           initial={{ opacity: 0, x: 20 }}
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
-          className="space-y-6"
+          className="space-y-5"
         >
-          <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-textDark dark:text-white">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white">
             About <span className="text-primary">Sarmad Irfan</span>
           </h2>
-          <p className="text-lg text-textDark/80 dark:text-gray-300 leading-relaxed">
-            I am a senior full-stack engineer transitioning into a consultant-level technical partner role for founders
-            and lean teams. My focus is execution: making sure products launch, stabilize, and improve without
-            unnecessary complexity.
+          <p className="text-base text-gray-300 leading-relaxed">
+            I work as a startup technical partner for founders and lean teams that need strong execution, not just extra coding capacity.
           </p>
-          <div className="space-y-3">
+          <div className="space-y-2">
             {points.map((point) => (
-              <p key={point} className="text-textDark/75 dark:text-gray-300 leading-relaxed">
+              <p key={point} className="text-gray-300 leading-relaxed text-sm">
                 - {point}
               </p>
             ))}
           </div>
-          <p className="text-textDark/70 dark:text-gray-400 leading-relaxed">
-            If you need someone who can move between product context and technical implementation quickly, we should
-            talk.
-          </p>
+          <div className="flex flex-col sm:flex-row gap-3 pt-2">
+            <a
+              href="https://drive.google.com/file/d/12sBGdNtcSZqLIlianFkNjwE3FBS-TY5m/view?usp=drive_link"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center px-5 py-2.5 border border-primary/50 text-primary rounded-lg font-semibold hover:bg-primary/10 transition-colors"
+            >
+              Download Resume
+            </a>
+            <a href="#contact" className="inline-flex items-center justify-center px-5 py-2.5 bg-primary text-white rounded-lg font-semibold hover:bg-primary/90 transition-colors">
+              Discuss Your Product
+            </a>
+          </div>
         </motion.div>
       </div>
     </section>

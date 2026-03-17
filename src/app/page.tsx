@@ -4,6 +4,7 @@ import CaseStudies from "@/components/case-studies";
 import EngagementModels from "@/components/engagement-models";
 import AboutPartner from "@/components/about-partner";
 import ProofSection from "@/components/proof-section";
+import FinalCtaBand from "@/components/final-cta-band";
 import Contact from "@/components/Contact";
 
 export default function Home() {
@@ -15,6 +16,7 @@ export default function Home() {
       <EngagementModels />
       <AboutPartner />
       <ProofSection />
+      <FinalCtaBand />
       <Contact />
     </main>
   );

@@ -1,0 +1,14 @@
+"use client";
+
+export default function MobileCta() {
+  return (
+    <div className="md:hidden fixed bottom-4 left-4 right-4 z-[999]">
+      <a
+        href="#contact"
+        className="w-full inline-flex items-center justify-center px-5 py-3 bg-primary text-white rounded-lg font-semibold shadow-lg hover:bg-primary/90 transition-colors"
+      >
+        Discuss Your Product
+      </a>
+    </div>
+  );
+}
