@@ -37,7 +37,7 @@ export default function AboutPartner() {
           className="space-y-5"
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-textPrimary">
-            About <span className="text-primary">Sarmad Irfan</span>
+            About Sarmad Irfan
           </h2>
           <p className="text-base text-textSecondary leading-relaxed">
             I work with founders and lean teams as a product engineer and technical partner focused on real execution, not just extra coding capacity.
@@ -45,7 +45,7 @@ export default function AboutPartner() {
           <ul className="space-y-3">
             {points.map((point) => (
               <li key={point} className="flex gap-3 text-textSecondary leading-relaxed text-sm">
-                <span className="shrink-0 w-6 h-6 rounded-md bg-primary/15 border border-primary/30 flex items-center justify-center">
+                <span className="shrink-0 w-6 h-6 rounded-md bg-primarySoft border border-border flex items-center justify-center">
                   <FiCheck className="text-primary text-xs" strokeWidth={3} />
                 </span>
                 <span>{point}</span>
@@ -69,7 +69,14 @@ export default function AboutPartner() {
             >
               View GitHub
             </a>
-            
+            <a
+              href="https://www.linkedin.com/in/sarmad-irfan-a5126b3b8/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center px-5 py-2.5 border border-primary/50 text-primary rounded-lg font-semibold hover:bg-primarySoft transition-all duration-200"
+            >
+              LinkedIn
+            </a>
           </div>
         </motion.div>
       </div>

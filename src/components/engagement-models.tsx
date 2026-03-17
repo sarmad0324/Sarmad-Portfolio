@@ -68,18 +68,18 @@ export default function EngagementModels() {
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mt-8">
           <a
+            href="#contact"
+            className="inline-flex items-center justify-center px-5 py-3 bg-primary text-white rounded-lg font-semibold hover:bg-primaryHover transition-all duration-200"
+          >
+            Discuss Your Project
+          </a>
+          <a
             href="https://calendly.com/sarmadirfan78/30min"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center px-5 py-3 bg-primary text-white rounded-lg font-semibold hover:bg-primaryHover transition-all duration-200"
-          >
-            Book a Strategy Call
-          </a>
-          <a
-            href="#contact"
             className="inline-flex items-center justify-center px-5 py-3 border border-primary/50 text-primary rounded-lg font-semibold hover:bg-primarySoft transition-all duration-200"
           >
-            Discuss Your Product
+            Book a Call
           </a>
         </div>
       </div>

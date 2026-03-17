@@ -27,7 +27,7 @@ return(
         initial="visible"
         whileTap="tap"
         whileHover="hover"
-        className="bg-surface w-[3rem] h-[3rem] drop-shadow backdrop-blur-[0.5rem] border border-border shadow-2xl rounded-full flex items-center justify-center" >
+        className="bg-surface w-[3rem] h-[3rem] backdrop-blur-[0.5rem] border border-border shadow-sm rounded-full flex items-center justify-center" >
             <Hamburger 
             toggled={isOpen}
             toggle={setisOpen}
@@ -39,7 +39,7 @@ return(
     <motion.div
     variants={menuList}
     initial="start"
-    animate="visible" className="w-full bg-surface drop-shadow border border-border shadow-2xl rounded-2xl flex flex-col items-center justify-center p-1" >
+    animate="visible" className="w-full bg-surface border border-border shadow-md rounded-2xl flex flex-col items-center justify-center p-1" >
     {links.map((link,index)=>(
         <motion.div 
    className="w-full"

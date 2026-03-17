@@ -62,9 +62,9 @@ export default function ProofSection() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.08 }}
               viewport={{ once: true }}
-              className="rounded-2xl border border-border bg-surface p-5"
+              className="rounded-2xl border border-border bg-surface p-6"
             >
-              <p className="text-textSecondary leading-relaxed text-sm">
+              <p className="text-textSecondary leading-relaxed text-sm md:text-base">
                 &ldquo;{item.quote}&rdquo;
               </p>
               <div className="mt-6">
@@ -77,13 +77,13 @@ export default function ProofSection() {
           ))}
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mt-12">
           {proofStrip.map((signal) => (
             <div
               key={signal}
-              className="rounded-xl border border-border bg-surface2 px-4 py-3"
+              className="rounded-xl border border-border bg-surface2 px-5 py-4"
             >
-              <p className="text-sm text-textMuted">{signal}</p>
+              <p className="text-sm text-textSecondary leading-relaxed">{signal}</p>
             </div>
           ))}
         </div>

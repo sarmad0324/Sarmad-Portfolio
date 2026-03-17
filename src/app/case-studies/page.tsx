@@ -51,7 +51,7 @@ export default function CaseStudiesPage() {
                 </p>
                 <Link
                   href={`/case-studies/${project.slug}`}
-                  className="mt-4 inline-flex items-center justify-center px-5 py-3 text-sm font-bold bg-primary text-white rounded-lg hover:bg-primaryHover hover:shadow-lg hover:shadow-primary/20 transition-all duration-200"
+                  className="mt-4 inline-flex items-center justify-center px-5 py-3 text-sm font-bold bg-primary text-white rounded-lg hover:bg-primaryHover transition-all duration-200"
                 >
                   View Case Study
                 </Link>

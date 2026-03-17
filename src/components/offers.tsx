@@ -6,24 +6,28 @@ import { useSectionInView } from "@/lib/useInView";
 const offers = [
   {
     title: "MVP Build & Launch",
+    audience: "Founders moving from idea to first release",
     problem: "Need to launch fast without a fragile product base.",
     delivery: "Ship the highest-leverage slice across frontend, backend, and integrations.",
     outcome: "Production-ready MVP your team can iterate on.",
   },
   {
     title: "App Rescue & Stabilization",
+    audience: "Teams with buggy, delayed, or fragile products",
     problem: "Reliability issues and delivery drag blocking growth.",
     delivery: "Audit bottlenecks, fix unstable areas, reset momentum.",
     outcome: "Stable product and a clear path for shipping updates.",
   },
   {
     title: "Full-Stack Product Engineering",
+    audience: "Lean teams needing strong execution across layers",
     problem: "Complete features needed across web, mobile, and backend.",
-    delivery: "Hands-on delivery across React, React Native, Next.js, Node.js, PostgreSQL.",
+    delivery: "Hands-on delivery across the full stack.",
     outcome: "Faster delivery with fewer handoff gaps.",
   },
   {
     title: "Fractional Technical Partner",
+    audience: "Founders who need senior ownership without a full-time hire",
     problem: "Need senior ownership without a full-time hire.",
     delivery: "Embedded partner for planning, implementation, and execution decisions.",
     outcome: "Stronger technical backbone while staying lean.",
@@ -74,6 +78,7 @@ export default function Offers() {
               className="rounded-2xl border border-border bg-surface p-6"
             >
               <h3 className="text-xl font-bold text-textPrimary">{offer.title}</h3>
+              <p className="text-sm text-primary font-medium mt-1">{offer.audience}</p>
               <ul className="mt-4 space-y-2.5">
                 <li className="flex gap-2.5 text-textSecondary text-sm">
                   <span className="text-primary font-semibold shrink-0">Problem:</span>
@@ -97,13 +102,15 @@ export default function Offers() {
             href="#contact"
             className="inline-flex items-center justify-center px-5 py-3 bg-primary text-white rounded-lg font-semibold hover:bg-primaryHover transition-all duration-200"
           >
-            Discuss Your Product
+            Discuss Your Project
           </a>
           <a
-            href="/case-studies"
+            href="https://calendly.com/sarmadirfan78/30min"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-flex items-center justify-center px-5 py-3 border border-primary/50 text-primary rounded-lg font-semibold hover:bg-primarySoft transition-all duration-200"
           >
-            View Case Studies
+            Book a Call
           </a>
         </div>
 

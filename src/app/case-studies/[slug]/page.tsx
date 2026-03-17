@@ -203,7 +203,7 @@ export default function CaseStudyDetailPage({ params }: Props) {
             href="/#contact"
             className="inline-flex items-center justify-center px-5 py-3 border border-primary/50 text-primary rounded-lg font-semibold hover:bg-primarySoft transition-all duration-200"
           >
-            Discuss Your Product
+            Discuss Your Project
           </Link>
         </div>
       </article>

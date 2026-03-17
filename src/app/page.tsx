@@ -12,11 +12,11 @@ import { BRAND, SITE_URL, DEFAULT_OG_IMAGE } from "@/lib/seo";
 export const metadata: Metadata = {
   title: BRAND.title,
   description:
-    "I help startups build, fix, and scale digital products. Hands-on product execution across web, mobile, backend, and AI-powered workflows for founders and lean teams.",
+    "I help teams build, fix, and scale digital products. Hands-on execution across web, mobile, backend, and AI-powered workflows for founders and lean teams.",
   openGraph: {
     title: BRAND.title,
     description:
-      "I help startups build, fix, and scale digital products. Hands-on execution across web, mobile, backend, and AI-powered workflows.",
+      "I help teams build, fix, and scale digital products. Hands-on execution across web, mobile, backend, and AI-powered workflows.",
     url: SITE_URL,
     siteName: BRAND.name,
     images: [{ url: DEFAULT_OG_IMAGE, alt: `${BRAND.name} - ${BRAND.role}`, width: 1200, height: 630 }],
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: BRAND.title,
-    description: "I help startups build, fix, and scale digital products. Product engineer and technical partner for founders and lean teams.",
+    description: "I help teams build, fix, and scale digital products. Product engineer and technical partner for founders and lean teams.",
     images: [DEFAULT_OG_IMAGE],
   },
   alternates: { canonical: SITE_URL },

@@ -5,19 +5,19 @@
 @tailwind utilities;
 
 :root {
-  --bg: #0B1020;
-  --surface: #121A2B;
-  --surface-2: #182235;
-  --border: #26324A;
-  --text-primary: #F5F7FA;
-  --text-secondary: #B8C2D8;
-  --text-muted: #8B97B3;
-  --accent: #4F7CFF;
-  --accent-hover: #6A92FF;
-  --accent-deep: #3E68E8;
-  --accent-soft: rgba(79, 124, 255, 0.12);
-  --success: #22C55E;
-  --info: #39C6E9;
+  --bg: #F3F5F9;
+  --surface: #FFFFFF;
+  --surface-2: #EDF2F7;
+  --border: #D8E0EA;
+  --text-primary: #0F172A;
+  --text-secondary: #334155;
+  --text-muted: #64748B;
+  --accent: #2563EB;
+  --accent-hover: #1D4ED8;
+  --accent-deep: #1D4ED8;
+  --accent-soft: #DBEAFE;
+  --success: #16A34A;
+  --info: #3B82F6;
 }
 
 * {
@@ -26,7 +26,7 @@
   box-sizing: border-box;
   font-family: "Inter", sans-serif;
   scroll-behavior: smooth;
-  color-scheme: dark;
+  color-scheme: light;
 }
 
 .hash-span {

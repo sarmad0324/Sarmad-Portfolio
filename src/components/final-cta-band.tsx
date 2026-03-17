@@ -11,11 +11,11 @@ export default function FinalCtaBand() {
           </p>
         </div>
         <div className="flex flex-col sm:flex-row gap-3">
-          <a href="#contact" className="inline-flex items-center justify-center px-5 py-3 bg-primary text-white rounded-lg font-semibold hover:bg-primaryHover transition-all duration-200">
-            Discuss Your Product
+          <a href="/#contact" className="inline-flex items-center justify-center px-5 py-3 bg-primary text-white rounded-lg font-semibold hover:bg-primaryHover transition-all duration-200">
+            Discuss Your Project
           </a>
-          <a href="/case-studies" className="inline-flex items-center justify-center px-5 py-3 border border-primary/50 text-primary rounded-lg font-semibold hover:bg-primarySoft transition-all duration-200">
-            View Case Studies
+          <a href="https://calendly.com/sarmadirfan78/30min" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-5 py-3 border border-primary/50 text-primary rounded-lg font-semibold hover:bg-primarySoft transition-all duration-200">
+            Book a Call
           </a>
         </div>
       </div>

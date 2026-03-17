@@ -7,7 +7,7 @@ import { useSectionInView } from "@/lib/useInView";
 
 export default function CaseStudies() {
   const { ref } = useSectionInView("#projects", 0.35);
-  const featuredSlugs = ["truckwise", "triangle-wallets", "ezrecova", "exact-printo"];
+  const featuredSlugs = ["triangle-wallets", "truckwise", "ezrecova", "exact-printo"];
   const featured = featuredSlugs
     .map((slug) => projectsData.find((project) => project.slug === slug))
     .filter((project): project is (typeof projectsData)[number] => Boolean(project));
@@ -39,7 +39,7 @@ export default function CaseStudies() {
               viewport={{ once: true }}
               className="rounded-2xl border border-border bg-surface overflow-hidden flex flex-col hover:border-primary/30 transition-colors duration-200"
             >
-              <div className="relative h-48 md:h-56 w-auto">
+              <div className="relative h-48 md:h-56 w-full">
                 <Image src={project.imageUrl} fill alt={project.title} className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
               </div>
               <div className="p-6 flex flex-col grow">
@@ -62,7 +62,7 @@ export default function CaseStudies() {
                 )}
                 <a
                   href={`/case-studies/${project.slug}`}
-                  className="mt-5 inline-flex items-center justify-center px-5 py-3 text-sm font-bold bg-primary text-white rounded-lg hover:bg-primaryHover hover:shadow-lg hover:shadow-primary/20 transition-all duration-200"
+                  className="mt-5 inline-flex items-center justify-center px-5 py-3 text-sm font-bold bg-primary text-white rounded-lg hover:bg-primaryHover transition-all duration-200"
                 >
                   View Case Study
                 </a>
@@ -72,11 +72,11 @@ export default function CaseStudies() {
         </div>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">
-          <a href="/case-studies" className="inline-flex items-center justify-center px-6 py-3.5 text-sm font-bold bg-primary text-white rounded-lg hover:bg-primaryHover hover:shadow-lg hover:shadow-primary/20 transition-all duration-200">
+          <a href="/case-studies" className="inline-flex items-center justify-center px-6 py-3.5 text-sm font-bold bg-primary text-white rounded-lg hover:bg-primaryHover transition-all duration-200">
             View All Case Studies
           </a>
-          <a href="#contact" className="inline-flex items-center justify-center px-6 py-3.5 text-sm font-bold border-2 border-primary/60 text-primary rounded-lg hover:bg-primarySoft hover:border-primary transition-all duration-200">
-            Book a Strategy Call
+          <a href="https://calendly.com/sarmadirfan78/30min" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-6 py-3.5 text-sm font-bold border-2 border-primary/60 text-primary rounded-lg hover:bg-primarySoft hover:border-primary transition-all duration-200">
+            Book a Call
           </a>
         </div>
       </div>

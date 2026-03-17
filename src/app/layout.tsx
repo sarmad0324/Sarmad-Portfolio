@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: BRAND.title,
     description:
-      "I help startups build, fix, and scale digital products. Hands-on execution across web, mobile, backend, and AI-powered workflows.",
+      "I help teams build, fix, and scale digital products. Hands-on execution across web, mobile, backend, and AI-powered workflows.",
     url: SITE_URL,
     siteName: BRAND.name,
     locale: "en_US",
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="dark !scroll-smooth">
+    <html lang="en" className="!scroll-smooth">
         <body className={`${inter.variable} font-Inter flex flex-col bg-bg text-textSecondary relative antialiased`}>
           <Script
             strategy="afterInteractive"
@@ -81,7 +81,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               url: SITE_URL,
               email: BRAND.email,
               jobTitle: BRAND.role,
-              sameAs: [BRAND.github, BRAND.calendly],
+              sameAs: [BRAND.github, BRAND.linkedin, BRAND.calendly],
               worksFor: { "@type": "Organization", name: "SyntaxLeap" },
             })}
           </Script>

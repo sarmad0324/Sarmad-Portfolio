@@ -29,7 +29,7 @@ export default function Header({ links }: HeaderProps) {
                 initial={{ y: -100, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8, type: "spring", stiffness: 100 }}
-                className='flex p-2 rounded-full border border-border bg-surface/80 shadow-lg backdrop-blur'
+                className='flex p-2 rounded-full border border-border bg-surface shadow-sm backdrop-blur'
             >
                 <ul className='flex flex-wrap items-center justify-center gap-1 text-sm font-semibold'>
                     {links.map((link, index) => (
@@ -85,10 +85,10 @@ export default function Header({ links }: HeaderProps) {
                 transition={{ duration: 0.6, type: "spring", stiffness: 100 }}
             >
                 <a
-                    href='https://calendly.com/sarmadirfan78/30min'
+                    href='/#contact'
                     className='flex items-center gap-2 px-5 py-2.5 rounded-full font-semibold text-white transition-colors bg-primary hover:bg-primaryHover focus:ring-2 focus:ring-primary/50 focus:outline-none'
                 >
-                    Book a Call
+                    Discuss Your Project
                 </a>
             </motion.div>
         </header>

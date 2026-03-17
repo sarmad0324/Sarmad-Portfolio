@@ -47,6 +47,9 @@ export default function Footer() {
                 <a href="https://github.com/sarmad0324" target="_blank" rel="noopener noreferrer" className="text-textSecondary hover:text-primary text-sm transition-colors">
                   GitHub
                 </a>
+                <a href="https://www.linkedin.com/in/sarmad-irfan-a5126b3b8/" target="_blank" rel="noopener noreferrer" className="text-textSecondary hover:text-primary text-sm transition-colors">
+                  LinkedIn
+                </a>
                 <a href="https://drive.google.com/file/d/1F5TVWgadnUpHgqp9Hxkvd7T2LTkELaBg/view?usp=sharing" target="_blank" rel="noopener noreferrer" className="text-textSecondary hover:text-primary text-sm transition-colors">
                   Resume
                 </a>
