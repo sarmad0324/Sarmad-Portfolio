@@ -1,18 +1,20 @@
-import Intro from "../components/intro";
-import Services from "@/components/services";
-import Projects from "@/components/projects";
-import About from "@/components/about";
-import ClientReviews from "@/components/client-reviews";
-import Contact from "../components/Contact"
+import Hero from "@/components/hero";
+import Offers from "@/components/offers";
+import CaseStudies from "@/components/case-studies";
+import EngagementModels from "@/components/engagement-models";
+import AboutPartner from "@/components/about-partner";
+import ProofSection from "@/components/proof-section";
+import Contact from "@/components/Contact";
 
 export default function Home() {
   return (
     <main className="flex flex-col">
-      <Intro/>
-      <Services/>
-      <Projects/>
-      <About/>
-      <ClientReviews/>
+      <Hero />
+      <Offers />
+      <CaseStudies />
+      <EngagementModels />
+      <AboutPartner />
+      <ProofSection />
       <Contact />
     </main>
   );

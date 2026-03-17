@@ -16,7 +16,7 @@ const Contact = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [comment, setComment] = useState("");
-  const [role, setRole] = useState("Select an Option");
+  const [role, setRole] = useState("");
 
   const [loading, setLoading] = useState(false); // New loading state
 
@@ -24,7 +24,7 @@ const Contact = () => {
     setName("");
     setComment("");
     setEmail("");
-    setRole("Select an Option");
+    setRole("");
    
   };
   const validateForm = () => {
@@ -33,7 +33,7 @@ const Contact = () => {
     if (!email) formErrors.email = "Email is required";
     else if (!/\S+@\S+\.\S+/.test(email)) formErrors.email = "Email is invalid";
     if (!comment.trim()) formErrors.comment = "Message is required";
-    if (role === "---") formErrors.role = "Please select an enquiry type";
+    if (!role) formErrors.role = "Please select an enquiry type";
 
    
     return Object.keys(formErrors).length === 0;
@@ -61,7 +61,7 @@ const Contact = () => {
         () => {
           Swal.fire({
             title: "Success!",
-            text: `Thanks ${name} for submitting the form, we will get in touch with you soon!`,
+            text: `Thanks ${name}. I will review your details and get back to you shortly.`,
             icon: "success",
             confirmButtonText: "OK",
           });
@@ -96,13 +96,13 @@ const Contact = () => {
           className="text-center mb-12 md:mb-16"
         >
           <p className="text-sm uppercase tracking-wider text-primary font-semibold mb-4">
-            Get in Touch
+            Final Step
           </p>
           <h3 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-4 text-textDark dark:text-white">
-            Let&apos;s <span className="text-primary">Build Something</span> Together
+            Need help shipping, fixing, or scaling a product?
           </h3>
           <p className="text-xl text-textDark/70 dark:text-gray-300 max-w-2xl mx-auto">
-            Have a project in mind? Get a free quote and consultation. I&apos;m here to help bring your vision to life.
+            Let&apos;s talk through your product bottleneck. Share where execution is stuck, what you need to ship, and what outcomes matter most.
           </p>
         </motion.div>
 
@@ -151,11 +151,12 @@ const Contact = () => {
                 className="bg-white dark:bg-darkGray1 text-textDark dark:text-gray-100 border border-borderGray dark:border-darkGray3 py-3 px-4 rounded-lg outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all duration-200"
                 required
               >
-                <option value="">- Select project type -</option>
-                <option value="Web Development">Web Development</option>
-                <option value="Mobile App Development">Mobile App Development</option>
-                <option value="AI Integration & Automation">AI Integration & Automation</option>
-                <option value="Remote Development Team">Remote Development Team</option>
+                <option value="">- Select engagement need -</option>
+                <option value="MVP Build & Launch">MVP Build & Launch</option>
+                <option value="App Rescue & Stabilization">App Rescue & Stabilization</option>
+                <option value="Full-Stack Product Engineering">Full-Stack Product Engineering</option>
+                <option value="AI & Workflow Integrations">AI & Workflow Integrations</option>
+                <option value="Monthly Technical Partner">Monthly Technical Partner</option>
                 <option value="Other">Other</option>
               </select>
             </label>
@@ -167,7 +168,7 @@ const Contact = () => {
                 required
                 value={comment}
                 onChange={(e) => setComment(e.target.value)}
-                placeholder="Tell me about your project..."
+                placeholder="What are you building, where is it blocked, and what timeline are you working with?"
                 className="bg-white dark:bg-darkGray1 text-textDark dark:text-gray-100 border border-borderGray dark:border-darkGray3 py-3 px-4 placeholder:text-textDark/40 dark:placeholder:text-gray-500 rounded-lg outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all duration-200 resize-none"
               />
             </label>
@@ -177,7 +178,7 @@ const Contact = () => {
               disabled={loading}
               className="bg-primary hover:bg-primary/90 text-white py-4 px-8 rounded-lg font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-200 w-full focus:ring-2 focus:ring-primary/50 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              {loading ? "Sending..." : "Get a Free Quote"}
+              {loading ? "Sending..." : "Book a Strategy Call"}
             </button>
 
           </form>

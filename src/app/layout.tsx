@@ -15,9 +15,11 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Sarmad Irfan – Software Engineer & AI Specialist",
-  description: "Transform your business with AI-powered web and mobile solutions. Full-stack development, AI integration, and automation services for businesses and startups. Get a quote today.",
-  keywords: "AI web development, mobile app development, business solutions, startup development, AI integration, automation, custom software development, React, Next.js, React Native",
+  title: "Sarmad Irfan - Startup Technical Partner",
+  description:
+    "Product-focused full-stack engineer helping founders and lean teams build, fix, and scale web and mobile products across React, React Native, Next.js, Node.js, and PostgreSQL.",
+  keywords:
+    "startup technical partner, product engineer, React, React Native, Next.js, Node.js, PostgreSQL, MVP build, app stabilization, fractional technical partner",
   authors: [{ name: "Sarmad Irfan" }],
   creator: "Sarmad Irfan",
   publisher: "Sarmad Irfan",
@@ -26,8 +28,9 @@ export const metadata: Metadata = {
     google: "FGaNKbTbKnR33p0Pq9aVSamdAX0bYwTsERX1dZBjCrA",
   },
   openGraph: {
-    title: "Sarmad Irfan – Software Engineer & AI Specialist",
-    description: "AI-powered web & mobile solutions for businesses and startups. Explore case studies, services, and how I help teams ship fast, scalable products.",
+    title: "Sarmad Irfan - Startup Technical Partner",
+    description:
+      "I help founders and lean teams ship, fix, and scale products with hands-on web, mobile, backend, and integration execution.",
     url: "https://sarmadirfan.com",
     siteName: "Sarmad Irfan",
     locale: "en_US",
@@ -35,14 +38,15 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/hero-profile-2.jpeg",
-        alt: "Sarmad Irfan – Software Engineer & AI Specialist",
+        alt: "Sarmad Irfan - Startup Technical Partner",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sarmad Irfan – Software Engineer & AI Specialist",
-    description: "AI-powered web & mobile solutions for businesses and startups. Explore case studies, services, and how I help teams ship fast, scalable products.",
+    title: "Sarmad Irfan - Startup Technical Partner",
+    description:
+      "Technical partner for founders and lean teams who need product execution, not just code.",
     images: ["/hero-profile-2.jpeg"],
   },
   alternates: {
@@ -79,10 +83,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   "https://www.linkedin.com/in/sarmad-irfan",
                   "https://github.com/sarmad0324"
                 ],
-                "jobTitle": "Software Engineer & CEO",
+                "jobTitle": "Product-Focused Full-Stack Engineer",
                 "worksFor": {
                   "@type": "Organization",
-                  "name": "SyntexLeap"
+                  "name": "SyntaxLeap"
                 }
               }
             `}
@@ -92,7 +96,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               {
                 "@context": "https://schema.org",
                 "@type": "WebSite",
-                "name": "Sarmad Irfan – Software Engineer",
+                "name": "Sarmad Irfan - Startup Technical Partner",
                 "url": "https://sarmadirfan.com",
                 "potentialAction": {
                   "@type": "SearchAction",
