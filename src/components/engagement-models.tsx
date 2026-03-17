@@ -6,21 +6,21 @@ import { useSectionInView } from "@/lib/useInView";
 const models = [
   {
     title: "Product Audit / Technical Review",
-    summary: "Clarify delivery risks before spending more engineering cycles.",
-    includes: "Architecture review, bottleneck mapping, and an execution plan.",
-    fit: "Best when shipping slows down or quality issues repeat.",
+    summary: "Clarify what’s blocking delivery before spending more engineering cycles.",
+    includes: "Architecture review, bottleneck mapping, and a concrete execution plan.",
+    fit: "When shipping has stalled or quality issues keep repeating.",
   },
   {
     title: "2-4 Week Build Sprint",
-    summary: "Focused implementation for a key milestone.",
+    summary: "Focused implementation to unblock a key milestone.",
     includes: "Feature delivery across web/mobile/backend with weekly checkpoints.",
-    fit: "Best for MVP milestones and urgent launches.",
+    fit: "MVP milestones, rescue work, or urgent launches that can’t wait.",
   },
   {
     title: "Monthly Technical Partner",
-    summary: "Ongoing embedded execution for lean teams.",
-    includes: "Prioritization, hands-on development, stabilization, and delivery leadership.",
-    fit: "Best for teams needing continuity without a full-time senior hire.",
+    summary: "Ongoing embedded execution for lean teams under delivery pressure.",
+    includes: "Prioritization, hands-on development, stabilization, and delivery ownership.",
+    fit: "Teams needing continuity and senior ownership without a full-time hire.",
   },
 ];
 
@@ -40,7 +40,7 @@ export default function EngagementModels() {
             Engagement <span className="text-primary">Models</span>
           </h2>
           <p className="max-w-2xl mx-auto text-base text-textSecondary">
-            Structured options designed for founders and lean product teams.
+            Structured interventions for founders who need execution to move again.
           </p>
         </motion.div>
 
@@ -52,7 +52,7 @@ export default function EngagementModels() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.08 }}
               viewport={{ once: true }}
-              className="rounded-2xl border border-border bg-surface p-6"
+              className="rounded-2xl border border-border bg-surface p-6 md:p-7 shadow-sm hover:shadow-md hover:border-primary/20 transition-all duration-200"
             >
               <h3 className="text-xl font-bold text-textPrimary">{model.title}</h3>
               <p className="text-textSecondary mt-3 text-sm leading-relaxed">{model.summary}</p>
@@ -66,7 +66,10 @@ export default function EngagementModels() {
           ))}
         </div>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mt-8">
+        <p className="text-center text-sm text-textMuted mt-6 max-w-xl mx-auto">
+          When project scope grows, I can extend delivery capacity through a trusted team at SyntaxLeap while staying hands-on in direction and execution quality.
+        </p>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
           <a
             href="#contact"
             className="inline-flex items-center justify-center px-5 py-3 bg-primary text-white rounded-lg font-semibold hover:bg-primaryHover transition-all duration-200"

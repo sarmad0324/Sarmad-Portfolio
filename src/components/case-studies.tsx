@@ -25,7 +25,7 @@ export default function CaseStudies() {
             Featured <span className="text-primary">Case Studies</span>
           </h2>
           <p className="max-w-2xl mx-auto text-base text-textSecondary">
-            Four projects that show product context, delivery ownership, and outcomes.
+            Real business and product interventions — context, what was wrong, what I owned, what changed.
           </p>
         </motion.div>
 
@@ -37,12 +37,12 @@ export default function CaseStudies() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.06 }}
               viewport={{ once: true }}
-              className="rounded-2xl border border-border bg-surface overflow-hidden flex flex-col hover:border-primary/30 transition-colors duration-200"
+              className="rounded-2xl border border-border bg-surface overflow-hidden flex flex-col shadow-sm hover:shadow-md hover:border-primary/20 transition-all duration-200"
             >
               <div className="relative h-48 md:h-56 w-full">
                 <Image src={project.imageUrl} fill alt={project.title} className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
               </div>
-              <div className="p-6 flex flex-col grow">
+              <div className="p-6 md:p-7 flex flex-col grow">
                 <div className="flex items-start justify-between gap-3">
                   <h3 className="text-lg font-bold text-textPrimary">{project.title}</h3>
                   {project.role && (
@@ -55,9 +55,9 @@ export default function CaseStudies() {
                   {project.homepageSummary ?? project.context ?? project.description}
                 </p>
                 {(project.outcomeShort ?? project.outcome) && (
-                  <p className="text-sm text-textMuted mt-2 line-clamp-2">
-                    <span className="font-semibold text-textPrimary">Outcome:</span>{" "}
-                    {project.outcomeShort ?? project.outcome}
+                  <p className="text-sm mt-2 line-clamp-2">
+                    <span className="font-semibold text-primary">What changed:</span>{" "}
+                    <span className="text-textMuted">{project.outcomeShort ?? project.outcome}</span>
                   </p>
                 )}
                 <a
@@ -75,8 +75,8 @@ export default function CaseStudies() {
           <a href="/case-studies" className="inline-flex items-center justify-center px-6 py-3.5 text-sm font-bold bg-primary text-white rounded-lg hover:bg-primaryHover transition-all duration-200">
             View All Case Studies
           </a>
-          <a href="https://calendly.com/sarmadirfan78/30min" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center px-6 py-3.5 text-sm font-bold border-2 border-primary/60 text-primary rounded-lg hover:bg-primarySoft hover:border-primary transition-all duration-200">
-            Book a Call
+          <a href="#contact" className="inline-flex items-center justify-center px-6 py-3.5 text-sm font-bold border-2 border-primary/60 text-primary rounded-lg hover:bg-primarySoft hover:border-primary transition-all duration-200">
+            Discuss Your Project
           </a>
         </div>
       </div>

@@ -90,19 +90,19 @@ const Contact = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="rounded-2xl border border-border bg-surface p-6 md:p-7"
+            className="rounded-2xl border border-border bg-surface p-6 md:p-8 shadow-sm"
           >
             <h3 className="text-2xl md:text-3xl font-bold text-textPrimary mb-4">
               Need help shipping, fixing, or scaling a product?
             </h3>
             <p className="text-sm md:text-base text-textSecondary leading-relaxed">
-              Share what&apos;s blocked, what needs to move next, and your timeline.
+              Share what&apos;s blocked, what needs to move next, and your timeline. I&apos;ll review and get back with next steps.
             </p>
 
-            <div className="mt-7 space-y-1">
+            <div className="mt-8 space-y-1">
               <a
                 href="mailto:sarmad.irfan@syntaxleap.com"
-                className="group flex items-center gap-3 py-2.5 text-textSecondary hover:text-primary transition-colors duration-200 rounded-lg hover:bg-primary/5 -mx-2 px-2"
+                className="group flex items-center gap-3 py-3 text-textSecondary hover:text-primary transition-colors duration-200 rounded-lg hover:bg-primary/5 -mx-2 px-3"
               >
                 <BsEnvelope className="text-lg shrink-0 group-hover:scale-110 transition-transform" />
                 <span className="text-sm">sarmad.irfan@syntaxleap.com</span>
@@ -111,7 +111,7 @@ const Contact = () => {
                 href="https://wa.me/923368486356"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center gap-3 py-2.5 text-textSecondary hover:text-primary transition-colors duration-200 rounded-lg hover:bg-primary/5 -mx-2 px-2"
+                className="group flex items-center gap-3 py-3 text-textSecondary hover:text-primary transition-colors duration-200 rounded-lg hover:bg-primary/5 -mx-2 px-3"
               >
                 <BsWhatsapp className="text-lg shrink-0 group-hover:scale-110 transition-transform" />
                 <span className="text-sm">+92 336 8486356</span>
@@ -120,7 +120,7 @@ const Contact = () => {
                 href="https://github.com/sarmad0324"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center gap-3 py-2.5 text-textSecondary hover:text-primary transition-colors duration-200 rounded-lg hover:bg-primary/5 -mx-2 px-2"
+                className="group flex items-center gap-3 py-3 text-textSecondary hover:text-primary transition-colors duration-200 rounded-lg hover:bg-primary/5 -mx-2 px-3"
               >
                 <FaGithub className="text-lg shrink-0 group-hover:scale-110 transition-transform" />
                 <span className="text-sm">View GitHub</span>
@@ -129,7 +129,7 @@ const Contact = () => {
                 href="https://www.linkedin.com/in/sarmad-irfan-a5126b3b8/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center gap-3 py-2.5 text-textSecondary hover:text-primary transition-colors duration-200 rounded-lg hover:bg-primary/5 -mx-2 px-2"
+                className="group flex items-center gap-3 py-3 text-textSecondary hover:text-primary transition-colors duration-200 rounded-lg hover:bg-primary/5 -mx-2 px-3"
               >
                 <FaLinkedinIn className="text-lg shrink-0 group-hover:scale-110 transition-transform" />
                 <span className="text-sm">LinkedIn</span>
@@ -138,7 +138,7 @@ const Contact = () => {
                 href="https://drive.google.com/file/d/1F5TVWgadnUpHgqp9Hxkvd7T2LTkELaBg/view?usp=sharing"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group flex items-center gap-3 py-2.5 text-textSecondary hover:text-primary transition-colors duration-200 rounded-lg hover:bg-primary/5 -mx-2 px-2"
+                className="group flex items-center gap-3 py-3 text-textSecondary hover:text-primary transition-colors duration-200 rounded-lg hover:bg-primary/5 -mx-2 px-3"
               >
                 <FiFileText className="text-lg shrink-0 group-hover:scale-110 transition-transform" />
                 <span className="text-sm">View Resume</span>
@@ -159,7 +159,7 @@ const Contact = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.1 }}
             viewport={{ once: true }}
-            className="rounded-2xl border border-border bg-surface p-6 md:p-7"
+            className="rounded-2xl border border-border bg-surface p-6 md:p-8 shadow-sm"
           >
             <h4 className="text-textPrimary font-semibold text-lg mb-5">Tell me what you need help with</h4>
             <form onSubmit={handleSubmit} ref={form} className="grid grid-cols-1 gap-5">

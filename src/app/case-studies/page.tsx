@@ -34,17 +34,17 @@ export default function CaseStudiesPage() {
             Case <span className="text-primary">Studies</span>
           </h1>
           <p className="text-textSecondary mt-3 max-w-2xl mx-auto">
-            Product execution work across fintech, logistics, and platform delivery.
+            Real business and product interventions — context, what was wrong, what I owned, what changed.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
           {projectsData.map((project) => (
-            <article key={project.slug} className="rounded-2xl border border-border bg-surface overflow-hidden">
+            <article key={project.slug} className="rounded-2xl border border-border bg-surface overflow-hidden shadow-sm hover:shadow-md hover:border-primary/20 transition-all duration-200">
               <div className="relative aspect-[16/9]">
                 <Image src={project.imageUrl} fill alt={project.title} className="object-cover" />
               </div>
-              <div className="p-5">
+              <div className="p-6 md:p-7">
                 <h2 className="text-xl font-bold text-textPrimary">{project.title}</h2>
                 <p className="text-sm text-textSecondary mt-2">
                   {project.homepageSummary ?? project.description}

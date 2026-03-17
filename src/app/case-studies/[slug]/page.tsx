@@ -76,7 +76,7 @@ export default function CaseStudyDetailPage({ params }: Props) {
         {JSON.stringify(breadcrumbList)}
       </Script>
       <article className="max-w-3xl mx-auto">
-        <header className="mb-10">
+        <header className="mb-12">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-textPrimary">
             {project.title}
           </h1>
@@ -100,35 +100,35 @@ export default function CaseStudyDetailPage({ params }: Props) {
           <div className="space-y-10 text-textSecondary leading-relaxed">
             {project.overview && (
               <section>
-                <h2 className="text-textPrimary font-bold text-lg mb-3">Overview</h2>
+                <h2 className="text-textPrimary font-bold text-lg mb-3">Context</h2>
                 <p>{project.overview}</p>
               </section>
             )}
 
-            {project.challenge && (
+            {(project.challenge || project.problem) && (
               <section>
-                <h2 className="text-textPrimary font-bold text-lg mb-3">Challenge</h2>
-                <p>{project.challenge}</p>
+                <h2 className="text-textPrimary font-bold text-lg mb-3">What Was Going Wrong</h2>
+                <p>{project.challenge ?? project.problem}</p>
               </section>
             )}
 
-            {project.whatIOwned && (
+            {(project.whatIOwned || project.ownership) && (
               <section>
                 <h2 className="text-textPrimary font-bold text-lg mb-3">What I Owned</h2>
-                <p>{project.whatIOwned}</p>
+                <p>{project.whatIOwned ?? project.ownership}</p>
               </section>
             )}
 
             {project.whatIBuilt && (
               <section>
-                <h2 className="text-textPrimary font-bold text-lg mb-3">What I Built</h2>
+                <h2 className="text-textPrimary font-bold text-lg mb-3">Technical Delivery</h2>
                 <p>{project.whatIBuilt}</p>
               </section>
             )}
 
             {project.outcome && (
               <section>
-                <h2 className="text-textPrimary font-bold text-lg mb-3">Outcome</h2>
+                <h2 className="text-textPrimary font-bold text-lg mb-3">What Changed</h2>
                 <p>{project.outcome}</p>
               </section>
             )}
@@ -147,10 +147,25 @@ export default function CaseStudyDetailPage({ params }: Props) {
               </section>
             )}
 
-            {project.capabilityLine && (
-              <p className="text-sm text-textMuted border-t border-border pt-6">
-                {project.capabilityLine}
-              </p>
+            {(project.capabilityLine || project.tags?.length) && (
+              <section>
+                <h2 className="text-textPrimary font-bold text-lg mb-3">Stack & Systems</h2>
+                {project.tags?.length > 0 && (
+                  <div className="flex flex-wrap gap-2 mb-2">
+                    {project.tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="inline-block px-3 py-1 rounded-full bg-primarySoft text-primary text-sm font-medium border border-primary/25"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                )}
+                {project.capabilityLine && (
+                  <p className="text-sm text-textMuted mt-2">{project.capabilityLine}</p>
+                )}
+              </section>
             )}
           </div>
         ) : (
@@ -163,7 +178,7 @@ export default function CaseStudyDetailPage({ params }: Props) {
             )}
             {project.problem && (
               <section>
-                <h2 className="text-textPrimary font-bold text-lg mb-2">Challenge</h2>
+                <h2 className="text-textPrimary font-bold text-lg mb-2">What Was Going Wrong</h2>
                 <p>{project.problem}</p>
               </section>
             )}
@@ -175,8 +190,23 @@ export default function CaseStudyDetailPage({ params }: Props) {
             )}
             {project.outcome && (
               <section>
-                <h2 className="text-textPrimary font-bold text-lg mb-2">Outcome</h2>
+                <h2 className="text-textPrimary font-bold text-lg mb-2">What Changed</h2>
                 <p>{project.outcome}</p>
+              </section>
+            )}
+            {project.tags?.length > 0 && (
+              <section>
+                <h2 className="text-textPrimary font-bold text-lg mb-2">Stack & Systems</h2>
+                <div className="flex flex-wrap gap-2">
+                  {project.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      className="inline-block px-3 py-1 rounded-full bg-primarySoft text-primary text-sm font-medium border border-primary/25"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
               </section>
             )}
           </div>

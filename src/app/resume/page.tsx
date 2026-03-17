@@ -25,7 +25,7 @@ export const metadata: Metadata = {
 export default function ResumePage() {
   return (
     <main className="px-6 pt-28 pb-16 bg-bg min-h-screen">
-      <section className="max-w-3xl mx-auto rounded-2xl border border-border bg-surface p-8 text-center">
+      <section className="max-w-3xl mx-auto rounded-2xl border border-border bg-surface p-8 md:p-10 text-center shadow-sm">
         <h1 className="text-3xl font-bold text-textPrimary">Resume</h1>
         <p className="text-textSecondary mt-3">
           Access my latest resume for product engineer and technical partner roles.

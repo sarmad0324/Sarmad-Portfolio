@@ -6,31 +6,31 @@ import { useSectionInView } from "@/lib/useInView";
 const offers = [
   {
     title: "MVP Build & Launch",
-    audience: "Founders moving from idea to first release",
-    problem: "Need to launch fast without a fragile product base.",
-    delivery: "Ship the highest-leverage slice across frontend, backend, and integrations.",
-    outcome: "Production-ready MVP your team can iterate on.",
+    audience: "Founders who need to ship a real first version without building the wrong thing.",
+    problem: "Ideas turn into bloated builds, slow delivery, avoidable debt.",
+    delivery: "Define and ship the highest-leverage slice across frontend, backend, integrations.",
+    outcome: "Launch-ready MVP to test, learn from, build on fast.",
   },
   {
     title: "App Rescue & Stabilization",
-    audience: "Teams with buggy, delayed, or fragile products",
-    problem: "Reliability issues and delivery drag blocking growth.",
-    delivery: "Audit bottlenecks, fix unstable areas, reset momentum.",
-    outcome: "Stable product and a clear path for shipping updates.",
+    audience: "Teams in motion but losing time to fragile code, blocked delivery, unclear ownership.",
+    problem: "Velocity drops when features break, releases drag, no one owns execution.",
+    delivery: "Step into bottlenecks, stabilize weak areas, get delivery moving again.",
+    outcome: "Reliable product. Clear path to shipping updates with confidence.",
   },
   {
     title: "Full-Stack Product Engineering",
-    audience: "Lean teams needing strong execution across layers",
-    problem: "Complete features needed across web, mobile, and backend.",
-    delivery: "Hands-on delivery across the full stack.",
-    outcome: "Faster delivery with fewer handoff gaps.",
+    audience: "Lean teams needing one person across web, mobile, backend, integrations.",
+    problem: "Delivery slows when frontend, backend, and execution are disconnected.",
+    delivery: "Work hands-on across the stack — close gaps, unblock workflows.",
+    outcome: "Faster execution. Fewer handoff delays. Stronger continuity.",
   },
   {
     title: "Fractional Technical Partner",
-    audience: "Founders who need senior ownership without a full-time hire",
-    problem: "Need senior ownership without a full-time hire.",
-    delivery: "Embedded partner for planning, implementation, and execution decisions.",
-    outcome: "Stronger technical backbone while staying lean.",
+    audience: "Founders needing senior technical ownership without a full-time hire.",
+    problem: "Teams stall when no one drives feasibility, priorities, execution decisions.",
+    delivery: "Embed as technical partner across planning, implementation, delivery direction.",
+    outcome: "Stronger leadership. Clearer execution. Better momentum.",
   },
 ];
 
@@ -63,7 +63,7 @@ export default function Offers() {
             Core <span className="text-primary">Offers</span>
           </h2>
           <p className="max-w-2xl mx-auto text-base text-textSecondary">
-            Four focused ways startup teams work with me.
+            Four ways founders work with me when execution needs to move again.
           </p>
         </motion.div>
 
@@ -75,11 +75,11 @@ export default function Offers() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.06 }}
               viewport={{ once: true }}
-              className="rounded-2xl border border-border bg-surface p-6"
+              className="rounded-2xl border border-border bg-surface p-6 md:p-7 shadow-sm hover:shadow-md hover:border-primary/20 transition-all duration-200"
             >
               <h3 className="text-xl font-bold text-textPrimary">{offer.title}</h3>
-              <p className="text-sm text-primary font-medium mt-1">{offer.audience}</p>
-              <ul className="mt-4 space-y-2.5">
+              <p className="text-sm text-textSecondary font-medium mt-1.5">{offer.audience}</p>
+              <ul className="mt-5 space-y-2.5">
                 <li className="flex gap-2.5 text-textSecondary text-sm">
                   <span className="text-primary font-semibold shrink-0">Problem:</span>
                   <span>{offer.problem}</span>
@@ -97,7 +97,7 @@ export default function Offers() {
           ))}
         </div>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mt-8">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-10">
           <a
             href="#contact"
             className="inline-flex items-center justify-center px-5 py-3 bg-primary text-white rounded-lg font-semibold hover:bg-primaryHover transition-all duration-200"
@@ -114,8 +114,8 @@ export default function Offers() {
           </a>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-10">
-          <div className="rounded-2xl border border-border bg-surface p-6">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-12">
+          <div className="rounded-2xl border border-border bg-surface p-6 md:p-7 shadow-sm">
             <h3 className="text-xl font-bold text-textPrimary">Who I Help</h3>
             <ul className="mt-3 space-y-2">
               {idealClients.map((item) => (
@@ -128,7 +128,7 @@ export default function Offers() {
               Secondary capability: AI/workflow integrations are available when they support product delivery.
             </p>
           </div>
-          <div className="rounded-2xl border border-border bg-surface p-6">
+          <div className="rounded-2xl border border-border bg-surface p-6 md:p-7 shadow-sm">
             <h3 className="text-xl font-bold text-textPrimary">Not a Fit</h3>
             <ul className="mt-3 space-y-2">
               {notIdealClients.map((item) => (

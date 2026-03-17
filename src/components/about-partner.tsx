@@ -14,7 +14,7 @@ export default function AboutPartner() {
     "Strong in turning product ideas, bottlenecks, and messy requirements into shippable systems.",
     "Delivery experience across logistics, fintech, recovery platforms, and digital commerce.",
     "Able to support both implementation and execution decisions, from technical feasibility to shipping priorities.",
-    "Can extend delivery capacity through SyntaxLeap when project scope grows.",
+    "When project scope grows, I can extend delivery capacity through a trusted team at SyntaxLeap while staying hands-on in direction and execution quality.",
   ];
 
   return (
@@ -26,7 +26,7 @@ export default function AboutPartner() {
             width={560}
             height={560}
             alt="Sarmad Irfan"
-            className="rounded-2xl border border-border object-cover w-full h-auto"
+            className="rounded-2xl border border-border object-cover w-full h-auto shadow-lg"
           />
         </motion.div>
 
@@ -42,10 +42,10 @@ export default function AboutPartner() {
           <p className="text-base text-textSecondary leading-relaxed">
             I work with founders and lean teams as a product engineer and technical partner focused on real execution, not just extra coding capacity.
           </p>
-          <ul className="space-y-3">
+          <ul className="space-y-4">
             {points.map((point) => (
-              <li key={point} className="flex gap-3 text-textSecondary leading-relaxed text-sm">
-                <span className="shrink-0 w-6 h-6 rounded-md bg-primarySoft border border-border flex items-center justify-center">
+              <li key={point} className="flex gap-4 text-textSecondary leading-relaxed text-sm">
+                <span className="shrink-0 w-6 h-6 rounded-full bg-primarySoft border border-primary/20 flex items-center justify-center mt-0.5">
                   <FiCheck className="text-primary text-xs" strokeWidth={3} />
                 </span>
                 <span>{point}</span>

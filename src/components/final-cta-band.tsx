@@ -2,12 +2,12 @@
 
 export default function FinalCtaBand() {
   return (
-    <section className="px-6 py-12 bg-bg">
-      <div className="max-w-7xl mx-auto rounded-2xl border border-border bg-surface p-7 md:p-9 flex flex-col md:flex-row md:items-center md:justify-between gap-5">
+    <section className="px-6 py-14 bg-bg">
+      <div className="max-w-7xl mx-auto rounded-2xl border border-border bg-surface p-8 md:p-10 flex flex-col md:flex-row md:items-center md:justify-between gap-6 shadow-sm">
         <div>
-          <h3 className="text-2xl md:text-3xl font-bold text-textPrimary">Need hands-on product execution?</h3>
+          <h3 className="text-2xl md:text-3xl font-bold text-textPrimary">Let&apos;s review what&apos;s blocked and what needs to move next.</h3>
           <p className="text-textSecondary mt-2 text-sm md:text-base">
-            Let&apos;s review your bottleneck and map the next shipping steps.
+            Get clarity on the bottleneck, scope, and next steps. No pressure — just a direct conversation.
           </p>
         </div>
         <div className="flex flex-col sm:flex-row gap-3">
