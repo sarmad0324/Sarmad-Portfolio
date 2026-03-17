@@ -29,7 +29,7 @@ export default function Header({ links }: HeaderProps) {
                 initial={{ y: -100, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8, type: "spring", stiffness: 100 }}
-                className='flex p-2 rounded-full border border-darkGray3 bg-darkGray1/80 shadow-lg backdrop-blur'
+                className='flex p-2 rounded-full border border-border bg-surface/80 shadow-lg backdrop-blur'
             >
                 <ul className='flex flex-wrap items-center justify-center gap-1 text-sm font-semibold'>
                     {links.map((link, index) => (
@@ -45,7 +45,7 @@ export default function Header({ links }: HeaderProps) {
                                     "relative flex items-center justify-center px-4 py-2 rounded-full transition-all duration-300 hover:scale-105 cursor-pointer",
                                     {
                                         "text-white": activeSection === link.hash,
-                                        "text-gray-400 hover:text-primary": activeSection !== link.hash
+                                        "text-textMuted hover:text-primary": activeSection !== link.hash
                                     }
                                 )}
                                 onClick={() => {
@@ -69,7 +69,7 @@ export default function Header({ links }: HeaderProps) {
                                 )}
                                 {link.hash !== activeSection && (
                                     <motion.span
-                                        className='absolute inset-0 bg-primary/15 rounded-full opacity-0 hover:opacity-100 transition-opacity duration-300 -z-10'
+                                        className='absolute inset-0 bg-primarySoft rounded-full opacity-0 hover:opacity-100 transition-opacity duration-300 -z-10'
                                     >
                                     </motion.span>
                                 )}
@@ -85,10 +85,10 @@ export default function Header({ links }: HeaderProps) {
                 transition={{ duration: 0.6, type: "spring", stiffness: 100 }}
             >
                 <a
-                    href='/contact'
-                    className='flex items-center gap-2 px-5 py-2.5 rounded-full font-semibold text-white transition-colors bg-primary hover:bg-primary/90 focus:ring-2 focus:ring-primary/50 focus:outline-none'
+                    href='https://calendly.com/sarmadirfan78/30min'
+                    className='flex items-center gap-2 px-5 py-2.5 rounded-full font-semibold text-white transition-colors bg-primary hover:bg-primaryHover focus:ring-2 focus:ring-primary/50 focus:outline-none'
                 >
-                    Discuss Your Product
+                    Book a Call
                 </a>
             </motion.div>
         </header>

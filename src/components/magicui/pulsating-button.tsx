@@ -24,10 +24,10 @@ export function PulsatingButton({
   const baseClasses = "relative overflow-hidden rounded-full font-semibold transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed"
   
   const variantClasses = {
-    default: "bg-primary text-white hover:bg-primary/90 focus:ring-primary",
-    primary: "bg-primary text-white hover:bg-primary/90 focus:ring-primary",
-    secondary: "bg-primary text-white hover:bg-primary/90 focus:ring-primary", 
-    accent: "bg-primary text-white hover:bg-primary/90 focus:ring-primary"
+    default: "bg-primary text-white hover:bg-primaryHover focus:ring-primary",
+    primary: "bg-primary text-white hover:bg-primaryHover focus:ring-primary",
+    secondary: "bg-primary text-white hover:bg-primaryHover focus:ring-primary", 
+    accent: "bg-primary text-white hover:bg-primaryHover focus:ring-primary"
   }
   
   const sizeClasses = {

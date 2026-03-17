@@ -49,18 +49,18 @@
   background: -webkit-linear-gradient(-90.13deg, #00cea8 1.9%, #bf61ff 97.5%);
 }
 
-.orange-text-gradient {
-  background: #f12711; /* fallback for old browsers */
+.primary-text-gradient {
+  background: #4F7CFF; /* primary blue */
   background: -webkit-linear-gradient(
     to top,
-    #f12711,
-    #f5af19
-  ); /* Chrome 10-25, Safari 5.1-6 */
+    #3E68E8,
+    #6A92FF
+  );
   background: linear-gradient(
     to top,
-    #f12711,
-    #f5af19
-  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    #3E68E8,
+    #6A92FF
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

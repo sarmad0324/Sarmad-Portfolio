@@ -5,6 +5,8 @@ import Providers from "@/containers/providers";
 import Navbar from "@/components/navbar";
 import Script from "next/script";
 import MobileCta from "@/components/mobile-cta";
+import Footer from "@/components/footer";
+import { SITE_URL, BRAND, DEFAULT_OG_IMAGE } from "@/lib/seo";
 
 const inter = Inter({
   subsets: ['latin'],
@@ -13,50 +15,52 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Sarmad Irfan - Startup Technical Partner",
+  title: { default: BRAND.title, template: `%s | ${BRAND.name}` },
   description:
-    "Product-focused full-stack engineer helping founders and lean teams build, fix, and scale web and mobile products across React, React Native, Next.js, Node.js, and PostgreSQL.",
+    "Hands-on product execution across web, mobile, backend, and AI-powered workflows for founders and lean teams.",
   keywords:
-    "startup technical partner, product engineer, React, React Native, Next.js, Node.js, PostgreSQL, MVP build, app stabilization, fractional technical partner",
-  authors: [{ name: "Sarmad Irfan" }],
-  creator: "Sarmad Irfan",
-  publisher: "Sarmad Irfan",
+    "product engineer, technical partner, React, React Native, Next.js, Node.js, PostgreSQL, MVP build, app stabilization, fractional technical partner",
+  authors: [{ name: BRAND.name }],
+  creator: BRAND.name,
+  publisher: BRAND.name,
   robots: "index, follow",
   verification: {
     google: "FGaNKbTbKnR33p0Pq9aVSamdAX0bYwTsERX1dZBjCrA",
   },
   openGraph: {
-    title: "Sarmad Irfan - Startup Technical Partner",
+    title: BRAND.title,
     description:
-      "I help founders and lean teams ship, fix, and scale products with hands-on web, mobile, backend, and integration execution.",
-    url: "https://sarmadirfan.com",
-    siteName: "Sarmad Irfan",
+      "I help startups build, fix, and scale digital products. Hands-on execution across web, mobile, backend, and AI-powered workflows.",
+    url: SITE_URL,
+    siteName: BRAND.name,
     locale: "en_US",
     type: "website",
     images: [
       {
-        url: "/hero-profile-2.jpeg",
-        alt: "Sarmad Irfan - Startup Technical Partner",
+        url: DEFAULT_OG_IMAGE,
+        alt: `${BRAND.name} - ${BRAND.role}`,
+        width: 1200,
+        height: 630,
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Sarmad Irfan - Startup Technical Partner",
+    title: BRAND.title,
     description:
-      "Technical partner for founders and lean teams who need product execution, not just code.",
-    images: ["/hero-profile-2.jpeg"],
+      "I help startups build, fix, and scale digital products. Product engineer and technical partner for founders and lean teams.",
+    images: [DEFAULT_OG_IMAGE],
   },
   alternates: {
-    canonical: "https://sarmadirfan.com",
+    canonical: SITE_URL,
   },
-  metadataBase: new URL("https://sarmadirfan.com"),
+  metadataBase: new URL(SITE_URL),
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className="dark !scroll-smooth">
-        <body className={`${inter.variable} font-Inter flex flex-col bg-darkBlack text-gray-200 relative antialiased`}>
+        <body className={`${inter.variable} font-Inter flex flex-col bg-bg text-textSecondary relative antialiased`}>
           <Script
             strategy="afterInteractive"
             src="https://www.googletagmanager.com/gtag/js?id=G-05BX1H3XYB"
@@ -69,45 +73,38 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               gtag('config', 'G-05BX1H3XYB');
             `}
           </Script>
-          <Script id="structured-data" type="application/ld+json">
-            {`
-              {
-                "@context": "https://schema.org",
-                "@type": "Person",
-                "name": "Sarmad Irfan",
-                "url": "https://sarmadirfan.com",
-                "sameAs": [
-                  "https://www.linkedin.com/in/sarmad-irfan",
-                  "https://github.com/sarmad0324"
-                ],
-                "jobTitle": "Product-Focused Full-Stack Engineer",
-                "worksFor": {
-                  "@type": "Organization",
-                  "name": "SyntaxLeap"
-                }
-              }
-            `}
+          <Script id="structured-data-person" type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: BRAND.name,
+              url: SITE_URL,
+              email: BRAND.email,
+              jobTitle: BRAND.role,
+              sameAs: [BRAND.github, BRAND.calendly],
+              worksFor: { "@type": "Organization", name: "SyntaxLeap" },
+            })}
           </Script>
-          <Script id="site-structured-data" type="application/ld+json">
-            {`
-              {
-                "@context": "https://schema.org",
-                "@type": "WebSite",
-                "name": "Sarmad Irfan - Startup Technical Partner",
-                "url": "https://sarmadirfan.com",
-                "potentialAction": {
-                  "@type": "SearchAction",
-                  "target": "https://sarmadirfan.com/?s={search_term_string}",
-                  "query-input": "required name=search_term_string"
-                }
-              }
-            `}
+          <Script id="structured-data-website" type="application/ld+json">
+            {JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              name: BRAND.title,
+              url: SITE_URL,
+              publisher: { "@type": "Person", name: BRAND.name },
+              potentialAction: {
+                "@type": "SearchAction",
+                target: `${SITE_URL}/?s={search_term_string}`,
+                "query-input": "required name=search_term_string",
+              },
+            })}
           </Script>
           <Providers>
             <Navbar />
             <div className="relative z-10">
               {children}
             </div>
+            <Footer />
             <MobileCta />
           </Providers>
         </body>

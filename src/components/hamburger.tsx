@@ -27,7 +27,7 @@ return(
         initial="visible"
         whileTap="tap"
         whileHover="hover"
-        className="bg-darkGray1 w-[3rem] h-[3rem] drop-shadow backdrop-blur-[0.5rem] border border-darkGray3 shadow-2xl rounded-full flex items-center justify-center" >
+        className="bg-surface w-[3rem] h-[3rem] drop-shadow backdrop-blur-[0.5rem] border border-border shadow-2xl rounded-full flex items-center justify-center" >
             <Hamburger 
             toggled={isOpen}
             toggle={setisOpen}
@@ -39,7 +39,7 @@ return(
     <motion.div
     variants={menuList}
     initial="start"
-    animate="visible" className="w-full bg-darkGray1 drop-shadow border border-darkGray3 shadow-2xl rounded-2xl flex flex-col items-center justify-center p-1" >
+    animate="visible" className="w-full bg-surface drop-shadow border border-border shadow-2xl rounded-2xl flex flex-col items-center justify-center p-1" >
     {links.map((link,index)=>(
         <motion.div 
    className="w-full"
@@ -49,9 +49,9 @@ return(
         >
             <NextLink
             className={clsx(
-                "flex w-full items-center justify-center px-3 py-3 transition text-gray-400 hover:text-primary cursor-pointer",
+                "flex w-full items-center justify-center px-3 py-3 transition text-textMuted hover:text-primary cursor-pointer",
                 {
-                  "text-white bg-darkGray3 rounded":activeSection === link.hash,
+                  "text-textPrimary bg-surface2 rounded":activeSection === link.hash,
                   "rounded-t-xl round":index === 0,
                   "rounded-b-xl round":index === links.length -1,
 

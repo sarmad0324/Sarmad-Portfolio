@@ -6,31 +6,27 @@ import { useSectionInView } from "@/lib/useInView";
 const offers = [
   {
     title: "MVP Build & Launch",
-    forWho: "Founders moving from idea to first release",
-    problem: "Need to launch quickly without creating a fragile product base.",
-    delivery: "Ship the highest-leverage product slice across frontend, backend, and core integrations.",
-    outcome: "A production-ready MVP your team can iterate on fast.",
+    problem: "Need to launch fast without a fragile product base.",
+    delivery: "Ship the highest-leverage slice across frontend, backend, and integrations.",
+    outcome: "Production-ready MVP your team can iterate on.",
   },
   {
     title: "App Rescue & Stabilization",
-    forWho: "Teams with buggy, delayed, or fragile products",
-    problem: "Reliability issues and delivery drag are blocking growth.",
-    delivery: "Audit bottlenecks, fix unstable areas, and reset engineering momentum.",
-    outcome: "A more stable product and a clearer path for shipping updates.",
+    problem: "Reliability issues and delivery drag blocking growth.",
+    delivery: "Audit bottlenecks, fix unstable areas, reset momentum.",
+    outcome: "Stable product and a clear path for shipping updates.",
   },
   {
     title: "Full-Stack Product Engineering",
-    forWho: "Lean teams needing strong execution across layers",
-    problem: "You need complete features shipped across web, mobile, and backend.",
-    delivery: "Hands-on delivery across React, React Native, Next.js, Node.js, and PostgreSQL.",
-    outcome: "Faster delivery with fewer handoff gaps between frontend and backend.",
+    problem: "Complete features needed across web, mobile, and backend.",
+    delivery: "Hands-on delivery across React, React Native, Next.js, Node.js, PostgreSQL.",
+    outcome: "Faster delivery with fewer handoff gaps.",
   },
   {
     title: "Fractional Technical Partner",
-    forWho: "Founders who need senior ownership without a full-time hire",
-    problem: "Need reliable technical direction plus hands-on delivery.",
-    delivery: "Operate as an embedded partner for planning, implementation, and execution decisions.",
-    outcome: "A stronger technical backbone while keeping your team lean.",
+    problem: "Need senior ownership without a full-time hire.",
+    delivery: "Embedded partner for planning, implementation, and execution decisions.",
+    outcome: "Stronger technical backbone while staying lean.",
   },
 ];
 
@@ -51,7 +47,7 @@ export default function Offers() {
   const { ref } = useSectionInView("#offers", 0.45);
 
   return (
-    <section ref={ref} id="offers" className="px-6 py-16 md:py-20 bg-darkBlack">
+    <section ref={ref} id="offers" className="px-6 py-16 md:py-20 bg-bg">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -59,10 +55,10 @@ export default function Offers() {
           viewport={{ once: true }}
           className="text-center mb-10"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-textPrimary mb-3">
             Core <span className="text-primary">Offers</span>
           </h2>
-          <p className="max-w-2xl mx-auto text-base text-gray-300">
+          <p className="max-w-2xl mx-auto text-base text-textSecondary">
             Four focused ways startup teams work with me.
           </p>
         </motion.div>
@@ -75,40 +71,61 @@ export default function Offers() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.06 }}
               viewport={{ once: true }}
-              className="rounded-2xl border border-darkGray3 bg-darkGray1/70 p-6"
+              className="rounded-2xl border border-border bg-surface p-6"
             >
-              <h3 className="text-xl font-bold text-white">{offer.title}</h3>
-              <p className="text-sm text-primary font-semibold mt-2">{offer.forWho}</p>
-              <p className="text-gray-300 mt-3 leading-relaxed text-sm">{offer.problem}</p>
-              <p className="text-gray-400 mt-2 leading-relaxed text-sm">
-                <span className="font-semibold text-gray-200">Delivery:</span> {offer.delivery}
-              </p>
-              <p className="text-gray-400 mt-2 leading-relaxed text-sm">
-                <span className="font-semibold text-gray-200">Outcome:</span> {offer.outcome}
-              </p>
+              <h3 className="text-xl font-bold text-textPrimary">{offer.title}</h3>
+              <ul className="mt-4 space-y-2.5">
+                <li className="flex gap-2.5 text-textSecondary text-sm">
+                  <span className="text-primary font-semibold shrink-0">Problem:</span>
+                  <span>{offer.problem}</span>
+                </li>
+                <li className="flex gap-2.5 text-textSecondary text-sm">
+                  <span className="text-primary font-semibold shrink-0">Delivery:</span>
+                  <span>{offer.delivery}</span>
+                </li>
+                <li className="flex gap-2.5 text-textSecondary text-sm">
+                  <span className="text-primary font-semibold shrink-0">Outcome:</span>
+                  <span>{offer.outcome}</span>
+                </li>
+              </ul>
             </motion.article>
           ))}
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-8">
-          <div className="rounded-2xl border border-darkGray3 bg-darkGray1/70 p-6">
-            <h3 className="text-xl font-bold text-white">Who I Help</h3>
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mt-8">
+          <a
+            href="#contact"
+            className="inline-flex items-center justify-center px-5 py-3 bg-primary text-white rounded-lg font-semibold hover:bg-primaryHover transition-all duration-200"
+          >
+            Discuss Your Product
+          </a>
+          <a
+            href="/case-studies"
+            className="inline-flex items-center justify-center px-5 py-3 border border-primary/50 text-primary rounded-lg font-semibold hover:bg-primarySoft transition-all duration-200"
+          >
+            View Case Studies
+          </a>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-10">
+          <div className="rounded-2xl border border-border bg-surface p-6">
+            <h3 className="text-xl font-bold text-textPrimary">Who I Help</h3>
             <ul className="mt-3 space-y-2">
               {idealClients.map((item) => (
-                <li key={item} className="text-gray-300 text-sm">
+                <li key={item} className="text-textSecondary text-sm">
                   - {item}
                 </li>
               ))}
             </ul>
-            <p className="text-xs text-gray-500 mt-4">
+            <p className="text-xs text-textMuted mt-4">
               Secondary capability: AI/workflow integrations are available when they support product delivery.
             </p>
           </div>
-          <div className="rounded-2xl border border-darkGray3 bg-darkGray1/70 p-6">
-            <h3 className="text-xl font-bold text-white">Not a Fit</h3>
+          <div className="rounded-2xl border border-border bg-surface p-6">
+            <h3 className="text-xl font-bold text-textPrimary">Not a Fit</h3>
             <ul className="mt-3 space-y-2">
               {notIdealClients.map((item) => (
-                <li key={item} className="text-gray-300 text-sm">
+                <li key={item} className="text-textSecondary text-sm">
                   - {item}
                 </li>
               ))}

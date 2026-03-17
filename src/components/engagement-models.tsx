@@ -28,7 +28,7 @@ export default function EngagementModels() {
   const { ref } = useSectionInView("#engagement", 0.4);
 
   return (
-    <section ref={ref} id="engagement" className="px-6 py-16 md:py-20 bg-darkBlack">
+    <section ref={ref} id="engagement" className="px-6 py-16 md:py-20 bg-bg">
       <div className="max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -36,10 +36,10 @@ export default function EngagementModels() {
           viewport={{ once: true }}
           className="text-center mb-10"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-3">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-textPrimary mb-3">
             Engagement <span className="text-primary">Models</span>
           </h2>
-          <p className="max-w-2xl mx-auto text-base text-gray-300">
+          <p className="max-w-2xl mx-auto text-base text-textSecondary">
             Structured options designed for founders and lean product teams.
           </p>
         </motion.div>
@@ -52,18 +52,35 @@ export default function EngagementModels() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.08 }}
               viewport={{ once: true }}
-              className="rounded-2xl border border-darkGray3 bg-darkGray1/70 p-6"
+              className="rounded-2xl border border-border bg-surface p-6"
             >
-              <h3 className="text-xl font-bold text-white">{model.title}</h3>
-              <p className="text-gray-300 mt-3 text-sm leading-relaxed">{model.summary}</p>
-              <p className="text-gray-400 mt-2 text-sm leading-relaxed">
-                <span className="font-semibold text-gray-200">Includes:</span> {model.includes}
+              <h3 className="text-xl font-bold text-textPrimary">{model.title}</h3>
+              <p className="text-textSecondary mt-3 text-sm leading-relaxed">{model.summary}</p>
+              <p className="text-textMuted mt-2 text-sm leading-relaxed">
+                <span className="font-semibold text-textPrimary">Includes:</span> {model.includes}
               </p>
-              <p className="text-gray-400 mt-2 text-sm leading-relaxed">
-                <span className="font-semibold text-gray-200">Good fit:</span> {model.fit}
+              <p className="text-textMuted mt-2 text-sm leading-relaxed">
+                <span className="font-semibold text-textPrimary">Good fit:</span> {model.fit}
               </p>
             </motion.article>
           ))}
+        </div>
+
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mt-8">
+          <a
+            href="https://calendly.com/sarmadirfan78/30min"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center px-5 py-3 bg-primary text-white rounded-lg font-semibold hover:bg-primaryHover transition-all duration-200"
+          >
+            Book a Strategy Call
+          </a>
+          <a
+            href="#contact"
+            className="inline-flex items-center justify-center px-5 py-3 border border-primary/50 text-primary rounded-lg font-semibold hover:bg-primarySoft transition-all duration-200"
+          >
+            Discuss Your Product
+          </a>
         </div>
       </div>
     </section>

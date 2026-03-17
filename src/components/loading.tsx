@@ -33,26 +33,26 @@ export function Loading({
   }, []);
 
   const containerClass = fullScreen 
-    ? "flex flex-col items-center justify-center min-h-screen bg-gradient-to-br from-darkBlack via-darkGray1 to-darkGray2"
+    ? "flex flex-col items-center justify-center min-h-screen bg-bg"
     : "flex flex-col items-center justify-center p-8";
 
   return (
     <div className={containerClass}>
       <div className="text-center">
-        <h1 className="text-4xl font-bold mb-8 bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
+        <h1 className="text-4xl font-bold mb-8 text-textPrimary">
           {title}
         </h1>
-        <p className="text-lg text-gray-300 mb-8">
+        <p className="text-lg text-textSecondary mb-8">
           {subtitle}
         </p>
         <AnimatedCircularProgressBar
           value={value}
-          gaugePrimaryColor="rgb(79 70 229)"
+          gaugePrimaryColor="rgb(249, 115, 69)"
           gaugeSecondaryColor="rgba(255, 255, 255, 0.1)"
           size={size}
           strokeWidth={10}
         />
-        <p className="text-sm text-gray-400 mt-4">
+        <p className="text-sm text-textMuted mt-4">
           {loadingText}
         </p>
       </div>

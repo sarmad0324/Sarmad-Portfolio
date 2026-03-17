@@ -25,7 +25,7 @@ export function InteractiveHoverButton({
 
   return (
     <motion.button
-      className={`relative overflow-hidden rounded-lg bg-primary hover:bg-primary/90 px-8 py-3 text-white font-medium focus:ring-2 focus:ring-primary/50 focus:outline-none ${className}`}
+      className={`relative overflow-hidden rounded-lg bg-primary hover:bg-primaryHover px-8 py-3 text-white font-medium focus:ring-2 focus:ring-primary/50 focus:outline-none ${className}`}
       onMouseMove={handleMouseMove}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}

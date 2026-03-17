@@ -5,6 +5,8 @@ import emailjs from "@emailjs/browser";
 import { useSectionInView } from "@/lib/useInView";
 import { BsWhatsapp } from 'react-icons/bs';
 import { BsEnvelope } from 'react-icons/bs';
+import { FaGithub } from "react-icons/fa";
+import { FiFileText } from "react-icons/fi";
 import Swal from "sweetalert2"; // For popups, make sure to install this package
 import "sweetalert2/dist/sweetalert2.min.css";
 
@@ -79,134 +81,144 @@ const Contact = () => {
   };
 
   return (
-    <div
-      ref={ref}
-      id="contact"
-      className="container mx-auto px-6 py-16 md:py-20 bg-darkBlack"
-    >
-      <div className="max-w-7xl mx-auto">
-        {/* Section Header */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-          className="text-center mb-12 md:mb-16"
-        >
-          <p className="text-sm uppercase tracking-wider text-primary font-semibold mb-4">
-            Final Step
-          </p>
-          <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 text-white">
-            Need help shipping, fixing, or scaling a product?
-          </h3>
-          <p className="text-base text-gray-300 max-w-2xl mx-auto">
-            Share what is blocked, what needs to ship next, and your timeline.
-          </p>
-        </motion.div>
-
-      <div className="grid grid-cols-1 gap-8">
-        <motion.div className="p-7 rounded-2xl bg-darkGray1/70 border border-darkGray3">
-          <form
-            onSubmit={handleSubmit}
-            ref={form}
-            className="grid grid-cols-1 md:grid-cols-2 gap-5"
+    <section ref={ref} id="contact" className="container mx-auto px-6 py-20 md:py-24 bg-bg">
+      <div className="max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-10">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="rounded-2xl border border-border bg-surface p-6 md:p-7"
           >
-            <label className="flex flex-col md:col-span-1">
-              <span className="text-sm font-semibold mb-2 text-white">Your Name</span>
-              <input
-                type="text"
-                name="name"
-                value={name}
-                required
-                onChange={(e) => setName(e.target.value)}
-                placeholder="John Doe"
-                className="bg-darkBlack text-gray-100 border border-darkGray3 py-3 px-4 placeholder:text-gray-500 rounded-lg outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all duration-200"
-              />
-            </label>
-            <label className="flex flex-col md:col-span-1">
-              <span className="text-sm font-semibold mb-2 text-white">Your Email</span>
-              <input
-                type="email"
-                name="email"
-                value={email}
-                required
-                onChange={(e) => setEmail(e.target.value)}
-                placeholder="john@example.com"
-                className="bg-darkBlack text-gray-100 border border-darkGray3 py-3 px-4 placeholder:text-gray-500 rounded-lg outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all duration-200"
-              />
-            </label>
-            <label className="flex flex-col md:col-span-2">
-              <span className="text-sm font-semibold mb-2 text-white">
-                Project Type
-              </span>
-              <select
-                name="role"
-                value={role}
-                onChange={(e) => setRole(e.target.value)}
-                className="bg-darkBlack text-gray-100 border border-darkGray3 py-3 px-4 rounded-lg outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all duration-200"
-                required
+            <h3 className="text-2xl md:text-3xl font-bold text-textPrimary mb-4">
+              Need help shipping, fixing, or scaling a product?
+            </h3>
+            <p className="text-sm md:text-base text-textSecondary leading-relaxed">
+              Share what you&apos;re building, where execution is blocked, and what needs to move next.
+            </p>
+
+            <div className="mt-7 space-y-1">
+              <a
+                href="mailto:sarmad.irfan@syntaxleap.com"
+                className="group flex items-center gap-3 py-2.5 text-textSecondary hover:text-primary transition-colors duration-200 rounded-lg hover:bg-primary/5 -mx-2 px-2"
               >
-                <option value="">- Select engagement need -</option>
-                <option value="MVP Build & Launch">MVP Build & Launch</option>
-                <option value="App Rescue & Stabilization">App Rescue & Stabilization</option>
-                <option value="Full-Stack Product Engineering">Full-Stack Product Engineering</option>
-                <option value="AI & Workflow Integrations">AI & Workflow Integrations</option>
-                <option value="Monthly Technical Partner">Monthly Technical Partner</option>
-                <option value="Other">Other</option>
-              </select>
-            </label>
-            <label className="flex flex-col md:col-span-2">
-              <span className="text-sm font-semibold mb-2 text-white">Project Details</span>
-              <textarea
-                rows={5}
-                name="comment"
-                required
-                value={comment}
-                onChange={(e) => setComment(e.target.value)}
-                placeholder="What are you building, where is it blocked, and what timeline are you working with?"
-                className="bg-darkBlack text-gray-100 border border-darkGray3 py-3 px-4 placeholder:text-gray-500 rounded-lg outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all duration-200 resize-none"
-              />
-            </label>
+                <BsEnvelope className="text-lg shrink-0 group-hover:scale-110 transition-transform" />
+                <span className="text-sm">sarmad.irfan@syntaxleap.com</span>
+              </a>
+              <a
+                href="https://wa.me/923368486356"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center gap-3 py-2.5 text-textSecondary hover:text-primary transition-colors duration-200 rounded-lg hover:bg-primary/5 -mx-2 px-2"
+              >
+                <BsWhatsapp className="text-lg shrink-0 group-hover:scale-110 transition-transform" />
+                <span className="text-sm">+92 336 8486356</span>
+              </a>
+              <a
+                href="https://github.com/sarmad0324"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center gap-3 py-2.5 text-textSecondary hover:text-primary transition-colors duration-200 rounded-lg hover:bg-primary/5 -mx-2 px-2"
+              >
+                <FaGithub className="text-lg shrink-0 group-hover:scale-110 transition-transform" />
+                <span className="text-sm">View GitHub</span>
+              </a>
+              <a
+                href="https://drive.google.com/file/d/1F5TVWgadnUpHgqp9Hxkvd7T2LTkELaBg/view?usp=sharing"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex items-center gap-3 py-2.5 text-textSecondary hover:text-primary transition-colors duration-200 rounded-lg hover:bg-primary/5 -mx-2 px-2"
+              >
+                <FiFileText className="text-lg shrink-0 group-hover:scale-110 transition-transform" />
+                <span className="text-sm">View Resume</span>
+              </a>
+              <a
+                href="https://calendly.com/sarmadirfan78/30min"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center mt-4 px-5 py-3 bg-primary text-white rounded-lg text-sm font-bold hover:bg-primaryHover hover:shadow-lg hover:shadow-primary/20 transition-all duration-200"
+              >
+                Book a Call
+              </a>
+            </div>
+          </motion.div>
 
-            <button
-              type="submit"
-              disabled={loading}
-              className="md:col-span-2 bg-primary hover:bg-primary/90 text-white py-3.5 px-8 rounded-lg font-semibold text-base transition-colors w-full focus:ring-2 focus:ring-primary/50 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed"
-            >
-              {loading ? "Sending..." : "Book a Strategy Call"}
-            </button>
-
-          </form>
-        </motion.div>
-      </div>
-
-      {/* Contact Info & Footer */}
-      <div className="mt-12 pt-8 border-t border-darkGray3">
-        <div className="flex flex-col sm:flex-row gap-y-6 sm:gap-x-12 justify-center items-center mb-8">
-          <motion.a
-            href="mailto:sarmadirfan@syntaxleap.com"
-            className="flex gap-3 items-center text-gray-400 hover:text-primary transition-colors"
-            whileHover={{ scale: 1.05 }}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            viewport={{ once: true }}
+            className="rounded-2xl border border-border bg-surface p-6 md:p-7"
           >
-            <BsEnvelope className="text-xl" />
-            <span className="text-sm sm:text-base">sarmadirfan@syntaxleap.com</span>
-          </motion.a>
-          <motion.a
-            href="tel:+923368486356"
-            className="flex gap-3 items-center text-gray-400 hover:text-primary transition-colors"
-            whileHover={{ scale: 1.05 }}
-          >
-            <BsWhatsapp className="text-xl" />
-            <span className="text-sm sm:text-base">+92 336 8486356</span>
-          </motion.a>
+            <h4 className="text-textPrimary font-semibold text-lg mb-5">Tell me what you need help with</h4>
+            <form onSubmit={handleSubmit} ref={form} className="grid grid-cols-1 gap-5">
+              <label className="flex flex-col">
+                <span className="text-sm font-semibold mb-2 text-textPrimary">Name</span>
+                <input
+                  type="text"
+                  name="name"
+                  value={name}
+                  required
+                  onChange={(e) => setName(e.target.value)}
+                  placeholder="John Doe"
+                  className="bg-bg text-textPrimary border border-border py-2.5 px-3.5 placeholder:text-textMuted rounded-lg outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all duration-200"
+                />
+              </label>
+              <label className="flex flex-col">
+                <span className="text-sm font-semibold mb-2 text-textPrimary">Email</span>
+                <input
+                  type="email"
+                  name="email"
+                  value={email}
+                  required
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="john@example.com"
+                  className="bg-bg text-textPrimary border border-border py-2.5 px-3.5 placeholder:text-textMuted rounded-lg outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all duration-200"
+                />
+              </label>
+              <label className="flex flex-col">
+                <span className="text-sm font-semibold mb-2 text-textPrimary">Project Type</span>
+                <select
+                  name="role"
+                  value={role}
+                  onChange={(e) => setRole(e.target.value)}
+                  className="bg-bg text-textPrimary border border-border py-2.5 px-3.5 rounded-lg outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all duration-200"
+                  required
+                >
+                  <option value="">- Select project type -</option>
+                  <option value="MVP Build & Launch">MVP Build & Launch</option>
+                  <option value="App Rescue & Stabilization">App Rescue & Stabilization</option>
+                  <option value="Full-Stack Product Engineering">Full-Stack Product Engineering</option>
+                  <option value="Fractional Technical Partner">Fractional Technical Partner</option>
+                  <option value="Other">Other</option>
+                </select>
+              </label>
+              <label className="flex flex-col">
+                <span className="text-sm font-semibold mb-2 text-textPrimary">Project Details</span>
+                <textarea
+                  rows={4}
+                  name="comment"
+                  required
+                  value={comment}
+                  onChange={(e) => setComment(e.target.value)}
+                  placeholder="What are you building, where is execution blocked, and what needs to move next?"
+                  className="bg-bg text-textPrimary border border-border py-2.5 px-3.5 placeholder:text-textMuted rounded-lg outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all duration-200 resize-none"
+                />
+              </label>
+
+              <button
+                type="submit"
+                disabled={loading}
+                className="w-fit bg-primary hover:bg-primaryHover text-white py-3 px-6 rounded-lg font-bold text-sm transition-all duration-200 hover:shadow-lg hover:shadow-primary/20 focus:ring-2 focus:ring-primary/50 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {loading ? "Sending..." : "Start the Conversation"}
+              </button>
+            </form>
+          </motion.div>
         </div>
-        
-        <p className="text-center text-gray-500 text-sm">
-          © 2025 Sarmad Irfan. All rights reserved.
-        </p>
       </div>
-      </div>
-    </div>
+    </section>
   );
 };
 
