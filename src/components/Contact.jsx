@@ -101,11 +101,11 @@ const Contact = () => {
 
             <div className="mt-8 space-y-1">
               <a
-                href="mailto:sarmad.irfan@syntaxleap.com"
+                href="mailto:sarmad@sarmadirfan.com"
                 className="group flex items-center gap-3 py-3 text-textSecondary hover:text-primary transition-colors duration-200 rounded-lg hover:bg-primary/5 -mx-2 px-3"
               >
                 <BsEnvelope className="text-lg shrink-0 group-hover:scale-110 transition-transform" />
-                <span className="text-sm">sarmad.irfan@syntaxleap.com</span>
+                <span className="text-sm">sarmad@sarmadirfan.com</span>
               </a>
               <a
                 href="https://wa.me/923368486356"

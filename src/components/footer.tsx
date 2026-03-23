@@ -7,8 +7,8 @@ export default function Footer() {
             <p className="text-textPrimary font-bold text-xl">Sarmad Irfan</p>
             <p className="text-primary font-semibold text-sm">Product Engineer & Technical Partner</p>
             <p className="text-textMuted text-sm">Based in Lahore, working internationally</p>
-            <a href="mailto:sarmad.irfan@syntaxleap.com" className="text-primary text-sm inline-block hover:text-primaryHover transition-colors mt-3">
-              sarmad.irfan@syntaxleap.com
+            <a href="mailto:sarmad@sarmadirfan.com" className="text-primary text-sm inline-block hover:text-primaryHover transition-colors mt-3">
+              sarmad@sarmadirfan.com
             </a>
           </div>
 
@@ -19,7 +19,7 @@ export default function Footer() {
                 <a href="https://calendly.com/sarmadirfan78/30min" target="_blank" rel="noopener noreferrer" className="text-textSecondary hover:text-primary text-sm transition-colors">
                   Book a Call
                 </a>
-                <a href="mailto:sarmad.irfan@syntaxleap.com" className="text-textSecondary hover:text-primary text-sm transition-colors">
+                <a href="mailto:sarmad@sarmadirfan.com" className="text-textSecondary hover:text-primary text-sm transition-colors">
                   Email
                 </a>
                 <a href="https://wa.me/923368486356" target="_blank" rel="noopener noreferrer" className="text-textSecondary hover:text-primary text-sm transition-colors">

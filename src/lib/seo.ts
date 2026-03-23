@@ -8,7 +8,7 @@ export const BRAND = {
   name: "Sarmad Irfan",
   title: "Sarmad Irfan | Product Engineer & Technical Partner",
   role: "Product Engineer & Technical Partner",
-  email: "sarmad.irfan@syntaxleap.com",
+  email: "sarmad@sarmadirfan.com",
   github: "https://github.com/sarmad0324",
   linkedin: "https://www.linkedin.com/in/sarmad-irfan-a5126b3b8/",
   calendly: "https://calendly.com/sarmadirfan78/30min",
