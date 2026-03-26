@@ -144,7 +144,7 @@ const Contact = () => {
                 <span className="text-sm">View Resume</span>
               </a>
               <a
-                href="https://calendly.com/sarmadirfan78/30min"
+                href="https://calendly.com/sarmad-sarmadirfan/30min"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center justify-center mt-4 px-5 py-3 bg-primary text-white rounded-lg text-sm font-bold hover:bg-primaryHover transition-all duration-200"

@@ -77,7 +77,7 @@ export default function EngagementModels() {
             Discuss Your Project
           </a>
           <a
-            href="https://calendly.com/sarmadirfan78/30min"
+            href="https://calendly.com/sarmad-sarmadirfan/30min"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center justify-center px-5 py-3 border border-primary/50 text-primary rounded-lg font-semibold hover:bg-primarySoft transition-all duration-200"

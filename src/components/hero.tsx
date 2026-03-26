@@ -31,7 +31,7 @@ export default function Hero() {
               Discuss Your Project
               <FaArrowRight className="group-hover:translate-x-1 transition-transform" />
             </a>
-            <a href="https://calendly.com/sarmadirfan78/30min" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-primary/50 text-primary rounded-lg font-semibold hover:bg-primarySoft transition-all duration-200">
+            <a href="https://calendly.com/sarmad-sarmadirfan/30min" target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-6 py-3 border border-primary/50 text-primary rounded-lg font-semibold hover:bg-primarySoft transition-all duration-200">
               Book a Call
             </a>
           </div>

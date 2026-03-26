@@ -16,7 +16,7 @@ export default function Footer() {
             <div>
               <p className="text-textMuted text-xs font-semibold uppercase tracking-wider mb-3">Connect</p>
               <div className="flex flex-col gap-2">
-                <a href="https://calendly.com/sarmadirfan78/30min" target="_blank" rel="noopener noreferrer" className="text-textSecondary hover:text-primary text-sm transition-colors">
+                <a href="https://calendly.com/sarmad-sarmadirfan/30min" target="_blank" rel="noopener noreferrer" className="text-textSecondary hover:text-primary text-sm transition-colors">
                   Book a Call
                 </a>
                 <a href="mailto:sarmad@sarmadirfan.com" className="text-textSecondary hover:text-primary text-sm transition-colors">
