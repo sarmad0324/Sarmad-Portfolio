@@ -116,7 +116,7 @@ const Contact = () => {
             Get in touch
           </p>
           <h2 className="text-3xl sm:text-4xl font-bold text-textPrimary font-Sora">
-            Let's talk about your product
+            Let&apos;s talk about your product
           </h2>
         </motion.div>
 
@@ -130,10 +130,10 @@ const Contact = () => {
             className="rounded-2xl border border-border bg-surface p-6 md:p-8 flex flex-col"
           >
             <h3 className="text-xl font-bold text-textPrimary font-Sora mb-2">
-              Tell me what's broken or blocked.
+              Tell me what&apos;s broken or blocked.
             </h3>
             <p className="text-sm text-textSecondary leading-relaxed mb-8">
-              Share what you're building, where execution is stuck, and your timeline. I'll review and get back with next steps — usually within 24 hours.
+              Share what you&apos;re building, where execution is stuck, and your timeline. I&apos;ll review and get back with next steps — usually within 24 hours.
             </p>
 
             <div className="space-y-1 flex-1">

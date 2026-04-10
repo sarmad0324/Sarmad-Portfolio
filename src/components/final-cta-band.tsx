@@ -21,12 +21,12 @@ export default function FinalCtaBand() {
               Ready to move?
             </p>
             <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-textPrimary font-Sora leading-tight mb-4">
-              Got a product that's stuck?
+              Got a product that&apos;s stuck?
               <br />
-              <span className="text-primary">Let's fix it.</span>
+              <span className="text-primary">Let&apos;s fix it.</span>
             </h2>
             <p className="text-textSecondary text-base md:text-lg leading-relaxed mb-8 max-w-lg mx-auto">
-              Book a free 30-minute call. No pitch, no pressure — just a direct conversation about what's blocked and what needs to move.
+              Book a free 30-minute call. No pitch, no pressure — just a direct conversation about what&apos;s blocked and what needs to move.
             </p>
             <a
               href="https://calendly.com/sarmad-sarmadirfan/30min"

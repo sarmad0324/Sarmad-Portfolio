@@ -67,7 +67,7 @@ export default function AboutPartner() {
               About me
             </p>
             <h2 className="text-3xl sm:text-4xl font-bold text-textPrimary font-Sora mb-4">
-              I'm not just a developer. I'm a technical partner.
+              I&apos;m not just a developer. I&apos;m a technical partner.
             </h2>
             <p className="text-textSecondary text-base leading-relaxed">
               I work with founders and lean teams as a product engineer and technical partner. My focus is real execution — not just writing code, but owning delivery decisions, scoping features correctly, and making sure the right things get shipped.

@@ -55,7 +55,7 @@ export default function ProofSection() {
             Proof from real product teams
           </h2>
           <p className="mt-3 text-base text-textSecondary max-w-xl">
-            Outcome-linked proof from founders and teams I've stepped in to move forward.
+            Outcome-linked proof from founders and teams I&apos;ve stepped in to move forward.
           </p>
         </motion.div>
 
@@ -71,11 +71,11 @@ export default function ProofSection() {
             >
               {/* Large decorative quote mark */}
               <span className="absolute top-4 right-5 text-5xl text-border font-serif leading-none select-none">
-                "
+                &ldquo;
               </span>
 
               <p className="text-textSecondary leading-relaxed text-sm md:text-base relative z-10">
-                "{item.quote}"
+                &ldquo;{item.quote}&rdquo;
               </p>
 
               {/* Outcome tag */}

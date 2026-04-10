@@ -43,7 +43,7 @@ export default function CaseStudiesPage() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {projectsData.map((project, idx) => (
+          {projectsData.map((project) => (
             <article
               key={project.slug}
               className="group rounded-2xl border border-border bg-surface overflow-hidden flex flex-col hover:border-primary/25 transition-all duration-200"
