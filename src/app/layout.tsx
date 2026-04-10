@@ -60,7 +60,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en" className="!scroll-smooth">
-        <body className={`${inter.variable} font-Inter flex flex-col bg-bg text-textSecondary relative antialiased`}>
+        <body className={`${inter.variable} font-Inter bg-bg text-textSecondary relative antialiased`}>
           <Script
             strategy="afterInteractive"
             src="https://www.googletagmanager.com/gtag/js?id=G-05BX1H3XYB"

@@ -1,32 +1,46 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Sora:wght@500;600;700;800&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --bg: #F3F5F9;
-  --surface: #FFFFFF;
-  --surface-2: #EDF2F7;
-  --border: #D8E0EA;
-  --text-primary: #0F172A;
-  --text-secondary: #334155;
-  --text-muted: #64748B;
-  --accent: #2563EB;
-  --accent-hover: #1D4ED8;
-  --accent-deep: #1D4ED8;
-  --accent-soft: #DBEAFE;
-  --success: #16A34A;
-  --info: #3B82F6;
+  --bg: #09090B;
+  --surface: #111113;
+  --surface-2: #18181B;
+  --border: #27272A;
+  --text-primary: #FAFAFA;
+  --text-secondary: #A1A1AA;
+  --text-muted: #52525B;
+  --accent: #6366F1;
+  --accent-hover: #4F46E5;
+  --accent-deep: #4338CA;
+  --accent-soft: rgba(99, 102, 241, 0.10);
+  --success: #22C55E;
+  --info: #6366F1;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Inter", sans-serif;
+}
+
+html {
   scroll-behavior: smooth;
-  color-scheme: light;
+  color-scheme: dark;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: var(--bg);
+  color: var(--text-secondary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Sora", sans-serif;
 }
 
 .hash-span {
@@ -35,14 +49,35 @@
   display: block;
 }
 
-/* Helper classes */
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* Selection */
+::selection {
+  background: rgba(99, 102, 241, 0.25);
+  color: #FAFAFA;
+}
+
 @layer components {
   .surface-card {
     @apply bg-surface rounded-xl border border-border;
   }
-
   .surface-card-2 {
     @apply bg-surface2 rounded-xl border border-border;
   }
+  .accent-glow {
+    box-shadow: 0 0 40px rgba(99, 102, 241, 0.15);
+  }
 }
-

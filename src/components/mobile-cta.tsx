@@ -2,12 +2,14 @@
 
 export default function MobileCta() {
   return (
-    <div className="md:hidden fixed bottom-4 left-4 right-4 z-[999]">
+    <div className="md:hidden fixed bottom-4 left-4 right-4 z-[998]">
       <a
-        href="/#contact"
-        className="w-full inline-flex items-center justify-center px-5 py-3 bg-primary text-white rounded-lg font-semibold shadow-sm hover:bg-primaryHover transition-colors"
+        href="https://calendly.com/sarmad-sarmadirfan/30min"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="w-full inline-flex items-center justify-center px-5 py-3.5 bg-primary text-white rounded-xl font-semibold shadow-lg shadow-primary/25 hover:bg-primaryHover transition-colors text-sm"
       >
-        Discuss Your Project
+        Book a Free Call
       </a>
     </div>
   );

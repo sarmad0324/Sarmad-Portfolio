@@ -9,8 +9,8 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        Sora: [`var(--font-sora)`, `sans-serif`],
-        Inter: [`var(--font-inter)`, "sans-serif"],
+        Sora: ["Sora", "sans-serif"],
+        Inter: ["Inter", "sans-serif"],
       },
       colors: {
         bg: "var(--bg)",
@@ -51,6 +51,6 @@ const config: Config = {
     },
   },
   plugins: [],
-  darkMode:"class"
+  darkMode: "class",
 };
 export default config;
