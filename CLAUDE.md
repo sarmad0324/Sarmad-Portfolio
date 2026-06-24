@@ -18,6 +18,10 @@ Static-exported **Next.js 14 App Router** portfolio for "Sarmad Irfan" (sarmadir
 - No server runtime. Everything must be statically generatable — no API routes, no server actions, no dynamic SSR. `images.unoptimized: true` is required (use `next/image` but it serves raw files).
 - Dynamic routes need `generateStaticParams`. The only dynamic route, `src/app/case-studies/[slug]/page.tsx`, enumerates its params from `projectsData`.
 
+### Images
+
+Because `images.unoptimized: true`, `next/image` serves raw files — so source images **must be pre-optimized**. Use WebP and resize to display size before committing (e.g. `cwebp -q 82 -resize 1500 0 src.png -o src.webp`). Project images live in `public/` and are referenced as `.webp` string paths in `src/lib/data.ts` (`imageUrl` / `gallery[].src`); the headshot `public/dp.webp` is imported as a module in `hero.tsx` / `about-partner.tsx`. Keep new screenshots well under ~150 KB. (Some unused legacy PNGs remain in `public/` — they don't load, so leave them unless asked.)
+
 Despite the README (CRA boilerplate text) mentioning Vercel, deployment is **Netlify** (`netlify.toml`, `@netlify/plugin-nextjs`).
 
 ### Single sources of truth
@@ -36,7 +40,16 @@ Despite the README (CRA boilerplate text) mentioning Vercel, deployment is **Net
 
 ### Styling
 
-Tailwind with `darkMode: "class"`. Custom color tokens (`bg`, `surface`, `primary`, `textPrimary`, etc. in `tailwind.config.ts`) map to **CSS variables** defined in `src/app/globals.css` — change theme colors there, not in the Tailwind config. Fonts: Inter via `next/font` plus local Geist fonts in `src/app/fonts/`.
+Tailwind with `darkMode: "class"`. Custom color tokens (`bg`, `surface`, `primary`, `textPrimary`, etc. in `tailwind.config.ts`) map to **CSS variables** defined in `src/app/globals.css` — change theme colors there, not in the Tailwind config. Fonts: Inter via `next/font` plus local Geist fonts in `src/app/fonts/`. `globals.css` also holds a global `:focus-visible` ring and a `prefers-reduced-motion` block.
+
+### Motion / animation
+
+Shared motion language lives in **`src/lib/anim.ts`** — reuse its exports (`EASE`/`EASE_SOFT` easings, `fadeUp`/`riseIn`/`fadeIn` variants, `stagger()` container, `viewportOnce`) instead of hand-rolling `initial`/`whileInView` per element. Grids use a parent `stagger()` container with child `variants` (not ad-hoc `delay: idx*…`). Conventions:
+- **Transform-based hovers (lift/scale) must use Framer `whileHover`, not Tailwind `hover:-translate-*`** — Framer leaves an inline `transform` that overrides the Tailwind class. Use Tailwind only for non-transform hovers (color/border/shadow).
+- When a continuous/animated element also needs static centering (`-translate-x-1/2`), split it: static transform on an outer wrapper, Framer animation on an inner element (see `final-cta-band.tsx`).
+- Reduced motion is honored globally via `<MotionConfig reducedMotion="user">` in `src/containers/providers.tsx` — keep all motion transform/opacity based so it degrades cleanly.
+
+> ⚠️ Do **not** import animation helpers from `@/lib/motion` — that legacy `src/lib/motion.js` (`staggerContainer`, `slideIn`) is still used by `src/hoc/StarWrapper.jsx`, and a same-named `motion.ts` causes a build-breaking module-resolution collision. The new system is deliberately named `anim.ts`.
 
 ### Notable libraries
 
