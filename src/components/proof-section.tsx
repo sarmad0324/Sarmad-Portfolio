@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/useInView";
+import { fadeUp, riseIn, stagger, viewportOnce, EASE } from "@/lib/anim";
 
 const testimonials = [
   {
@@ -43,9 +44,10 @@ export default function ProofSection() {
     <section ref={ref} id="reviews" className="px-6 py-16 md:py-20 bg-surface/30">
       <div className="max-w-7xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={viewportOnce}
           className="mb-10"
         >
           <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-3">
@@ -59,15 +61,19 @@ export default function ProofSection() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-          {testimonials.map((item, idx) => (
+        <motion.div
+          variants={stagger(0.1)}
+          initial="hidden"
+          whileInView="show"
+          viewport={viewportOnce}
+          className="grid grid-cols-1 md:grid-cols-3 gap-5"
+        >
+          {testimonials.map((item) => (
             <motion.article
               key={`${item.name}-${item.company}`}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: idx * 0.09 }}
-              viewport={{ once: true }}
-              className="relative rounded-2xl border border-border bg-surface p-6 md:p-7 flex flex-col hover:border-primary/25 transition-all duration-200"
+              variants={riseIn}
+              whileHover={{ y: -6, transition: { duration: 0.3, ease: EASE } }}
+              className="relative rounded-2xl border border-border bg-surface p-6 md:p-7 flex flex-col hover:border-primary/25 hover:shadow-xl hover:shadow-black/25 transition-colors duration-300"
             >
               {/* Large decorative quote mark */}
               <span className="absolute top-4 right-5 text-5xl text-border font-serif leading-none select-none">
@@ -99,7 +105,7 @@ export default function ProofSection() {
               </div>
             </motion.article>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

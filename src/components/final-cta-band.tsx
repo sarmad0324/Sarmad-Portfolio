@@ -2,19 +2,27 @@
 
 import { motion } from "framer-motion";
 import { FiArrowRight } from "react-icons/fi";
+import { fadeUp, viewportOnce } from "@/lib/anim";
 
 export default function FinalCtaBand() {
   return (
     <section className="px-6 py-16 md:py-20">
       <motion.div
-        initial={{ opacity: 0, y: 20 }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
+        variants={fadeUp}
+        initial="hidden"
+        whileInView="show"
+        viewport={viewportOnce}
         className="max-w-7xl mx-auto"
       >
         <div className="relative rounded-2xl overflow-hidden border border-primary/20 bg-gradient-to-br from-primary/[0.12] via-surface to-surface p-10 md:p-14 text-center">
-          {/* Background glow */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-32 bg-primary/20 blur-3xl rounded-full" />
+          {/* Background glow (outer centers, inner breathes — keeps transforms separate) */}
+          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-32">
+            <motion.div
+              className="w-full h-full bg-primary/20 blur-3xl rounded-full"
+              animate={{ opacity: [0.5, 1, 0.5], scale: [0.9, 1.15, 0.9] }}
+              transition={{ duration: 7, ease: "easeInOut", repeat: Infinity }}
+            />
+          </div>
 
           <div className="relative z-10 max-w-2xl mx-auto">
             <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-4">

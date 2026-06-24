@@ -3,6 +3,7 @@ import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import emailjs from "@emailjs/browser";
 import { useSectionInView } from "@/lib/useInView";
+import { fadeUp, viewportOnce, EASE } from "@/lib/anim";
 import { BsWhatsapp, BsEnvelope } from "react-icons/bs";
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { FiFileText, FiCalendar } from "react-icons/fi";
@@ -107,9 +108,10 @@ const Contact = () => {
     <section ref={ref} id="contact" className="px-6 py-16 md:py-20">
       <div className="max-w-5xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={viewportOnce}
           className="mb-10"
         >
           <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-3">
@@ -123,10 +125,10 @@ const Contact = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* Left: info + links */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 28 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true }}
+            transition={{ duration: 0.7, ease: EASE }}
+            viewport={viewportOnce}
             className="rounded-2xl border border-border bg-surface p-6 md:p-8 flex flex-col"
           >
             <h3 className="text-xl font-bold text-textPrimary font-Sora mb-2">
@@ -164,10 +166,10 @@ const Contact = () => {
 
           {/* Right: form */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 28 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            viewport={{ once: true }}
+            transition={{ duration: 0.7, ease: EASE, delay: 0.12 }}
+            viewport={viewportOnce}
             className="rounded-2xl border border-border bg-surface p-6 md:p-8"
           >
             <h4 className="text-textPrimary font-semibold text-base mb-5 font-Sora">

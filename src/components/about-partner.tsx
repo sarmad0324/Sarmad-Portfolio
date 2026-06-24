@@ -3,10 +3,11 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/useInView";
+import { EASE } from "@/lib/anim";
 import { FiExternalLink } from "react-icons/fi";
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 import { HiOutlineDocumentText } from "react-icons/hi";
-import Boy from "../../public/dp.png";
+import Boy from "../../public/dp.webp";
 
 const stack = [
   "React Native", "Next.js", "React", "Node.js",
@@ -28,12 +29,17 @@ export default function AboutPartner() {
 
         {/* Photo side */}
         <motion.div
-          initial={{ opacity: 0, x: -20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
+          initial={{ opacity: 0, x: -28, filter: "blur(8px)" }}
+          whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+          transition={{ duration: 0.9, ease: EASE }}
+          viewport={{ once: true, margin: "-80px" }}
           className="relative"
         >
-          <div className="absolute inset-8 bg-primary/15 rounded-3xl blur-3xl" />
+          <motion.div
+            className="absolute inset-8 bg-primary/15 rounded-3xl blur-3xl"
+            animate={{ opacity: [0.5, 0.85, 0.5], scale: [0.98, 1.04, 0.98] }}
+            transition={{ duration: 8, ease: "easeInOut", repeat: Infinity }}
+          />
           <Image
             src={Boy}
             width={520}
@@ -57,9 +63,10 @@ export default function AboutPartner() {
 
         {/* Text side */}
         <motion.div
-          initial={{ opacity: 0, x: 20 }}
-          whileInView={{ opacity: 1, x: 0 }}
-          viewport={{ once: true }}
+          initial={{ opacity: 0, x: 28, filter: "blur(8px)" }}
+          whileInView={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+          transition={{ duration: 0.9, ease: EASE, delay: 0.1 }}
+          viewport={{ once: true, margin: "-80px" }}
           className="space-y-6 mt-8 lg:mt-0"
         >
           <div>
@@ -84,7 +91,7 @@ export default function AboutPartner() {
               {stack.map((tech) => (
                 <span
                   key={tech}
-                  className="px-3 py-1.5 rounded-lg bg-surface2 border border-border text-textSecondary text-xs font-medium hover:border-primary/30 hover:text-textPrimary transition-colors"
+                  className="px-3 py-1.5 rounded-lg bg-surface2 border border-border text-textSecondary text-xs font-medium hover:border-primary/30 hover:text-textPrimary hover:-translate-y-0.5 transition-all duration-300 ease-out"
                 >
                   {tech}
                 </span>
@@ -98,7 +105,7 @@ export default function AboutPartner() {
               href="https://drive.google.com/file/d/1F5TVWgadnUpHgqp9Hxkvd7T2LTkELaBg/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-border text-textSecondary text-sm font-semibold hover:border-primary/30 hover:text-textPrimary hover:bg-primary/5 transition-all duration-200"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-border text-textSecondary text-sm font-semibold hover:border-primary/30 hover:text-textPrimary hover:bg-primary/5 hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 ease-out"
             >
               <HiOutlineDocumentText className="text-base" />
               Resume
@@ -108,7 +115,7 @@ export default function AboutPartner() {
               href="https://github.com/sarmad0324"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-border text-textSecondary text-sm font-semibold hover:border-primary/30 hover:text-textPrimary hover:bg-primary/5 transition-all duration-200"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-border text-textSecondary text-sm font-semibold hover:border-primary/30 hover:text-textPrimary hover:bg-primary/5 hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 ease-out"
             >
               <FaGithub className="text-base" />
               GitHub
@@ -117,7 +124,7 @@ export default function AboutPartner() {
               href="https://www.linkedin.com/in/sarmad-irfan-a5126b3b8/"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-border text-textSecondary text-sm font-semibold hover:border-primary/30 hover:text-textPrimary hover:bg-primary/5 transition-all duration-200"
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl border border-border text-textSecondary text-sm font-semibold hover:border-primary/30 hover:text-textPrimary hover:bg-primary/5 hover:-translate-y-0.5 active:scale-[0.98] transition-all duration-300 ease-out"
             >
               <FaLinkedinIn className="text-base" />
               LinkedIn

@@ -7,7 +7,8 @@ import { FaLinkedinIn, FaGithub, FaWhatsapp } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
 import { BsCalendar2Check } from "react-icons/bs";
 import { useSectionInView } from "@/lib/useInView";
-import Boy from "../../public/dp.png";
+import { fadeUp, riseIn, stagger, EASE_SOFT } from "@/lib/anim";
+import Boy from "../../public/dp.webp";
 
 const socials = [
   { icon: FaLinkedinIn, href: "https://www.linkedin.com/in/sarmad-irfan-a5126b3b8/", label: "LinkedIn" },
@@ -33,31 +34,34 @@ export default function Hero() {
 
         {/* Left: content */}
         <motion.div
-          initial={{ opacity: 0, y: 28 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.65 }}
+          variants={stagger(0.12, 0.1)}
+          initial="hidden"
+          animate="show"
           className="space-y-7"
         >
           {/* Availability badge */}
-          <div>
+          <motion.div variants={riseIn}>
             <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary/10 text-primary font-semibold text-xs border border-primary/20">
-              <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
+              <span className="relative flex w-1.5 h-1.5">
+                <span className="absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75 animate-ping" />
+                <span className="relative inline-flex rounded-full w-1.5 h-1.5 bg-green-400" />
+              </span>
               Technical partner for founders
             </span>
-          </div>
+          </motion.div>
 
           {/* Headline */}
-          <div className="space-y-4">
+          <motion.div variants={fadeUp} className="space-y-4">
             <h1 className="text-4xl sm:text-5xl md:text-[3.4rem] font-bold leading-[1.08] text-textPrimary font-Sora">
               The technical partner founders bring in when the product has to ship.
             </h1>
             <p className="text-base sm:text-lg text-textSecondary leading-relaxed max-w-xl">
               I work with early-stage founders who don&apos;t have a technical co-founder, turning stalled, fragile, or half-built products into something that ships — and scales. Start with a paid Technical Audit; leave with a clear roadmap and someone who can actually execute it.
             </p>
-          </div>
+          </motion.div>
 
           {/* Social icons */}
-          <div className="flex items-center gap-2">
+          <motion.div variants={riseIn} className="flex items-center gap-2">
             {socials.map((s) => (
               <a
                 key={s.label}
@@ -65,15 +69,15 @@ export default function Hero() {
                 target={s.href.startsWith("mailto") ? undefined : "_blank"}
                 rel="noopener noreferrer"
                 aria-label={s.label}
-                className="w-9 h-9 rounded-lg border border-border bg-surface flex items-center justify-center text-textMuted hover:text-primary hover:border-primary/40 hover:bg-primary/5 transition-all duration-200"
+                className="w-9 h-9 rounded-lg border border-border bg-surface flex items-center justify-center text-textMuted hover:text-primary hover:border-primary/40 hover:bg-primary/5 hover:-translate-y-0.5 transition-all duration-300 ease-out"
               >
                 <s.icon className="text-sm" />
               </a>
             ))}
-          </div>
+          </motion.div>
 
           {/* Stats */}
-          <div className="flex flex-wrap items-center gap-x-5 gap-y-3 py-1">
+          <motion.div variants={riseIn} className="flex flex-wrap items-center gap-x-5 gap-y-3 py-1">
             {stats.map((stat, i) => (
               <div key={stat.label} className="flex items-center gap-5">
                 <div>
@@ -85,37 +89,41 @@ export default function Hero() {
                 )}
               </div>
             ))}
-          </div>
+          </motion.div>
 
           {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-3 pt-1">
+          <motion.div variants={riseIn} className="flex flex-col sm:flex-row gap-3 pt-1">
             <a
               href="https://calendly.com/sarmad-sarmadirfan/30min"
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-primary text-white rounded-xl font-semibold hover:bg-primaryHover active:scale-[0.98] transition-all duration-200 text-sm shadow-lg shadow-primary/20"
+              className="group inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-primary text-white rounded-xl font-semibold hover:bg-primaryHover hover:shadow-xl hover:shadow-primary/30 active:scale-[0.98] transition-all duration-300 ease-out text-sm shadow-lg shadow-primary/20"
             >
               Book a 20-min fit call
-              <FaArrowRight className="group-hover:translate-x-1 transition-transform text-xs" />
+              <FaArrowRight className="group-hover:translate-x-1 transition-transform duration-300 ease-out text-xs" />
             </a>
             <a
               href="/case-studies/surfbank"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 border border-border text-textSecondary rounded-xl font-semibold hover:border-primary/30 hover:text-textPrimary hover:bg-primary/5 active:scale-[0.98] transition-all duration-200 text-sm"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 border border-border text-textSecondary rounded-xl font-semibold hover:border-primary/30 hover:text-textPrimary hover:bg-primary/5 active:scale-[0.98] transition-all duration-300 ease-out text-sm"
             >
               See the SurfBank audit
             </a>
-          </div>
+          </motion.div>
         </motion.div>
 
         {/* Right: photo */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.7, delay: 0.2 }}
+          initial={{ opacity: 0, scale: 0.96, filter: "blur(10px)" }}
+          animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
+          transition={{ duration: 1, delay: 0.25, ease: EASE_SOFT }}
           className="hidden lg:flex items-center justify-center relative"
         >
-          {/* Glow */}
-          <div className="absolute inset-8 rounded-3xl bg-primary/20 blur-3xl" />
+          {/* Breathing glow */}
+          <motion.div
+            className="absolute inset-8 rounded-3xl bg-primary/20 blur-3xl"
+            animate={{ opacity: [0.45, 0.8, 0.45], scale: [0.97, 1.03, 0.97] }}
+            transition={{ duration: 7, ease: "easeInOut", repeat: Infinity }}
+          />
           {/* Grid pattern behind photo */}
           <div
             className="absolute inset-0 opacity-[0.04]"
@@ -124,7 +132,11 @@ export default function Hero() {
               backgroundSize: "32px 32px",
             }}
           />
-          <div className="relative">
+          <motion.div
+            className="relative"
+            animate={{ y: [0, -10, 0] }}
+            transition={{ duration: 6, ease: "easeInOut", repeat: Infinity }}
+          >
             <Image
               src={Boy}
               alt="Sarmad Irfan — Technical Partner"
@@ -133,7 +145,7 @@ export default function Hero() {
               className="relative rounded-2xl object-cover border border-border/60 shadow-2xl"
               priority
             />
-          </div>
+          </motion.div>
         </motion.div>
 
       </div>

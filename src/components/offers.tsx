@@ -1,8 +1,17 @@
 "use client";
 
 import { motion } from "framer-motion";
+import type { Variants } from "framer-motion";
 import { FiSearch, FiTool, FiShield, FiArrowRight, FiCheck } from "react-icons/fi";
 import { useSectionInView } from "@/lib/useInView";
+import { fadeUp, riseIn, stagger, viewportOnce, EASE } from "@/lib/anim";
+
+// Featured card keeps a persistent scale "pop". Driven through Framer (not Tailwind)
+// so it doesn't conflict with the entrance transform.
+const featuredCard: Variants = {
+  hidden: { opacity: 0, y: 24, scale: 1.02 },
+  show: { opacity: 1, y: 0, scale: 1.04, transition: { duration: 0.65, ease: EASE } },
+};
 
 const offers = [
   {
@@ -65,9 +74,10 @@ export default function Offers() {
     <section ref={ref} id="offers" className="px-6 py-16 md:py-24 bg-surface/30">
       <div className="max-w-7xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={viewportOnce}
           className="mb-12 md:mb-14"
         >
           <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-3">
@@ -81,20 +91,28 @@ export default function Offers() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-5 lg:gap-6 lg:items-stretch">
-          {offers.map((offer, idx) => (
+        <motion.div
+          variants={stagger(0.1)}
+          initial="hidden"
+          whileInView="show"
+          viewport={viewportOnce}
+          className="grid grid-cols-1 lg:grid-cols-3 gap-5 lg:gap-6 lg:items-stretch"
+        >
+          {offers.map((offer) => (
             <motion.div
               key={offer.tag}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: idx * 0.08 }}
-              viewport={{ once: true }}
-              className={`relative flex flex-col rounded-2xl border p-6 md:p-8 transition-all duration-200 ${
+              variants={offer.highlight ? featuredCard : riseIn}
+              whileHover={{
+                y: offer.highlight ? -10 : -6,
+                scale: offer.highlight ? 1.05 : 1.015,
+                transition: { duration: 0.3, ease: EASE },
+              }}
+              className={`relative flex flex-col rounded-2xl border p-6 md:p-8 transition-colors duration-300 ${
                 offer.highlight
-                  ? "border-primary/50 bg-primary/[0.07] shadow-xl shadow-primary/15 ring-1 ring-primary/30 lg:scale-[1.035] lg:-translate-y-1 z-10"
+                  ? "border-primary/50 bg-primary/[0.07] shadow-xl shadow-primary/15 ring-1 ring-primary/30 z-10"
                   : offer.mainOffer
-                  ? "border-primary/30 bg-surface hover:border-primary/40"
-                  : "border-border bg-surface hover:border-primary/20 hover:bg-primary/[0.03]"
+                  ? "border-primary/30 bg-surface hover:border-primary/40 hover:shadow-lg hover:shadow-black/20"
+                  : "border-border bg-surface hover:border-primary/20 hover:bg-primary/[0.03] hover:shadow-lg hover:shadow-black/20"
               }`}
             >
               {offer.label && (
@@ -159,11 +177,11 @@ export default function Offers() {
                 }`}
               >
                 {offer.cta}
-                <FiArrowRight className="group-hover:translate-x-1 transition-transform text-xs" />
+                <FiArrowRight className="group-hover:translate-x-1 transition-transform duration-300 ease-out text-xs" />
               </a>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         <p className="mt-8 text-center text-xs text-textMuted max-w-xl mx-auto">
           Final scope and pricing depend on product complexity and speed required. Most engagements start with an Audit.

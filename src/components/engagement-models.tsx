@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { FiPhone, FiFileText, FiTrendingUp } from "react-icons/fi";
 import { useSectionInView } from "@/lib/useInView";
+import { fadeUp, riseIn, stagger, viewportOnce } from "@/lib/anim";
 
 const steps = [
   {
@@ -35,9 +36,10 @@ export default function EngagementModels() {
     <section ref={ref} id="engagement" className="px-6 py-16 md:py-20 bg-surface/30">
       <div className="max-w-7xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={viewportOnce}
           className="mb-12"
         >
           <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-3">
@@ -51,21 +53,24 @@ export default function EngagementModels() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative">
+        <motion.div
+          variants={stagger(0.12)}
+          initial="hidden"
+          whileInView="show"
+          viewport={viewportOnce}
+          className="grid grid-cols-1 md:grid-cols-3 gap-6 relative"
+        >
           {/* Connector line on desktop */}
           <div className="hidden md:block absolute top-10 left-[33%] right-[33%] h-px bg-gradient-to-r from-transparent via-border to-transparent" />
 
           {steps.map((step, idx) => (
             <motion.div
               key={step.number}
-              initial={{ opacity: 0, y: 24 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: idx * 0.1 }}
-              viewport={{ once: true }}
-              className="relative flex flex-col"
+              variants={riseIn}
+              className="group relative flex flex-col"
             >
               <div className="flex items-center gap-4 mb-5">
-                <div className="relative flex items-center justify-center w-12 h-12 rounded-2xl bg-primary/10 border border-primary/25 shrink-0">
+                <div className="relative flex items-center justify-center w-12 h-12 rounded-2xl bg-primary/10 border border-primary/25 shrink-0 group-hover:border-primary/50 group-hover:bg-primary/15 transition-colors duration-300">
                   <step.icon className="text-primary text-lg" />
                   <span className="absolute -top-2 -right-2 w-5 h-5 rounded-full bg-primary text-white text-[10px] font-bold flex items-center justify-center">
                     {idx + 1}
@@ -79,19 +84,20 @@ export default function EngagementModels() {
               <p className="text-sm text-textSecondary leading-relaxed">{step.description}</p>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
 
         <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={viewportOnce}
           className="mt-12 flex justify-center"
         >
           <a
             href="https://calendly.com/sarmad-sarmadirfan/30min"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center px-7 py-3.5 bg-primary text-white rounded-xl font-semibold hover:bg-primaryHover active:scale-[0.98] transition-all duration-200 text-sm shadow-lg shadow-primary/20"
+            className="inline-flex items-center justify-center px-7 py-3.5 bg-primary text-white rounded-xl font-semibold hover:bg-primaryHover hover:shadow-xl hover:shadow-primary/30 active:scale-[0.98] transition-all duration-300 ease-out text-sm shadow-lg shadow-primary/20"
           >
             Book a 20-min fit call
           </a>

@@ -40,9 +40,9 @@ const tools: Item[] = [
 function Pill({ label, Icon, ai }: Item) {
   return (
     <div
-      className={`flex items-center gap-2.5 rounded-xl border px-4 py-2.5 whitespace-nowrap transition-colors ${
+      className={`flex items-center gap-2.5 rounded-xl border px-4 py-2.5 whitespace-nowrap transition-all duration-300 ease-out hover:-translate-y-0.5 ${
         ai
-          ? "border-primary/25 bg-primary/[0.06] text-textSecondary hover:border-primary/40 hover:text-textPrimary"
+          ? "border-primary/25 bg-primary/[0.06] text-textSecondary hover:border-primary/40 hover:text-textPrimary hover:bg-primary/[0.1]"
           : "border-border bg-surface text-textSecondary hover:border-primary/30 hover:text-textPrimary"
       }`}
     >

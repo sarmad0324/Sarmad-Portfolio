@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { FiArrowRight, FiArrowUpRight } from "react-icons/fi";
 import { projectsData } from "@/lib/data";
 import { useSectionInView } from "@/lib/useInView";
+import { fadeUp, riseIn, stagger, viewportOnce, EASE } from "@/lib/anim";
 
 export default function CaseStudies() {
   const { ref } = useSectionInView("#projects", 0.35);
@@ -24,9 +25,10 @@ export default function CaseStudies() {
     <section ref={ref} id="projects" className="px-6 py-16 md:py-20">
       <div className="max-w-7xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={viewportOnce}
           className="mb-10"
         >
           <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-3">
@@ -42,10 +44,12 @@ export default function CaseStudies() {
 
         {/* SurfBank — Featured flagship card */}
         <motion.article
-          initial={{ opacity: 0, y: 24 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="relative rounded-2xl border border-primary/40 bg-surface overflow-hidden mb-6 group hover:border-primary/50 transition-all duration-300 shadow-xl shadow-primary/10 ring-1 ring-primary/20"
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={viewportOnce}
+          whileHover={{ y: -6, transition: { duration: 0.3, ease: EASE } }}
+          className="relative rounded-2xl border border-primary/40 bg-surface overflow-hidden mb-6 group hover:border-primary/50 hover:shadow-2xl hover:shadow-primary/20 transition-colors duration-300 shadow-xl shadow-primary/10 ring-1 ring-primary/20"
         >
           <div className="grid grid-cols-1 lg:grid-cols-2">
             <div className="relative h-64 lg:h-auto min-h-[300px]">
@@ -97,15 +101,19 @@ export default function CaseStudies() {
         </motion.article>
 
         {/* Other 3 case studies */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-          {others.map((project, idx) => (
+        <motion.div
+          variants={stagger(0.09)}
+          initial="hidden"
+          whileInView="show"
+          viewport={viewportOnce}
+          className="grid grid-cols-1 md:grid-cols-3 gap-5"
+        >
+          {others.map((project) => (
             <motion.article
               key={project.title}
-              initial={{ opacity: 0, y: 22 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: idx * 0.07 }}
-              viewport={{ once: true }}
-              className="rounded-2xl border border-border bg-surface overflow-hidden flex flex-col hover:border-primary/25 hover:bg-primary/[0.02] transition-all duration-200 group"
+              variants={riseIn}
+              whileHover={{ y: -6, transition: { duration: 0.3, ease: EASE } }}
+              className="rounded-2xl border border-border bg-surface overflow-hidden flex flex-col hover:border-primary/25 hover:bg-primary/[0.02] hover:shadow-xl hover:shadow-black/25 transition-colors duration-300 group"
             >
               <div className="relative h-44 w-full overflow-hidden">
                 <Image
@@ -138,15 +146,15 @@ export default function CaseStudies() {
               </div>
             </motion.article>
           ))}
-        </div>
+        </motion.div>
 
         <div className="flex items-center justify-center mt-8">
           <a
             href="/case-studies"
-            className="inline-flex items-center gap-2 px-6 py-3 border border-border text-textSecondary rounded-xl font-semibold hover:border-primary/30 hover:text-textPrimary hover:bg-primary/5 transition-all duration-200 text-sm"
+            className="group inline-flex items-center gap-2 px-6 py-3 border border-border text-textSecondary rounded-xl font-semibold hover:border-primary/30 hover:text-textPrimary hover:bg-primary/5 active:scale-[0.98] transition-all duration-300 ease-out text-sm"
           >
             View All Case Studies
-            <FiArrowRight className="text-xs" />
+            <FiArrowRight className="group-hover:translate-x-1 transition-transform duration-300 ease-out text-xs" />
           </a>
         </div>
       </div>

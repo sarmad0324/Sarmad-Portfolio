@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/useInView";
+import { fadeUp, riseIn, stagger, viewportOnce, EASE } from "@/lib/anim";
 import { FiAlertTriangle, FiClock, FiCode, FiUser, FiLayers, FiZap, FiTrendingUp } from "react-icons/fi";
 
 const painPoints = [
@@ -42,9 +43,10 @@ export default function WhenFoundersBringMeIn() {
     <section ref={ref} id="when-founders" className="px-6 py-16 md:py-20">
       <div className="max-w-7xl mx-auto">
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={viewportOnce}
           className="mb-10"
         >
           <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-3">
@@ -58,23 +60,27 @@ export default function WhenFoundersBringMeIn() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-          {painPoints.map((point, idx) => (
+        <motion.div
+          variants={stagger(0.07)}
+          initial="hidden"
+          whileInView="show"
+          viewport={viewportOnce}
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
+        >
+          {painPoints.map((point) => (
             <motion.div
               key={point.text}
-              initial={{ opacity: 0, y: 18 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: idx * 0.06 }}
-              viewport={{ once: true }}
-              className="group flex items-start gap-4 rounded-xl border border-border bg-surface px-5 py-5 hover:border-primary/30 hover:bg-primary/[0.04] transition-all duration-200"
+              variants={riseIn}
+              whileHover={{ y: -6, transition: { duration: 0.3, ease: EASE } }}
+              className="group flex items-start gap-4 rounded-xl border border-border bg-surface px-5 py-5 hover:border-primary/30 hover:bg-primary/[0.04] hover:shadow-lg hover:shadow-black/20 transition-colors duration-300 ease-out"
             >
-              <div className="shrink-0 w-8 h-8 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center mt-0.5 group-hover:bg-primary/15 transition-colors">
+              <div className="shrink-0 w-8 h-8 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center mt-0.5 group-hover:bg-primary/15 group-hover:scale-110 transition-all duration-300 ease-out">
                 <point.icon className="text-primary text-sm" />
               </div>
               <p className="text-sm text-textSecondary leading-relaxed">{point.text}</p>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
