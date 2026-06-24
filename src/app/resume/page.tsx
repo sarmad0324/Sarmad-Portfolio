@@ -4,11 +4,11 @@ import { BRAND, SITE_URL, DEFAULT_OG_IMAGE } from "@/lib/seo";
 export const metadata: Metadata = {
   title: "Resume",
   description:
-    "Access Sarmad Irfan's resume for product engineer and technical partner roles. Hands-on execution across web, mobile, backend, and AI workflows.",
+    "Access Sarmad Irfan's resume — technical partner and fractional CTO for early-stage founders. Founder-level execution across web, mobile, backend, and AI workflows.",
   openGraph: {
     title: `Resume | ${BRAND.name}`,
     description:
-      "Resume for product engineer and technical partner roles. Experience across logistics, fintech, and digital platforms.",
+      "Resume for technical partner and fractional CTO engagements. Experience across logistics, fintech, and digital platforms.",
     url: `${SITE_URL}/resume`,
     siteName: BRAND.name,
     images: [{ url: DEFAULT_OG_IMAGE, alt: `${BRAND.name} - ${BRAND.role}`, width: 1200, height: 630 }],
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: `Resume | ${BRAND.name}`,
-    description: "Resume for product engineer and technical partner roles.",
+    description: "Resume for technical partner and fractional CTO engagements.",
     images: [DEFAULT_OG_IMAGE],
   },
   alternates: { canonical: `${SITE_URL}/resume` },
@@ -28,7 +28,7 @@ export default function ResumePage() {
       <section className="max-w-3xl mx-auto rounded-2xl border border-border bg-surface p-8 md:p-10 text-center shadow-sm">
         <h1 className="text-3xl font-bold text-textPrimary">Resume</h1>
         <p className="text-textSecondary mt-3">
-          Access my latest resume for product engineer and technical partner roles.
+          Access my latest resume — technical partner and fractional CTO for early-stage founders.
         </p>
         <a
           href="https://drive.google.com/file/d/1F5TVWgadnUpHgqp9Hxkvd7T2LTkELaBg/view?usp=sharing"

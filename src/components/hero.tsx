@@ -18,9 +18,10 @@ const socials = [
 ];
 
 const stats = [
-  { value: "4+", label: "Years in production" },
-  { value: "5+", label: "Products shipped" },
-  { value: "3", label: "Continents served" },
+  { value: "5+", label: "Years in production" },
+  { value: "6+", label: "Products shipped" },
+  { value: "3", label: "Continents" },
+  { value: "Audit→build", label: "Execution partner" },
 ];
 
 export default function Hero() {
@@ -41,17 +42,17 @@ export default function Hero() {
           <div>
             <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary/10 text-primary font-semibold text-xs border border-primary/20">
               <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-              Open to new projects
+              Technical partner for founders
             </span>
           </div>
 
           {/* Headline */}
           <div className="space-y-4">
             <h1 className="text-4xl sm:text-5xl md:text-[3.4rem] font-bold leading-[1.08] text-textPrimary font-Sora">
-              I fix broken products and ship what stalled.
+              The technical partner founders bring in when the product has to ship.
             </h1>
-            <p className="text-base sm:text-lg text-textSecondary leading-relaxed max-w-lg">
-              Technical partner for founders who need real execution — not just a developer. I take ownership of messy, delayed, or stalled products and move them to ship-ready across web, mobile, and backend.
+            <p className="text-base sm:text-lg text-textSecondary leading-relaxed max-w-xl">
+              I work with early-stage founders who don&apos;t have a technical co-founder, turning stalled, fragile, or half-built products into something that ships — and scales. Start with a paid Technical Audit; leave with a clear roadmap and someone who can actually execute it.
             </p>
           </div>
 
@@ -72,11 +73,11 @@ export default function Hero() {
           </div>
 
           {/* Stats */}
-          <div className="flex items-center gap-6 py-1">
+          <div className="flex flex-wrap items-center gap-x-5 gap-y-3 py-1">
             {stats.map((stat, i) => (
-              <div key={stat.label} className="flex items-center gap-6">
+              <div key={stat.label} className="flex items-center gap-5">
                 <div>
-                  <p className="text-2xl font-bold text-textPrimary font-Sora">{stat.value}</p>
+                  <p className="text-xl sm:text-2xl font-bold text-textPrimary font-Sora">{stat.value}</p>
                   <p className="text-xs text-textMuted mt-0.5">{stat.label}</p>
                 </div>
                 {i < stats.length - 1 && (
@@ -92,16 +93,16 @@ export default function Hero() {
               href="https://calendly.com/sarmad-sarmadirfan/30min"
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-primary text-white rounded-xl font-semibold hover:bg-primaryHover transition-all duration-200 text-sm shadow-lg shadow-primary/20"
+              className="group inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-primary text-white rounded-xl font-semibold hover:bg-primaryHover active:scale-[0.98] transition-all duration-200 text-sm shadow-lg shadow-primary/20"
             >
-              Book a Free Call
+              Book a 20-min fit call
               <FaArrowRight className="group-hover:translate-x-1 transition-transform text-xs" />
             </a>
             <a
-              href="#projects"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 border border-border text-textSecondary rounded-xl font-semibold hover:border-primary/30 hover:text-textPrimary hover:bg-primary/5 transition-all duration-200 text-sm"
+              href="/case-studies/surfbank"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 border border-border text-textSecondary rounded-xl font-semibold hover:border-primary/30 hover:text-textPrimary hover:bg-primary/5 active:scale-[0.98] transition-all duration-200 text-sm"
             >
-              See My Work
+              See the SurfBank audit
             </a>
           </div>
         </motion.div>

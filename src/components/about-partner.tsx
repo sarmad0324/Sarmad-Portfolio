@@ -14,9 +14,9 @@ const stack = [
 ];
 
 const credentialBadges = [
-  { label: "Geeks for Growth", note: "Senior Engineer" },
-  { label: "4+ Years", note: "Production delivery" },
-  { label: "Dubai · US · Nigeria", note: "International clients" },
+  { label: "Acting CTO", note: "SurfBank trial" },
+  { label: "5+ Years", note: "Production delivery" },
+  { label: "Dubai · US · Germany", note: "International founders" },
 ];
 
 export default function AboutPartner() {
@@ -66,14 +66,14 @@ export default function AboutPartner() {
             <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-3">
               About me
             </p>
-            <h2 className="text-3xl sm:text-4xl font-bold text-textPrimary font-Sora mb-4">
-              I&apos;m not just a developer. I&apos;m a technical partner.
+            <h2 className="text-3xl sm:text-4xl font-bold text-textPrimary font-Sora mb-4 tracking-tight">
+              More than a developer — the technical leader your build doesn&apos;t have yet.
             </h2>
             <p className="text-textSecondary text-base leading-relaxed">
-              I work with founders and lean teams as a product engineer and technical partner. My focus is real execution — not just writing code, but owning delivery decisions, scoping features correctly, and making sure the right things get shipped.
+              I work with early-stage founders as a technical partner and fractional CTO — especially the ones without a technical co-founder. My job isn&apos;t to take tickets. It&apos;s to own the decisions that actually move a product: what to build, what to fix first, how to architect it so it scales, and how to ship it without stalling.
             </p>
             <p className="text-textSecondary text-base leading-relaxed mt-3">
-              Previously worked with international teams including <span className="text-textPrimary font-semibold">Geeks for Growth</span>. Currently working with clients across logistics, fintech, recovery platforms, and digital commerce.
+              I lead with judgment, not just tools. I&apos;ve shipped products across logistics, fintech, recovery platforms, and digital commerce, and run a CTO-level audit and Release 2.0 strategy for a multi-platform product (<span className="text-textPrimary font-semibold">SurfBank</span>). Previously worked with international teams including <span className="text-textPrimary font-semibold">Geeks for Growth</span>.
             </p>
           </div>
 

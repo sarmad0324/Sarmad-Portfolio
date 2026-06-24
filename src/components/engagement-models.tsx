@@ -8,23 +8,23 @@ const steps = [
   {
     number: "01",
     icon: FiPhone,
-    title: "Book a Discovery Call",
+    title: "Book a fit call",
     description:
-      "We do a free 30-minute call. You tell me what's broken, stalled, or needed. I ask the right questions to understand your product and bottleneck.",
+      "Free 20 minutes. You tell me what's stuck, fragile, or unbuilt — and I tell you honestly whether I'm the right person to help.",
   },
   {
     number: "02",
     icon: FiFileText,
-    title: "Scoped Proposal",
+    title: "Start with an Audit",
     description:
-      "I come back with a clear scope, recommended approach, and a first sprint plan. No ambiguity — you know exactly what gets built and when.",
+      "A paid, written diagnosis of your product, architecture, and roadmap. What's slowing you down, what to fix first, and a prioritized plan you own. No ambiguity.",
   },
   {
     number: "03",
     icon: FiTrendingUp,
-    title: "Execute & Own",
+    title: "Execute & own",
     description:
-      "I step in, take ownership of delivery, and keep you updated weekly. You have a direct line — no account managers, no delays, just execution.",
+      "I step in on a focused sprint or as your ongoing technical partner and move the product forward — taking ownership of delivery, with weekly updates and a direct line to me.",
   },
 ];
 
@@ -47,7 +47,7 @@ export default function EngagementModels() {
             How it works
           </h2>
           <p className="mt-3 text-base text-textSecondary max-w-xl">
-            Three steps from first message to product moving again.
+            Audit-led, ownership-driven. Three steps from first call to a product that&apos;s actually moving.
           </p>
         </motion.div>
 
@@ -91,9 +91,9 @@ export default function EngagementModels() {
             href="https://calendly.com/sarmad-sarmadirfan/30min"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center px-7 py-3.5 bg-primary text-white rounded-xl font-semibold hover:bg-primaryHover transition-all duration-200 text-sm shadow-lg shadow-primary/20"
+            className="inline-flex items-center justify-center px-7 py-3.5 bg-primary text-white rounded-xl font-semibold hover:bg-primaryHover active:scale-[0.98] transition-all duration-200 text-sm shadow-lg shadow-primary/20"
           >
-            Start with a Free Call
+            Book a 20-min fit call
           </a>
         </motion.div>
       </div>

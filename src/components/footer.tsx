@@ -21,7 +21,7 @@ export default function Footer() {
             <p className="text-textPrimary font-bold text-lg font-Sora">
               Sarmad<span className="text-primary">.</span>
             </p>
-            <p className="text-primary text-sm font-semibold">Technical Partner & Product Engineer</p>
+            <p className="text-primary text-sm font-semibold">Technical Partner & Fractional CTO for Founders</p>
             <p className="text-textMuted text-xs">Based in Lahore — working internationally</p>
           </div>
 

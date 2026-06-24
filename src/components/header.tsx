@@ -86,7 +86,7 @@ export default function Header({ links }: HeaderProps) {
                     href='https://calendly.com/sarmad-sarmadirfan/30min'
                     target="_blank"
                     rel="noopener noreferrer"
-                    className='flex items-center gap-2 px-4 py-2 rounded-full font-semibold text-sm text-white transition-all bg-primary hover:bg-primaryHover focus:ring-2 focus:ring-primary/50 focus:outline-none shadow-lg shadow-primary/20'
+                    className='flex items-center gap-2 px-4 py-2 rounded-full font-semibold text-sm text-white transition-all bg-primary hover:bg-primaryHover active:scale-[0.97] focus:ring-2 focus:ring-primary/50 focus:outline-none shadow-lg shadow-primary/20'
                 >
                     Book a Call
                 </a>

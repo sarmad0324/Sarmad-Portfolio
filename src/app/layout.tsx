@@ -17,9 +17,9 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: { default: BRAND.title, template: `%s | ${BRAND.name}` },
   description:
-    "Hands-on product execution across web, mobile, backend, and AI-powered workflows for founders and lean teams.",
+    "Technical partner and fractional CTO for early-stage founders without a technical co-founder. Start with a paid Technical Audit, then build, fix, and scale your product across web, mobile, backend, and AI-powered workflows.",
   keywords:
-    "product engineer, technical partner, React, React Native, Next.js, Node.js, PostgreSQL, MVP build, app stabilization, fractional technical partner",
+    "fractional CTO, technical partner, technical co-founder, technical audit, product engineer, startup CTO, React, React Native, Next.js, Node.js, MVP build, app stabilization",
   authors: [{ name: BRAND.name }],
   creator: BRAND.name,
   publisher: BRAND.name,
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: BRAND.title,
     description:
-      "I help teams build, fix, and scale digital products. Hands-on execution across web, mobile, backend, and AI-powered workflows.",
+      "Technical partner and fractional CTO for early-stage founders. Start with a paid Technical Audit, then build, fix, and scale your product — with someone who owns the execution.",
     url: SITE_URL,
     siteName: BRAND.name,
     locale: "en_US",
@@ -48,7 +48,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: BRAND.title,
     description:
-      "I help startups build, fix, and scale digital products. Product engineer and technical partner for founders and lean teams.",
+      "Technical partner and fractional CTO for early-stage founders. Audit-led engagements that turn stalled, fragile, or half-built products into something that ships.",
     images: [DEFAULT_OG_IMAGE],
   },
   alternates: {

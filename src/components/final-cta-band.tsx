@@ -26,15 +26,15 @@ export default function FinalCtaBand() {
               <span className="text-primary">Let&apos;s fix it.</span>
             </h2>
             <p className="text-textSecondary text-base md:text-lg leading-relaxed mb-8 max-w-lg mx-auto">
-              Book a free 30-minute call. No pitch, no pressure — just a direct conversation about what&apos;s blocked and what needs to move.
+              Book a free 20-minute fit call. No pitch, no pressure — just a direct conversation about what&apos;s blocked and what needs to move. Most founders start with a paid Technical Audit.
             </p>
             <a
               href="https://calendly.com/sarmad-sarmadirfan/30min"
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center gap-2 px-8 py-4 bg-primary text-white rounded-xl font-bold hover:bg-primaryHover transition-all duration-200 text-sm shadow-xl shadow-primary/25"
+              className="group inline-flex items-center gap-2 px-8 py-4 bg-primary text-white rounded-xl font-bold hover:bg-primaryHover active:scale-[0.98] transition-all duration-200 text-sm shadow-xl shadow-primary/25"
             >
-              Book a Free Call
+              Book a 20-min fit call
               <FiArrowRight className="group-hover:translate-x-1 transition-transform" />
             </a>
           </div>

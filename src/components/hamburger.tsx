@@ -14,9 +14,27 @@ const HamburgerMenu: React.FC<HamburgerMenuProps> = ({ links }) => {
     const { activeSection, setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
 
     return (
-        <div className="md:hidden top-4 right-4 fixed w-56 z-[999] flex flex-col items-end gap-2">
+        <>
+            {/* Click-outside backdrop */}
+            <AnimatePresence>
+                {isOpen && (
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        exit={{ opacity: 0 }}
+                        transition={{ duration: 0.18 }}
+                        onClick={() => setIsOpen(false)}
+                        aria-hidden="true"
+                        className="md:hidden fixed inset-0 z-[998] bg-bg/40 backdrop-blur-[2px]"
+                    />
+                )}
+            </AnimatePresence>
+
+            <div className="md:hidden top-4 right-4 fixed w-56 z-[999] flex flex-col items-end gap-2">
             <motion.button
                 whileTap={{ scale: 0.9 }}
+                aria-label={isOpen ? "Close menu" : "Open menu"}
+                aria-expanded={isOpen}
                 className="bg-surface w-11 h-11 border border-border shadow-lg rounded-full flex items-center justify-center backdrop-blur-md"
             >
                 <Hamburger
@@ -69,7 +87,8 @@ const HamburgerMenu: React.FC<HamburgerMenuProps> = ({ links }) => {
                     </motion.div>
                 )}
             </AnimatePresence>
-        </div>
+            </div>
+        </>
     )
 }
 

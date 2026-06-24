@@ -6,11 +6,11 @@ import { BRAND, SITE_URL, DEFAULT_OG_IMAGE } from "@/lib/seo";
 export const metadata: Metadata = {
   title: "About",
   description:
-    "Learn about Sarmad Irfan, Product Engineer & Technical Partner. Hands-on execution across web, mobile, backend, and AI-powered workflows for founders and lean teams.",
+    "Sarmad Irfan — technical partner and fractional CTO for early-stage founders without a technical co-founder. Founder-level ownership of product execution across web, mobile, backend, and AI-powered workflows.",
   openGraph: {
     title: `About | ${BRAND.name}`,
     description:
-      "Product engineer and technical partner focused on real execution. Experience across logistics, fintech, recovery platforms, and digital commerce.",
+      "Technical partner and fractional CTO focused on owning product execution. Experience across logistics, fintech, recovery platforms, and digital commerce.",
     url: `${SITE_URL}/about`,
     siteName: BRAND.name,
     images: [{ url: DEFAULT_OG_IMAGE, alt: `${BRAND.name} - ${BRAND.role}`, width: 1200, height: 630 }],
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: `About | ${BRAND.name}`,
-    description: "Product engineer and technical partner for founders and lean teams. Hands-on across web, mobile, backend, and AI workflows.",
+    description: "Technical partner and fractional CTO for early-stage founders. Founder-level ownership across web, mobile, backend, and AI workflows.",
     images: [DEFAULT_OG_IMAGE],
   },
   alternates: { canonical: `${SITE_URL}/about` },

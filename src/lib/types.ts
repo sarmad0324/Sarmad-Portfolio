@@ -19,8 +19,18 @@ export type ProjectInfo = {
     proofBullets?: string[];
     capabilityLine?: string;
     outcomeShort?: string;
+    /** Optional ribbon shown on the homepage card and case-study header (e.g. "Featured · Paid Technical Audit"). */
+    featuredBadge?: string;
+    /** Overrides the default "Technical Delivery" heading for advisory engagements (e.g. "Key Findings & Recommendations"). */
+    deliveryHeading?: string;
+    /** Optional bottom-of-page CTA label; when set, replaces the default "Discuss Your Project" CTA. */
+    ctaLabel?: string;
+    /** Destination for the optional bottom CTA (defaults to the contact section). */
+    ctaHref?: string;
     tags: string[];
     imageUrl: string;
+    /** Optional additional images shown as a gallery on the case-study detail page. */
+    gallery?: { src: string; alt: string; orientation?: "landscape" | "portrait" }[];
     link: string;
     linkLabel?: string;
 }

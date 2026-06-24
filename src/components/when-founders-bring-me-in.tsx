@@ -2,32 +2,36 @@
 
 import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/useInView";
-import { FiAlertTriangle, FiClock, FiCode, FiUser, FiLayers, FiZap } from "react-icons/fi";
+import { FiAlertTriangle, FiClock, FiCode, FiUser, FiLayers, FiZap, FiTrendingUp } from "react-icons/fi";
 
 const painPoints = [
   {
-    icon: FiAlertTriangle,
-    text: "Product is breaking in production — bugs are piling up with no clear owner",
-  },
-  {
-    icon: FiClock,
-    text: "Delivery keeps slipping — deadlines are missed and scope never gets locked",
-  },
-  {
-    icon: FiCode,
-    text: "Codebase is fragile — every change breaks something else",
+    icon: FiTrendingUp,
+    text: "You've raised, but you have no technical leader owning the build.",
   },
   {
     icon: FiUser,
-    text: "No one owns technical decisions — execution is leaderless",
-  },
-  {
-    icon: FiLayers,
-    text: "Frontend, backend, and integrations are disconnected — nothing works as one system",
+    text: "No one owns the technical decisions — the build has no leader.",
   },
   {
     icon: FiZap,
-    text: "MVP is half-built or stalled — you've hired but nothing ships",
+    text: "Your MVP is half-built or stalled — you've hired, but nothing ships.",
+  },
+  {
+    icon: FiAlertTriangle,
+    text: "Your product keeps breaking in production — and no one owns the fix.",
+  },
+  {
+    icon: FiClock,
+    text: "Delivery keeps slipping — deadlines pass, scope never locks.",
+  },
+  {
+    icon: FiCode,
+    text: "The codebase is fragile — every change breaks something else.",
+  },
+  {
+    icon: FiLayers,
+    text: "Frontend, backend, and integrations don't add up to one system.",
   },
 ];
 
@@ -50,7 +54,7 @@ export default function WhenFoundersBringMeIn() {
             When founders bring me in
           </h2>
           <p className="mt-3 text-base text-textSecondary max-w-xl">
-            These are the exact situations I step into and fix.
+            These are the exact moments founders bring me in — to take ownership and move the product forward.
           </p>
         </motion.div>
 

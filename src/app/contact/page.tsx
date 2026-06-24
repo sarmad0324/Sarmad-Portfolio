@@ -5,11 +5,11 @@ import { BRAND, SITE_URL, DEFAULT_OG_IMAGE } from "@/lib/seo";
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Get in touch with Sarmad Irfan for product engineering, MVP builds, app stabilization, or fractional technical partnership. Book a call or send a message.",
+    "Get in touch with Sarmad Irfan for a Technical Audit, a Build & Stabilize sprint, or an ongoing technical partner / fractional CTO engagement. Book a 20-min fit call or send a message.",
   openGraph: {
     title: `Contact | ${BRAND.name}`,
     description:
-      "Discuss your product. Book a call or reach out via email. Product engineer and technical partner for startups and lean teams.",
+      "Discuss your product. Book a 20-min fit call or reach out via email. Technical partner and fractional CTO for early-stage founders.",
     url: `${SITE_URL}/contact`,
     siteName: BRAND.name,
     images: [{ url: DEFAULT_OG_IMAGE, alt: `${BRAND.name} - ${BRAND.role}`, width: 1200, height: 630 }],

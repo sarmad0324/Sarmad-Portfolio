@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: `Case Studies | ${BRAND.name}`,
     description:
-      "Product execution across fintech, logistics, and platform delivery. Case studies from product engineer and technical partner.",
+      "Product execution across fintech, logistics, and platform delivery — including a CTO-level technical audit. Case studies from a technical partner and fractional CTO.",
     url: `${SITE_URL}/case-studies`,
     siteName: BRAND.name,
     images: [{ url: DEFAULT_OG_IMAGE, alt: `${BRAND.name} - Case Studies`, width: 1200, height: 630 }],
@@ -56,6 +56,13 @@ export default function CaseStudiesPage() {
                   className="object-cover group-hover:scale-[1.03] transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-surface/70 to-transparent" />
+                {project.featuredBadge && (
+                  <div className="absolute top-3 left-4">
+                    <span className="text-[10px] font-bold px-2.5 py-1 rounded-full bg-primary text-white shadow-lg shadow-primary/20">
+                      {project.featuredBadge}
+                    </span>
+                  </div>
+                )}
                 {project.role && (
                   <div className="absolute bottom-3 left-4">
                     <span className="text-[10px] font-bold px-2.5 py-1 rounded-full bg-primary/20 text-primary border border-primary/30 backdrop-blur-sm">

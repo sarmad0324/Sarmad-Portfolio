@@ -94,6 +94,13 @@ export default function CaseStudyDetailPage({ params }: Props) {
 
         {/* Header */}
         <header className="mb-10">
+          {project.featuredBadge && (
+            <div className="mb-4">
+              <span className="inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1.5 rounded-full bg-primary text-white shadow-lg shadow-primary/20">
+                {project.featuredBadge}
+              </span>
+            </div>
+          )}
           <div className="flex flex-wrap gap-2 mb-4">
             {project.role && (
               <span className="text-xs font-bold px-3 py-1 rounded-full bg-primary/10 text-primary border border-primary/20">
@@ -121,6 +128,28 @@ export default function CaseStudyDetailPage({ params }: Props) {
             <p className="text-textPrimary font-medium text-sm leading-relaxed">
               {project.outcomeShort ?? project.outcome}
             </p>
+          </div>
+        )}
+
+        {/* Gallery */}
+        {project.gallery && project.gallery.length > 0 && (
+          <div className="mb-12 grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {project.gallery.map((shot) => (
+              <div
+                key={shot.src}
+                className={`relative overflow-hidden rounded-xl border border-border bg-surface ${
+                  shot.orientation === "portrait" ? "aspect-[9/16] sm:max-w-[260px] sm:mx-auto" : "aspect-[16/10]"
+                }`}
+              >
+                <Image
+                  src={shot.src}
+                  fill
+                  alt={shot.alt}
+                  className="object-cover object-top"
+                  sizes="(max-width: 640px) 100vw, 50vw"
+                />
+              </div>
+            ))}
           </div>
         )}
 
@@ -161,7 +190,7 @@ export default function CaseStudyDetailPage({ params }: Props) {
               <section>
                 <h2 className="text-textPrimary font-bold text-xl font-Sora mb-3 flex items-center gap-2">
                   <span className="w-1 h-5 rounded-full bg-primary inline-block" />
-                  Technical Delivery
+                  {project.deliveryHeading ?? "Technical Delivery"}
                 </h2>
                 <p className="text-base leading-relaxed">{project.whatIBuilt}</p>
               </section>
@@ -294,13 +323,25 @@ export default function CaseStudyDetailPage({ params }: Props) {
             <FiArrowLeft className="text-xs" />
             All Case Studies
           </Link>
-          <Link
-            href="/#contact"
-            className="inline-flex items-center justify-center gap-2 px-5 py-3 border border-primary/30 text-primary rounded-xl font-semibold hover:bg-primary/5 transition-all duration-200 text-sm"
-          >
-            Discuss Your Project
-            <FiArrowRight className="text-xs" />
-          </Link>
+          {project.ctaLabel ? (
+            <a
+              href={project.ctaHref ?? "/#contact"}
+              target={project.ctaHref?.startsWith("http") ? "_blank" : undefined}
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center gap-2 px-5 py-3 bg-primary text-white rounded-xl font-semibold hover:bg-primaryHover transition-all duration-200 text-sm shadow-lg shadow-primary/20"
+            >
+              {project.ctaLabel}
+              <FiArrowRight className="text-xs" />
+            </a>
+          ) : (
+            <Link
+              href="/#contact"
+              className="inline-flex items-center justify-center gap-2 px-5 py-3 border border-primary/30 text-primary rounded-xl font-semibold hover:bg-primary/5 transition-all duration-200 text-sm"
+            >
+              Discuss Your Project
+              <FiArrowRight className="text-xs" />
+            </Link>
+          )}
         </div>
       </article>
     </main>

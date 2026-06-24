@@ -130,10 +130,10 @@ const Contact = () => {
             className="rounded-2xl border border-border bg-surface p-6 md:p-8 flex flex-col"
           >
             <h3 className="text-xl font-bold text-textPrimary font-Sora mb-2">
-              Tell me what&apos;s broken or blocked.
+              Tell me what&apos;s stuck — or what you&apos;re trying to build.
             </h3>
             <p className="text-sm text-textSecondary leading-relaxed mb-8">
-              Share what you&apos;re building, where execution is stuck, and your timeline. I&apos;ll review and get back with next steps — usually within 24 hours.
+              Share what you&apos;re building, where execution is stuck, and your timeline. I&apos;ll review and get back with next steps — usually within 24 hours. Most engagements start with a paid Technical Audit.
             </p>
 
             <div className="space-y-1 flex-1">
@@ -158,7 +158,7 @@ const Contact = () => {
               className="mt-6 inline-flex items-center justify-center gap-2 px-5 py-3.5 bg-primary text-white rounded-xl text-sm font-bold hover:bg-primaryHover transition-all duration-200 shadow-lg shadow-primary/20"
             >
               <FiCalendar className="text-sm" />
-              Book a Free Call
+              Book a 20-min fit call
             </a>
           </motion.div>
 
@@ -208,10 +208,10 @@ const Contact = () => {
                   required
                 >
                   <option value="">— Select an option —</option>
-                  <option value="Fix & Stabilize">Fix &amp; Stabilize — my product is broken</option>
-                  <option value="MVP Build">MVP Build — I need to ship version one</option>
-                  <option value="Technical Partner">Technical Partner — ongoing retainer</option>
-                  <option value="Other">Other / Not sure yet</option>
+                  <option value="Technical Audit">Technical Audit — diagnose what to fix or build</option>
+                  <option value="Build & Stabilize">Build &amp; Stabilize — ship or fix the product</option>
+                  <option value="Technical Partner">Technical Partner — ongoing / fractional CTO</option>
+                  <option value="Not sure yet">Not sure yet</option>
                 </select>
               </label>
               <label className="flex flex-col gap-1.5">
@@ -229,7 +229,7 @@ const Contact = () => {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full bg-primary hover:bg-primaryHover text-white py-3.5 px-6 rounded-xl font-bold text-sm transition-all duration-200 focus:ring-2 focus:ring-primary/50 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed shadow-lg shadow-primary/20"
+                className="w-full bg-primary hover:bg-primaryHover active:scale-[0.99] text-white py-3.5 px-6 rounded-xl font-bold text-sm transition-all duration-200 focus:ring-2 focus:ring-primary/50 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed disabled:active:scale-100 shadow-lg shadow-primary/20"
               >
                 {loading ? "Sending..." : "Send Message"}
               </button>

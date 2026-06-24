@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Hero from "@/components/hero";
+import TechMarquee from "@/components/tech-marquee";
 import WhenFoundersBringMeIn from "@/components/when-founders-bring-me-in";
 import Offers from "@/components/offers";
 import CaseStudies from "@/components/case-studies";
@@ -13,11 +14,11 @@ import { BRAND, SITE_URL, DEFAULT_OG_IMAGE } from "@/lib/seo";
 export const metadata: Metadata = {
   title: BRAND.title,
   description:
-    "I step in when product execution is slow, messy, or blocked. I work with founders and lean teams to build, fix, and scale digital products across web, mobile, backend, and AI-powered workflows.",
+    "The technical partner founders bring in when the product has to ship. I work with early-stage founders without a technical co-founder — starting with a paid Technical Audit, then building, fixing, and scaling across web, mobile, backend, and AI-powered workflows.",
   openGraph: {
     title: BRAND.title,
     description:
-      "I step in when product execution is slow, messy, or blocked. Hands-on delivery, clearer technical direction, less wasted momentum.",
+      "The technical partner founders bring in when the product has to ship. Audit-first engagements, then hands-on execution and ongoing technical leadership.",
     url: SITE_URL,
     siteName: BRAND.name,
     images: [{ url: DEFAULT_OG_IMAGE, alt: `${BRAND.name} - ${BRAND.role}`, width: 1200, height: 630 }],
@@ -25,7 +26,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: BRAND.title,
-    description: "I step in when product execution is slow, messy, or blocked. Hands-on delivery across web, mobile, backend, and AI-powered workflows.",
+    description: "The technical partner founders bring in when the product has to ship. Start with a paid Technical Audit, leave with a roadmap and someone who can execute it.",
     images: [DEFAULT_OG_IMAGE],
   },
   alternates: { canonical: SITE_URL },
@@ -35,6 +36,7 @@ export default function Home() {
   return (
     <main className="flex flex-col">
       <Hero />
+      <TechMarquee />
       <WhenFoundersBringMeIn />
       <Offers />
       <CaseStudies />

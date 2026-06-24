@@ -9,8 +9,14 @@ import { useSectionInView } from "@/lib/useInView";
 export default function CaseStudies() {
   const { ref } = useSectionInView("#projects", 0.35);
 
-  const truckwise = projectsData.find((p) => p.slug === "truckwise")!;
-  const others = ["triangle-wallets", "ezrecova", "exact-printo"]
+  const featured = projectsData.find((p) => p.slug === "surfbank")!;
+  const featuredMetrics = [
+    "30-day Acting CTO trial",
+    "Audited web, backend, mobile & extension",
+    "Search-first AI strategy",
+    "Release 2.0 roadmap — modernize, don't rewrite",
+  ];
+  const others = ["truckwise", "triangle-wallets", "ezrecova"]
     .map((slug) => projectsData.find((p) => p.slug === slug))
     .filter(Boolean) as typeof projectsData;
 
@@ -34,46 +40,45 @@ export default function CaseStudies() {
           </p>
         </motion.div>
 
-        {/* TruckWise — Featured hero card */}
+        {/* SurfBank — Featured flagship card */}
         <motion.article
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="relative rounded-2xl border border-primary/25 bg-surface overflow-hidden mb-6 group hover:border-primary/40 transition-all duration-300"
+          className="relative rounded-2xl border border-primary/40 bg-surface overflow-hidden mb-6 group hover:border-primary/50 transition-all duration-300 shadow-xl shadow-primary/10 ring-1 ring-primary/20"
         >
           <div className="grid grid-cols-1 lg:grid-cols-2">
-            <div className="relative h-64 lg:h-auto min-h-[280px]">
+            <div className="relative h-64 lg:h-auto min-h-[300px]">
               <Image
-                src={truckwise.imageUrl}
+                src={featured.imageUrl}
                 fill
-                alt={truckwise.title}
+                alt={featured.title}
                 className="object-cover group-hover:scale-[1.02] transition-transform duration-500"
                 sizes="(max-width: 1024px) 100vw, 50vw"
               />
               <div className="absolute inset-0 bg-gradient-to-r from-transparent to-surface/60 hidden lg:block" />
+              {featured.featuredBadge && (
+                <div className="absolute top-4 left-4">
+                  <span className="inline-flex items-center text-[11px] font-bold px-3 py-1.5 rounded-full bg-primary text-white shadow-lg shadow-primary/30">
+                    {featured.featuredBadge}
+                  </span>
+                </div>
+              )}
             </div>
             <div className="p-7 md:p-10 flex flex-col justify-center">
               <div className="flex items-center gap-2 mb-4">
-                <span className="text-[11px] font-bold px-2.5 py-1 rounded-full bg-primary/15 text-primary border border-primary/25">
-                  Featured Project
-                </span>
                 <span className="text-[11px] font-semibold px-2.5 py-1 rounded-full bg-surface2 text-textMuted border border-border">
-                  {truckwise.role}
+                  {featured.role}
                 </span>
               </div>
               <h3 className="text-2xl md:text-3xl font-bold text-textPrimary font-Sora mb-3">
-                {truckwise.title}
+                {featured.title}
               </h3>
               <p className="text-textSecondary text-sm leading-relaxed mb-4">
-                {truckwise.homepageSummary}
+                {featured.homepageSummary}
               </p>
               <div className="grid grid-cols-2 gap-3 mb-6">
-                {[
-                  "5+ role types unified into one platform",
-                  "2 years of continuous delivery",
-                  "Bookings, fleet, OCR, invoicing — all shipped",
-                  "Execution moved from blocked to ship-ready",
-                ].map((metric) => (
+                {featuredMetrics.map((metric) => (
                   <div key={metric} className="flex items-start gap-2 text-xs text-textSecondary">
                     <span className="text-primary mt-0.5 shrink-0">✓</span>
                     {metric}
@@ -81,7 +86,7 @@ export default function CaseStudies() {
                 ))}
               </div>
               <a
-                href="/case-studies/truckwise"
+                href="/case-studies/surfbank"
                 className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:text-primaryHover transition-colors group/link"
               >
                 Read full case study
