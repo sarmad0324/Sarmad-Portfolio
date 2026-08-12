@@ -19,9 +19,9 @@ export default function Footer() {
           {/* Brand */}
           <div className="space-y-1">
             <p className="text-textPrimary font-bold text-lg font-Sora">
-              Sarmad<span className="text-primary">.</span>
+              Sarmad Irfan
             </p>
-            <p className="text-primary text-sm font-semibold">Technical Partner & Fractional CTO for Founders</p>
+            <p className="text-primary text-sm font-semibold">Fractional CTO & Technical Partner for Founders</p>
             <p className="text-textMuted text-xs">Based in Lahore — working internationally</p>
           </div>
 

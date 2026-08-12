@@ -9,8 +9,8 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        Sora: ["Sora", "sans-serif"],
-        Inter: ["Inter", "sans-serif"],
+        Sora: ["var(--font-syne)", "system-ui", "sans-serif"],
+        Inter: ["var(--font-dm)", "system-ui", "sans-serif"],
       },
       colors: {
         bg: "var(--bg)",

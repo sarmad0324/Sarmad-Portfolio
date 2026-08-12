@@ -2,85 +2,88 @@
 
 import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/useInView";
-import { fadeUp, riseIn, stagger, viewportOnce, EASE } from "@/lib/anim";
-import { FiAlertTriangle, FiClock, FiCode, FiUser, FiLayers, FiZap, FiTrendingUp } from "react-icons/fi";
+import { fadeUp, viewportOnce, EASE } from "@/lib/anim";
 
-const painPoints = [
+const moments = [
   {
-    icon: FiTrendingUp,
-    text: "You've raised, but you have no technical leader owning the build.",
+    title: "No technical owner",
+    text: "You've raised — but nobody owns architecture, delivery, or the hard calls.",
   },
   {
-    icon: FiUser,
-    text: "No one owns the technical decisions — the build has no leader.",
+    title: "Stuck mid-build",
+    text: "The MVP is half-built. People are hired. Still nothing ships.",
   },
   {
-    icon: FiZap,
-    text: "Your MVP is half-built or stalled — you've hired, but nothing ships.",
+    title: "Production keeps breaking",
+    text: "Incidents pile up and the fix has no single owner.",
   },
   {
-    icon: FiAlertTriangle,
-    text: "Your product keeps breaking in production — and no one owns the fix.",
+    title: "Delivery never locks",
+    text: "Deadlines slip because scope never settles and leadership is thin.",
   },
   {
-    icon: FiClock,
-    text: "Delivery keeps slipping — deadlines pass, scope never locks.",
-  },
-  {
-    icon: FiCode,
-    text: "The codebase is fragile — every change breaks something else.",
-  },
-  {
-    icon: FiLayers,
-    text: "Frontend, backend, and integrations don't add up to one system.",
+    title: "Fragile foundations",
+    text: "Every change breaks something else. Velocity is fake.",
   },
 ];
 
 export default function WhenFoundersBringMeIn() {
-  const { ref } = useSectionInView("#when-founders", 0.45);
+  const { ref } = useSectionInView("#when-founders", 0.35);
 
   return (
-    <section ref={ref} id="when-founders" className="px-6 py-16 md:py-20">
-      <div className="max-w-7xl mx-auto">
-        <motion.div
-          variants={fadeUp}
-          initial="hidden"
-          whileInView="show"
-          viewport={viewportOnce}
-          className="mb-10"
-        >
-          <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-3">
-            Sound familiar?
-          </p>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-textPrimary font-Sora">
-            When founders bring me in
-          </h2>
-          <p className="mt-3 text-base text-textSecondary max-w-xl">
-            These are the exact moments founders bring me in — to take ownership and move the product forward.
-          </p>
-        </motion.div>
+    <section ref={ref} id="when-founders" className="px-6 md:px-10 py-24 md:py-32 border-t border-border">
+      <div className="max-w-[1400px] mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8">
+          <motion.div
+            variants={fadeUp}
+            initial="hidden"
+            whileInView="show"
+            viewport={viewportOnce}
+            className="lg:col-span-4 lg:sticky lg:top-28 lg:self-start"
+          >
+            <p className="section-eyebrow">Who this is for</p>
+            <h2 className="text-[clamp(2rem,4vw,3.25rem)] font-bold text-textPrimary font-Sora tracking-tight leading-[1.05]">
+              Founders bring me in when the product is at risk.
+            </h2>
+            <p className="mt-5 text-textSecondary leading-relaxed max-w-sm">
+              If one of these is true, a strategy call is worth 20 minutes.
+            </p>
+          </motion.div>
 
-        <motion.div
-          variants={stagger(0.07)}
-          initial="hidden"
-          whileInView="show"
-          viewport={viewportOnce}
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
-        >
-          {painPoints.map((point) => (
-            <motion.div
-              key={point.text}
-              variants={riseIn}
-              whileHover={{ y: -6, transition: { duration: 0.3, ease: EASE } }}
-              className="group flex items-start gap-4 rounded-xl border border-border bg-surface px-5 py-5 hover:border-primary/30 hover:bg-primary/[0.04] hover:shadow-lg hover:shadow-black/20 transition-colors duration-300 ease-out"
-            >
-              <div className="shrink-0 w-8 h-8 rounded-lg bg-primary/10 border border-primary/20 flex items-center justify-center mt-0.5 group-hover:bg-primary/15 group-hover:scale-110 transition-all duration-300 ease-out">
-                <point.icon className="text-primary text-sm" />
-              </div>
-              <p className="text-sm text-textSecondary leading-relaxed">{point.text}</p>
-            </motion.div>
-          ))}
-        </motion.div>
+          <ol className="lg:col-span-7 lg:col-start-6">
+            {moments.map((item, i) => (
+              <motion.li
+                key={item.title}
+                initial={{ opacity: 0, x: 32 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, margin: "-10% 0px" }}
+                transition={{ duration: 0.7, delay: i * 0.06, ease: EASE }}
+                className="group relative border-t border-border py-7 last:border-b"
+              >
+                <motion.span
+                  initial={{ scaleX: 0 }}
+                  whileInView={{ scaleX: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: 0.15 + i * 0.06, ease: EASE }}
+                  className="absolute left-0 top-0 h-px origin-left bg-primary w-12"
+                />
+                <div className="flex gap-6 md:gap-10">
+                  <span className="font-Sora text-sm font-bold text-primary tabular-nums pt-1">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <div>
+                    <p className="text-xl md:text-2xl text-textPrimary font-Sora font-semibold leading-snug tracking-tight group-hover:translate-x-1 transition-transform duration-500 ease-out">
+                      {item.title}
+                    </p>
+                    <p className="mt-2 text-sm md:text-base text-textSecondary leading-relaxed max-w-lg">
+                      {item.text}
+                    </p>
+                  </div>
+                </div>
+              </motion.li>
+            ))}
+          </ol>
+        </div>
       </div>
     </section>
   );

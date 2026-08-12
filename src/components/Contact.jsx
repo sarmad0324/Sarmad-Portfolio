@@ -79,9 +79,9 @@ const Contact = () => {
             text: `Thanks ${name}. I'll review your details and get back to you shortly.`,
             icon: "success",
             confirmButtonText: "OK",
-            background: "#111113",
-            color: "#FAFAFA",
-            confirmButtonColor: "#6366F1",
+            background: "#0F0F0F",
+            color: "#F2F2F0",
+            confirmButtonColor: "#D6FF4B",
           });
           clearForm();
           setLoading(false);
@@ -92,9 +92,9 @@ const Contact = () => {
             text: "Something went wrong. Please try again or reach out directly.",
             icon: "error",
             confirmButtonText: "OK",
-            background: "#111113",
-            color: "#FAFAFA",
-            confirmButtonColor: "#6366F1",
+            background: "#0F0F0F",
+            color: "#F2F2F0",
+            confirmButtonColor: "#D6FF4B",
           });
           setLoading(false);
         }
@@ -102,52 +102,51 @@ const Contact = () => {
   };
 
   const inputClass =
-    "bg-surface2 text-textPrimary border border-border py-3 px-4 placeholder:text-textMuted rounded-xl outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/60 transition-all duration-200 text-sm w-full";
+    "bg-bg text-textPrimary border border-border py-3 px-4 placeholder:text-textMuted rounded-lg outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary/60 transition-all duration-200 text-sm w-full";
 
   return (
-    <section ref={ref} id="contact" className="px-6 py-16 md:py-20">
-      <div className="max-w-5xl mx-auto">
+    <section ref={ref} id="contact" className="px-6 py-20 md:py-28 border-t border-border/70">
+      <div className="max-w-7xl mx-auto">
         <motion.div
           variants={fadeUp}
           initial="hidden"
           whileInView="show"
           viewport={viewportOnce}
-          className="mb-10"
+          className="mb-12 max-w-2xl"
         >
-          <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-3">
-            Get in touch
+          <p className="section-eyebrow">
+            Contact
           </p>
-          <h2 className="text-3xl sm:text-4xl font-bold text-textPrimary font-Sora">
-            Let&apos;s talk about your product
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-textPrimary font-Sora tracking-tight">
+            Let&apos;s put an owner on the product
           </h2>
+          <p className="mt-4 text-base text-textSecondary leading-relaxed">
+            Tell me what&apos;s stuck. I usually reply within 24 hours — or book a strategy call now.
+          </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          {/* Left: info + links */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-px bg-border border border-border overflow-hidden rounded-lg">
           <motion.div
             initial={{ opacity: 0, y: 28 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: EASE }}
             viewport={viewportOnce}
-            className="rounded-2xl border border-border bg-surface p-6 md:p-8 flex flex-col"
+            className="lg:col-span-5 bg-surface p-7 md:p-9 flex flex-col"
           >
-            <h3 className="text-xl font-bold text-textPrimary font-Sora mb-2">
-              Tell me what&apos;s stuck — or what you&apos;re trying to build.
-            </h3>
             <p className="text-sm text-textSecondary leading-relaxed mb-8">
-              Share what you&apos;re building, where execution is stuck, and your timeline. I&apos;ll review and get back with next steps — usually within 24 hours. Most engagements start with a paid Technical Audit.
+              Prefer a call? Book directly. Serious engagements usually start with a paid Technical Audit ($2,000).
             </p>
 
-            <div className="space-y-1 flex-1">
+            <div className="space-y-0.5 flex-1">
               {contactLinks.map((link) => (
                 <a
                   key={link.label}
                   href={link.href}
                   target={link.external ? "_blank" : undefined}
                   rel="noopener noreferrer"
-                  className="group flex items-center gap-3 py-3 px-3 -mx-3 text-textSecondary hover:text-primary rounded-xl hover:bg-primary/5 transition-all duration-200"
+                  className="group flex items-center gap-3 py-3 px-3 -mx-3 text-textSecondary hover:text-primary transition-colors duration-200"
                 >
-                  <link.icon className="text-base shrink-0 group-hover:scale-110 transition-transform" />
+                  <link.icon className="text-base shrink-0" />
                   <span className="text-sm">{link.label}</span>
                 </a>
               ))}
@@ -157,23 +156,22 @@ const Contact = () => {
               href="https://calendly.com/sarmad-sarmadirfan/30min"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-6 inline-flex items-center justify-center gap-2 px-5 py-3.5 bg-primary text-white rounded-xl text-sm font-bold hover:bg-primaryHover transition-all duration-200 shadow-lg shadow-primary/20"
+              className="mt-6 btn-primary w-full"
             >
               <FiCalendar className="text-sm" />
-              Book a 20-min fit call
+              Book a strategy call
             </a>
           </motion.div>
 
-          {/* Right: form */}
           <motion.div
             initial={{ opacity: 0, y: 28 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: EASE, delay: 0.12 }}
             viewport={viewportOnce}
-            className="rounded-2xl border border-border bg-surface p-6 md:p-8"
+            className="lg:col-span-7 bg-surface p-7 md:p-9"
           >
-            <h4 className="text-textPrimary font-semibold text-base mb-5 font-Sora">
-              Or send me a message directly
+            <h4 className="text-textPrimary font-semibold text-base mb-6 font-Sora">
+              Or send a message
             </h4>
             <form onSubmit={handleSubmit} ref={form} className="space-y-4">
               <label className="flex flex-col gap-1.5">
@@ -184,7 +182,7 @@ const Contact = () => {
                   value={name}
                   required
                   onChange={(e) => setName(e.target.value)}
-                  placeholder="John Doe"
+                  placeholder="Your name"
                   className={inputClass}
                 />
               </label>
@@ -196,7 +194,7 @@ const Contact = () => {
                   value={email}
                   required
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="john@example.com"
+                  placeholder="you@company.com"
                   className={inputClass}
                 />
               </label>
@@ -210,10 +208,10 @@ const Contact = () => {
                   required
                 >
                   <option value="">— Select an option —</option>
-                  <option value="Technical Audit">Technical Audit — diagnose what to fix or build</option>
-                  <option value="Build & Stabilize">Build &amp; Stabilize — ship or fix the product</option>
-                  <option value="Technical Partner">Technical Partner — ongoing / fractional CTO</option>
-                  <option value="Not sure yet">Not sure yet</option>
+                  <option value="Technical Audit">Technical Audit — $2,000 diagnosis & roadmap</option>
+                  <option value="Build & Stabilize">Build &amp; Stabilize Sprint — from $6,000</option>
+                  <option value="Technical Partner">Technical Partner — from $4,500/mo</option>
+                  <option value="Not sure yet">Not sure — need a strategy call</option>
                 </select>
               </label>
               <label className="flex flex-col gap-1.5">
@@ -231,7 +229,7 @@ const Contact = () => {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full bg-primary hover:bg-primaryHover active:scale-[0.99] text-white py-3.5 px-6 rounded-xl font-bold text-sm transition-all duration-200 focus:ring-2 focus:ring-primary/50 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed disabled:active:scale-100 shadow-lg shadow-primary/20"
+                className="w-full btn-primary disabled:opacity-50 disabled:cursor-not-allowed disabled:active:scale-100"
               >
                 {loading ? "Sending..." : "Send Message"}
               </button>

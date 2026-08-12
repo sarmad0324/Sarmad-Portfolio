@@ -15,9 +15,9 @@ export default function MobileCta() {
         href="https://calendly.com/sarmad-sarmadirfan/30min"
         target="_blank"
         rel="noopener noreferrer"
-        className="w-full inline-flex items-center justify-center px-5 py-3.5 bg-primary text-white rounded-xl font-semibold shadow-lg shadow-primary/25 hover:bg-primaryHover active:scale-[0.98] transition-all duration-200 text-sm"
+        className="w-full btn-primary shadow-lg shadow-black/40"
       >
-        Book a 20-min fit call
+        Book a strategy call
       </a>
     </motion.div>
   );

@@ -16,7 +16,7 @@ import {
 import { Sparkles, Bot, TerminalSquare, Workflow, BrainCircuit, LucideIcon } from "lucide-react";
 import Marquee from "@/components/magicui/marquee";
 
-type Item = { label: string; Icon: IconType | LucideIcon; ai?: boolean };
+type Item = { label: string; Icon: IconType | LucideIcon };
 
 const tools: Item[] = [
   { label: "React", Icon: SiReact },
@@ -29,46 +29,32 @@ const tools: Item[] = [
   { label: "MongoDB", Icon: SiMongodb },
   { label: "Express", Icon: SiExpress },
   { label: "Tailwind", Icon: SiTailwindcss },
-  { label: "Claude", Icon: Sparkles, ai: true },
-  { label: "Cursor", Icon: TerminalSquare, ai: true },
-  { label: "GitHub Copilot", Icon: Bot, ai: true },
-  { label: "OpenAI", Icon: SiOpenai, ai: true },
-  { label: "AI Agents", Icon: BrainCircuit, ai: true },
-  { label: "LLM / RAG", Icon: Workflow, ai: true },
+  { label: "Claude", Icon: Sparkles },
+  { label: "Cursor", Icon: TerminalSquare },
+  { label: "GitHub Copilot", Icon: Bot },
+  { label: "OpenAI", Icon: SiOpenai },
+  { label: "AI Agents", Icon: BrainCircuit },
+  { label: "LLM / RAG", Icon: Workflow },
 ];
-
-function Pill({ label, Icon, ai }: Item) {
-  return (
-    <div
-      className={`flex items-center gap-2.5 rounded-xl border px-4 py-2.5 whitespace-nowrap transition-all duration-300 ease-out hover:-translate-y-0.5 ${
-        ai
-          ? "border-primary/25 bg-primary/[0.06] text-textSecondary hover:border-primary/40 hover:text-textPrimary hover:bg-primary/[0.1]"
-          : "border-border bg-surface text-textSecondary hover:border-primary/30 hover:text-textPrimary"
-      }`}
-    >
-      <Icon className={`text-lg ${ai ? "text-primary" : "text-textMuted"}`} />
-      <span className="text-sm font-medium">{label}</span>
-    </div>
-  );
-}
 
 export default function TechMarquee() {
   return (
-    <section className="px-6 py-10 md:py-12 border-y border-border/60 bg-surface/20">
-      <div className="max-w-7xl mx-auto">
-        <p className="text-center text-xs font-semibold uppercase tracking-widest text-textMuted mb-7">
-          Product engineering — accelerated by AI-assisted, agentic workflows
-        </p>
-        <div className="relative">
-          <Marquee pauseOnHover className="[--duration:38s] [--gap:0.9rem]">
-            {tools.map((t, i) => (
-              <Pill key={`${t.label}-${i}`} {...t} />
-            ))}
-          </Marquee>
-          {/* Edge fades */}
-          <div className="pointer-events-none absolute inset-y-0 left-0 w-16 sm:w-28 bg-gradient-to-r from-bg to-transparent" />
-          <div className="pointer-events-none absolute inset-y-0 right-0 w-16 sm:w-28 bg-gradient-to-l from-bg to-transparent" />
-        </div>
+    <section className="py-8 border-b border-border/60">
+      <div className="relative max-w-7xl mx-auto">
+        <p className="sr-only">Technologies and tools</p>
+        <Marquee pauseOnHover className="[--duration:42s] [--gap:2.5rem]">
+          {tools.map((t, i) => (
+            <div
+              key={`${t.label}-${i}`}
+              className="flex items-center gap-2.5 text-textMuted whitespace-nowrap"
+            >
+              <t.Icon className="text-base opacity-70" />
+              <span className="text-sm font-medium tracking-wide">{t.label}</span>
+            </div>
+          ))}
+        </Marquee>
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-16 sm:w-28 bg-gradient-to-r from-bg to-transparent" />
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-16 sm:w-28 bg-gradient-to-l from-bg to-transparent" />
       </div>
     </section>
   );

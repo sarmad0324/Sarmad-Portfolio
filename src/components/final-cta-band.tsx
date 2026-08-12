@@ -3,48 +3,42 @@
 import { motion } from "framer-motion";
 import { FiArrowRight } from "react-icons/fi";
 import { fadeUp, viewportOnce } from "@/lib/anim";
+import { Magnetic } from "@/components/ui/motion-bits";
 
 export default function FinalCtaBand() {
   return (
-    <section className="px-6 py-16 md:py-20">
+    <section className="px-6 md:px-10 py-24 md:py-32">
       <motion.div
         variants={fadeUp}
         initial="hidden"
         whileInView="show"
         viewport={viewportOnce}
-        className="max-w-7xl mx-auto"
+        className="max-w-[1400px] mx-auto border border-border bg-surface px-8 py-14 md:px-16 md:py-20"
       >
-        <div className="relative rounded-2xl overflow-hidden border border-primary/20 bg-gradient-to-br from-primary/[0.12] via-surface to-surface p-10 md:p-14 text-center">
-          {/* Background glow (outer centers, inner breathes — keeps transforms separate) */}
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-32">
-            <motion.div
-              className="w-full h-full bg-primary/20 blur-3xl rounded-full"
-              animate={{ opacity: [0.5, 1, 0.5], scale: [0.9, 1.15, 0.9] }}
-              transition={{ duration: 7, ease: "easeInOut", repeat: Infinity }}
-            />
-          </div>
-
-          <div className="relative z-10 max-w-2xl mx-auto">
-            <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-4">
-              Ready to move?
-            </p>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-textPrimary font-Sora leading-tight mb-4">
-              Got a product that&apos;s stuck?
-              <br />
-              <span className="text-primary">Let&apos;s fix it.</span>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-end">
+          <div className="lg:col-span-8">
+            <p className="section-eyebrow">Ready when you are</p>
+            <h2 className="text-[clamp(2.2rem,5vw,4.25rem)] font-bold text-textPrimary font-Sora leading-[1.02] tracking-tight max-w-[16ch]">
+              If the product is stuck, let&apos;s put an owner on it.
             </h2>
-            <p className="text-textSecondary text-base md:text-lg leading-relaxed mb-8 max-w-lg mx-auto">
-              Book a free 20-minute fit call. No pitch, no pressure — just a direct conversation about what&apos;s blocked and what needs to move. Most founders start with a paid Technical Audit.
+            <p className="mt-6 text-textSecondary text-base md:text-lg leading-relaxed max-w-lg">
+              Book a 20-minute strategy call. We&apos;ll map what&apos;s blocked and whether an Audit,
+              Sprint, or Partner retainer is the right move. Most serious engagements start with
+              the Audit.
             </p>
-            <a
-              href="https://calendly.com/sarmad-sarmadirfan/30min"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group inline-flex items-center gap-2 px-8 py-4 bg-primary text-white rounded-xl font-bold hover:bg-primaryHover active:scale-[0.98] transition-all duration-200 text-sm shadow-xl shadow-primary/25"
-            >
-              Book a 20-min fit call
-              <FiArrowRight className="group-hover:translate-x-1 transition-transform" />
-            </a>
+          </div>
+          <div className="lg:col-span-4 lg:flex lg:justify-end">
+            <Magnetic>
+              <a
+                href="https://calendly.com/sarmad-sarmadirfan/30min"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-primary group !px-8 !py-4 text-base"
+              >
+                Book a strategy call
+                <FiArrowRight className="group-hover:translate-x-1 transition-transform" />
+              </a>
+            </Magnetic>
           </div>
         </div>
       </motion.div>

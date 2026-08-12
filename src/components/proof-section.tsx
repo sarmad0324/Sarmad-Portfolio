@@ -7,57 +7,49 @@ import { fadeUp, riseIn, stagger, viewportOnce, EASE } from "@/lib/anim";
 const testimonials = [
   {
     quote:
-      "Sarmad delivered strong execution on our wallet app and handled critical flows with real ownership. Communication was clear and the quality held up under pressure.",
+      "Sarmad took real ownership on critical wallet flows. Clear communication, pressure-ready quality — exactly what a trust-sensitive product needs.",
     name: "Abdul Samad Umer",
-    role: "CEO",
-    company: "Triangle Wallets",
-    outcome: "Core fintech flows shipped for production — trust-sensitive environment stabilized",
-    initials: "AS",
-    color: "from-amber-500 to-orange-500",
+    role: "CEO, Triangle Wallets",
+    outcome: "Core fintech flows shipped to production",
   },
   {
     quote:
-      "Collaborating on Truckwise was smooth because he could work across mobile and backend without constant direction. He solved problems fast and kept delivery moving.",
+      "He worked across mobile and backend without constant direction. Problems got solved fast. Delivery kept moving.",
     name: "Fasseh",
-    role: "Product Engineering Collaborator",
-    company: "TruckWise",
-    outcome: "5+ role types unified into one product system — execution moved from blocked to ship-ready",
-    initials: "F",
-    color: "from-indigo-500 to-violet-500",
+    role: "Product Engineering, TruckWise",
+    outcome: "Blocked multi-role product → ship-ready system",
   },
   {
     quote:
-      "He took our product goals seriously and translated them into a usable platform. The booking and user journey improvements made a clear difference for our team.",
+      "He translated product goals into a usable platform. Booking and journey improvements made a clear difference for the team.",
     name: "Chris",
-    role: "Founder",
-    company: "EZRecova",
-    outcome: "Subscription flows, user journeys, and AI support unified into one platform",
-    initials: "C",
-    color: "from-emerald-500 to-teal-500",
+    role: "Founder, EZRecova",
+    outcome: "Subscriptions + AI support unified into one product",
   },
 ];
 
 export default function ProofSection() {
-  const { ref } = useSectionInView("#reviews", 0.45);
+  const { ref } = useSectionInView("#reviews", 0.35);
 
   return (
-    <section ref={ref} id="reviews" className="px-6 py-16 md:py-20 bg-surface/30">
-      <div className="max-w-7xl mx-auto">
+    <section ref={ref} id="reviews" className="px-6 md:px-10 py-24 md:py-32 border-t border-border">
+      <div className="max-w-[1400px] mx-auto">
         <motion.div
           variants={fadeUp}
           initial="hidden"
           whileInView="show"
           viewport={viewportOnce}
-          className="mb-10"
+          className="mb-14 md:mb-16 flex flex-col md:flex-row md:items-end md:justify-between gap-6"
         >
-          <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-3">
-            What founders say
-          </p>
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-textPrimary font-Sora">
-            Proof from real product teams
-          </h2>
-          <p className="mt-3 text-base text-textSecondary max-w-xl">
-            Outcome-linked proof from founders and teams I&apos;ve stepped in to move forward.
+          <div className="max-w-2xl">
+            <p className="section-eyebrow">Client proof</p>
+            <h2 className="text-[clamp(2rem,4.5vw,3.5rem)] font-bold text-textPrimary font-Sora tracking-tight leading-[1.05]">
+              Founders don&apos;t hire me for slides.
+              <span className="block text-textMuted">They hire me for movement.</span>
+            </h2>
+          </div>
+          <p className="text-sm text-textSecondary max-w-xs md:text-right leading-relaxed">
+            Outcome-linked feedback from teams I&apos;ve stepped into.
           </p>
         </motion.div>
 
@@ -66,44 +58,34 @@ export default function ProofSection() {
           initial="hidden"
           whileInView="show"
           viewport={viewportOnce}
-          className="grid grid-cols-1 md:grid-cols-3 gap-5"
         >
-          {testimonials.map((item) => (
-            <motion.article
-              key={`${item.name}-${item.company}`}
+          {testimonials.map((item, i) => (
+            <motion.blockquote
+              key={`${item.name}-${item.role}`}
               variants={riseIn}
-              whileHover={{ y: -6, transition: { duration: 0.3, ease: EASE } }}
-              className="relative rounded-2xl border border-border bg-surface p-6 md:p-7 flex flex-col hover:border-primary/25 hover:shadow-xl hover:shadow-black/25 transition-colors duration-300"
+              whileHover={{ x: 3, transition: { duration: 0.25, ease: EASE } }}
+              className="grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-10 py-10 border-t border-border last:border-b"
             >
-              {/* Large decorative quote mark */}
-              <span className="absolute top-4 right-5 text-5xl text-border font-serif leading-none select-none">
-                &ldquo;
-              </span>
-
-              <p className="text-textSecondary leading-relaxed text-sm md:text-base relative z-10">
-                &ldquo;{item.quote}&rdquo;
-              </p>
-
-              {/* Outcome tag */}
-              <div className="mt-5 px-3 py-2.5 rounded-lg bg-primary/[0.08] border border-primary/15">
-                <p className="text-xs text-primary font-medium leading-relaxed">
-                  {item.outcome}
+              <div className="md:col-span-1">
+                <span className="font-Sora text-sm font-bold text-primary">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+              </div>
+              <div className="md:col-span-7">
+                <p className="text-lg sm:text-xl md:text-2xl text-textPrimary leading-snug font-Sora font-medium tracking-tight">
+                  &ldquo;{item.quote}&rdquo;
                 </p>
               </div>
-
-              {/* Author */}
-              <div className="mt-5 pt-5 border-t border-border flex items-center gap-3">
-                <div className={`w-9 h-9 rounded-full bg-gradient-to-br ${item.color} flex items-center justify-center shrink-0`}>
-                  <span className="text-white text-xs font-bold">{item.initials}</span>
-                </div>
+              <footer className="md:col-span-4 md:text-right space-y-3 flex flex-col md:items-end justify-center">
                 <div>
                   <p className="font-bold text-textPrimary text-sm">{item.name}</p>
-                  <p className="text-xs text-textMuted">
-                    {item.role} · {item.company}
-                  </p>
+                  <p className="text-xs text-textMuted mt-1">{item.role}</p>
                 </div>
-              </div>
-            </motion.article>
+                <p className="inline-flex text-[11px] font-semibold uppercase tracking-wider text-[color:var(--accent-ink)] bg-primary px-2.5 py-1">
+                  {item.outcome}
+                </p>
+              </footer>
+            </motion.blockquote>
           ))}
         </motion.div>
       </div>

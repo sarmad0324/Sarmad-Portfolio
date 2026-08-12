@@ -41,7 +41,7 @@ const HamburgerMenu: React.FC<HamburgerMenuProps> = ({ links }) => {
                     toggled={isOpen}
                     toggle={setIsOpen}
                     size={18}
-                    color="#A1A1AA"
+                    color="#9A9A94"
                 />
             </motion.button>
 
@@ -79,7 +79,7 @@ const HamburgerMenu: React.FC<HamburgerMenuProps> = ({ links }) => {
                             href="https://calendly.com/sarmad-sarmadirfan/30min"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="mx-3 my-3 flex items-center justify-center px-4 py-2.5 bg-primary text-white rounded-lg text-sm font-semibold hover:bg-primaryHover transition-colors"
+                            className="mx-3 my-3 btn-primary"
                             onClick={() => setIsOpen(false)}
                         >
                             Book a Call

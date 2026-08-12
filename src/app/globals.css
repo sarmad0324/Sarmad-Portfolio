@@ -1,23 +1,23 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Sora:wght@500;600;700;800&display=swap");
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --bg: #09090B;
-  --surface: #111113;
-  --surface-2: #18181B;
-  --border: #27272A;
-  --text-primary: #FAFAFA;
-  --text-secondary: #A1A1AA;
-  --text-muted: #52525B;
-  --accent: #6366F1;
-  --accent-hover: #4F46E5;
-  --accent-deep: #4338CA;
-  --accent-soft: rgba(99, 102, 241, 0.10);
-  --success: #22C55E;
-  --info: #6366F1;
+  /* Near-monochrome operator. Accent is a signal, not the brand. */
+  --bg: #070707;
+  --surface: #0F0F0F;
+  --surface-2: #161616;
+  --border: #242424;
+  --text-primary: #F2F2F0;
+  --text-secondary: #9A9A94;
+  --text-muted: #5C5C58;
+  --accent: #D6FF4B;
+  --accent-hover: #E2FF78;
+  --accent-deep: #B8E032;
+  --accent-soft: rgba(214, 255, 75, 0.1);
+  --accent-ink: #070707;
+  --success: #5FA777;
+  --info: #D6FF4B;
 }
 
 * {
@@ -32,15 +32,31 @@ html {
 }
 
 body {
-  font-family: "Inter", sans-serif;
+  font-family: var(--font-dm), system-ui, sans-serif;
   background-color: var(--bg);
   color: var(--text-secondary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Fine technical grid — atmosphere without glow orbs */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.35;
+  background-image:
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 72px 72px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 0%, black, transparent 75%);
+}
+
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Sora", sans-serif;
+  font-family: var(--font-syne), system-ui, sans-serif;
+  letter-spacing: -0.035em;
 }
 
 .hash-span {
@@ -49,29 +65,24 @@ h1, h2, h3, h4, h5, h6 {
   display: block;
 }
 
-/* Custom scrollbar */
 ::-webkit-scrollbar {
-  width: 5px;
+  width: 4px;
 }
 ::-webkit-scrollbar-track {
   background: var(--bg);
 }
 ::-webkit-scrollbar-thumb {
   background: var(--border);
-  border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: var(--accent);
+  background: var(--text-muted);
 }
 
-/* Selection */
 ::selection {
-  background: rgba(99, 102, 241, 0.25);
-  color: #FAFAFA;
+  background: rgba(214, 255, 75, 0.28);
+  color: #070707;
 }
 
-/* Keyboard focus — consistent, visible ring for interactive elements.
-   Uses :focus-visible so it only shows for keyboard nav, not mouse clicks. */
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
@@ -79,13 +90,9 @@ select:focus-visible,
 textarea:focus-visible,
 [tabindex]:focus-visible {
   outline: 2px solid var(--accent);
-  outline-offset: 2px;
-  border-radius: 6px;
+  outline-offset: 3px;
 }
 
-/* Respect users who prefer reduced motion: neutralize CSS animations/transitions
-   (marquee, floats) and instant-scroll. Framer Motion is handled via
-   <MotionConfig reducedMotion="user"> in providers. */
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -102,12 +109,27 @@ textarea:focus-visible,
 
 @layer components {
   .surface-card {
-    @apply bg-surface rounded-xl border border-border;
+    @apply bg-surface border border-border;
   }
   .surface-card-2 {
-    @apply bg-surface2 rounded-xl border border-border;
+    @apply bg-surface2 border border-border;
   }
-  .accent-glow {
-    box-shadow: 0 0 40px rgba(99, 102, 241, 0.15);
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 px-7 py-4 font-semibold text-sm
+      bg-primary hover:bg-primaryHover active:scale-[0.98]
+      transition-all duration-300 ease-out rounded-none;
+    color: var(--accent-ink);
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 px-7 py-4 font-semibold text-sm
+      border border-border text-textSecondary hover:text-textPrimary
+      active:scale-[0.98] transition-all duration-300 ease-out rounded-none;
+  }
+  .btn-ghost:hover {
+    border-color: color-mix(in srgb, var(--accent) 45%, var(--border));
+    background-color: var(--accent-soft);
+  }
+  .section-eyebrow {
+    @apply text-[11px] font-semibold uppercase tracking-[0.22em] text-primary mb-4;
   }
 }

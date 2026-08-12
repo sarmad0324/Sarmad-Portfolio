@@ -3,151 +3,138 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { FaArrowRight } from "react-icons/fa";
-import { FaLinkedinIn, FaGithub, FaWhatsapp } from "react-icons/fa";
-import { HiOutlineMail } from "react-icons/hi";
-import { BsCalendar2Check } from "react-icons/bs";
 import { useSectionInView } from "@/lib/useInView";
-import { fadeUp, riseIn, stagger, EASE_SOFT } from "@/lib/anim";
+import { EASE, EASE_SOFT } from "@/lib/anim";
+import { Magnetic, RevealWords } from "@/components/ui/motion-bits";
 import Boy from "../../public/dp.webp";
 
-const socials = [
-  { icon: FaLinkedinIn, href: "https://www.linkedin.com/in/sarmad-irfan-a5126b3b8/", label: "LinkedIn" },
-  { icon: FaGithub, href: "https://github.com/sarmad0324", label: "GitHub" },
-  { icon: HiOutlineMail, href: "mailto:sarmad@sarmadirfan.com", label: "Email" },
-  { icon: FaWhatsapp, href: "https://wa.me/923368486356", label: "WhatsApp" },
-  { icon: BsCalendar2Check, href: "https://calendly.com/sarmad-sarmadirfan/30min", label: "Calendly" },
-];
-
-const stats = [
-  { value: "5+", label: "Years in production" },
-  { value: "6+", label: "Products shipped" },
-  { value: "3", label: "Continents" },
-  { value: "Audit→build", label: "Execution partner" },
-];
-
 export default function Hero() {
-  const { ref } = useSectionInView("#home", 0.5);
+  const { ref } = useSectionInView("#home", 0.4);
 
   return (
-    <section ref={ref} id="home" className="max-w-7xl mx-auto px-6 pt-24 md:pt-32 pb-16 md:pb-24">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
-
-        {/* Left: content */}
-        <motion.div
-          variants={stagger(0.12, 0.1)}
-          initial="hidden"
-          animate="show"
-          className="space-y-7"
-        >
-          {/* Availability badge */}
-          <motion.div variants={riseIn}>
-            <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-primary/10 text-primary font-semibold text-xs border border-primary/20">
-              <span className="relative flex w-1.5 h-1.5">
-                <span className="absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75 animate-ping" />
-                <span className="relative inline-flex rounded-full w-1.5 h-1.5 bg-green-400" />
+    <section
+      ref={ref}
+      id="home"
+      className="relative min-h-[100svh] flex flex-col justify-center overflow-hidden pt-24 pb-12 md:pb-16"
+    >
+      <div className="relative z-10 w-full max-w-[1400px] mx-auto px-6 md:px-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+          <div className="lg:col-span-7 xl:col-span-8">
+            <motion.div
+              initial={{ opacity: 0, y: 16 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, ease: EASE }}
+              className="flex flex-wrap items-center gap-3 mb-7"
+            >
+              <span className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-primary">
+                <span className="relative flex h-1.5 w-1.5">
+                  <span className="absolute inset-0 rounded-full bg-primary animate-ping opacity-60" />
+                  <span className="relative rounded-full h-1.5 w-1.5 bg-primary" />
+                </span>
+                Open for 2 new engagements
               </span>
-              Technical partner for founders
-            </span>
-          </motion.div>
+              <span className="hidden sm:inline text-border">|</span>
+              <span className="text-[11px] font-semibold uppercase tracking-[0.16em] text-textMuted">
+                Fractional CTO · Technical Partner
+              </span>
+            </motion.div>
 
-          {/* Headline */}
-          <motion.div variants={fadeUp} className="space-y-4">
-            <h1 className="text-4xl sm:text-5xl md:text-[3.4rem] font-bold leading-[1.08] text-textPrimary font-Sora">
-              The technical partner founders bring in when the product has to ship.
-            </h1>
-            <p className="text-base sm:text-lg text-textSecondary leading-relaxed max-w-xl">
-              I work with early-stage founders who don&apos;t have a technical co-founder, turning stalled, fragile, or half-built products into something that ships — and scales. Start with a paid Technical Audit; leave with a clear roadmap and someone who can actually execute it.
+            <p className="font-Sora text-xl sm:text-2xl font-bold text-textPrimary tracking-tight mb-5">
+              Sarmad Irfan
             </p>
-          </motion.div>
 
-          {/* Social icons */}
-          <motion.div variants={riseIn} className="flex items-center gap-2">
-            {socials.map((s) => (
-              <a
-                key={s.label}
-                href={s.href}
-                target={s.href.startsWith("mailto") ? undefined : "_blank"}
-                rel="noopener noreferrer"
-                aria-label={s.label}
-                className="w-9 h-9 rounded-lg border border-border bg-surface flex items-center justify-center text-textMuted hover:text-primary hover:border-primary/40 hover:bg-primary/5 hover:-translate-y-0.5 transition-all duration-300 ease-out"
-              >
-                <s.icon className="text-sm" />
-              </a>
-            ))}
-          </motion.div>
+            <h1 className="font-Sora font-bold text-textPrimary text-[clamp(2.35rem,5.4vw,4.85rem)] leading-[1.02] tracking-[-0.04em] max-w-[15ch]">
+              <RevealWords text="I own the technical side so founders can ship." />
+            </h1>
 
-          {/* Stats */}
-          <motion.div variants={riseIn} className="flex flex-wrap items-center gap-x-5 gap-y-3 py-1">
-            {stats.map((stat, i) => (
-              <div key={stat.label} className="flex items-center gap-5">
-                <div>
-                  <p className="text-xl sm:text-2xl font-bold text-textPrimary font-Sora">{stat.value}</p>
-                  <p className="text-xs text-textMuted mt-0.5">{stat.label}</p>
-                </div>
-                {i < stats.length - 1 && (
-                  <div className="w-px h-8 bg-border" />
-                )}
+            <motion.div
+              initial={{ opacity: 0, y: 24 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.7, ease: EASE_SOFT }}
+              className="mt-8 md:mt-10 space-y-8 max-w-xl"
+            >
+              <p className="text-base md:text-lg text-textSecondary leading-relaxed">
+                Early-stage founders without a technical co-founder bring me in to diagnose
+                what&apos;s stuck, set the roadmap, and execute — until the product is shipping
+                with confidence.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-3">
+                <Magnetic>
+                  <a
+                    href="https://calendly.com/sarmad-sarmadirfan/30min"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn-primary group"
+                  >
+                    Book a strategy call
+                    <FaArrowRight className="group-hover:translate-x-1 transition-transform duration-300 text-xs" />
+                  </a>
+                </Magnetic>
+                <Magnetic strength={0.2}>
+                  <a href="#offers" className="btn-ghost">
+                    View engagements
+                  </a>
+                </Magnetic>
               </div>
-            ))}
-          </motion.div>
 
-          {/* CTAs */}
-          <motion.div variants={riseIn} className="flex flex-col sm:flex-row gap-3 pt-1">
-            <a
-              href="https://calendly.com/sarmad-sarmadirfan/30min"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group inline-flex items-center justify-center gap-2 px-6 py-3.5 bg-primary text-white rounded-xl font-semibold hover:bg-primaryHover hover:shadow-xl hover:shadow-primary/30 active:scale-[0.98] transition-all duration-300 ease-out text-sm shadow-lg shadow-primary/20"
-            >
-              Book a 20-min fit call
-              <FaArrowRight className="group-hover:translate-x-1 transition-transform duration-300 ease-out text-xs" />
-            </a>
-            <a
-              href="/case-studies/surfbank"
-              className="inline-flex items-center justify-center gap-2 px-6 py-3.5 border border-border text-textSecondary rounded-xl font-semibold hover:border-primary/30 hover:text-textPrimary hover:bg-primary/5 active:scale-[0.98] transition-all duration-300 ease-out text-sm"
-            >
-              See the SurfBank audit
-            </a>
-          </motion.div>
-        </motion.div>
+              <p className="text-xs text-textMuted leading-relaxed">
+                20 minutes. No pitch deck. Leave knowing whether an Audit, Sprint, or Partner
+                retainer is the right next move.
+              </p>
+            </motion.div>
+          </div>
 
-        {/* Right: photo */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.96, filter: "blur(10px)" }}
-          animate={{ opacity: 1, scale: 1, filter: "blur(0px)" }}
-          transition={{ duration: 1, delay: 0.25, ease: EASE_SOFT }}
-          className="hidden lg:flex items-center justify-center relative"
-        >
-          {/* Breathing glow */}
           <motion.div
-            className="absolute inset-8 rounded-3xl bg-primary/20 blur-3xl"
-            animate={{ opacity: [0.45, 0.8, 0.45], scale: [0.97, 1.03, 0.97] }}
-            transition={{ duration: 7, ease: "easeInOut", repeat: Infinity }}
-          />
-          {/* Grid pattern behind photo */}
-          <div
-            className="absolute inset-0 opacity-[0.04]"
-            style={{
-              backgroundImage: `linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px)`,
-              backgroundSize: "32px 32px",
-            }}
-          />
-          <motion.div
-            className="relative"
-            animate={{ y: [0, -10, 0] }}
-            transition={{ duration: 6, ease: "easeInOut", repeat: Infinity }}
+            initial={{ opacity: 0, clipPath: "inset(10% 10% 10% 10%)" }}
+            animate={{ opacity: 1, clipPath: "inset(0% 0% 0% 0%)" }}
+            transition={{ duration: 1.05, delay: 0.35, ease: EASE }}
+            className="lg:col-span-5 xl:col-span-4"
           >
-            <Image
-              src={Boy}
-              alt="Sarmad Irfan — Technical Partner"
-              width={440}
-              height={480}
-              className="relative rounded-2xl object-cover border border-border/60 shadow-2xl"
-              priority
-            />
+            <div className="relative aspect-[4/5] max-w-[320px] lg:max-w-none mx-auto lg:ml-auto overflow-hidden border border-border bg-surface">
+              <Image
+                src={Boy}
+                alt="Sarmad Irfan — Technical Partner"
+                fill
+                priority
+                className="object-cover object-top"
+                sizes="(max-width: 1024px) 320px, 400px"
+              />
+              <div className="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-bg via-bg/80 to-transparent">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-primary mb-1">
+                  Flagship engagement
+                </p>
+                <p className="text-sm font-Sora font-bold text-textPrimary">
+                  Acting CTO · SurfBank
+                </p>
+                <p className="text-xs text-textMuted mt-1">
+                  30-day trial · Release 2.0 roadmap delivered
+                </p>
+              </div>
+            </div>
           </motion.div>
-        </motion.div>
+        </div>
 
+        <motion.div
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.05, duration: 0.7 }}
+          className="mt-14 md:mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 pt-8 border-t border-border"
+        >
+          {[
+            { value: "6+", label: "Products shipped" },
+            { value: "3", label: "Continents" },
+            { value: "$2k", label: "Audit entry point" },
+            { value: "24h", label: "Typical reply time" },
+          ].map((stat) => (
+            <div key={stat.label}>
+              <p className="font-Sora text-2xl md:text-3xl font-bold text-textPrimary tracking-tight">
+                {stat.value}
+              </p>
+              <p className="text-xs text-textMuted mt-1.5 tracking-wide">{stat.label}</p>
+            </div>
+          ))}
+        </motion.div>
       </div>
     </section>
   );

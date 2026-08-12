@@ -20,41 +20,32 @@ export default function Header({ links }: HeaderProps) {
     const { activeSection, setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
 
     return (
-        <header className='hidden md:flex items-center justify-between fixed z-[999] w-full mt-5 px-8'>
-            {/* Logo / name */}
+        <header className='hidden md:flex items-center justify-between fixed z-[999] w-full top-0 px-8 py-4 bg-bg/70 backdrop-blur-md border-b border-border/50'>
             <motion.a
                 href="/#home"
-                initial={{ x: -60, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                transition={{ duration: 0.6, type: "spring", stiffness: 100 }}
-                className="text-textPrimary font-Sora font-bold text-sm tracking-tight hover:text-primary transition-colors"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5 }}
+                className="text-textPrimary font-Sora font-bold text-sm tracking-tight"
             >
-                Sarmad<span className="text-primary">.</span>
+                Sarmad Irfan
             </motion.a>
 
-            {/* Center pill nav */}
-            <motion.div
-                initial={{ y: -60, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.7, type: "spring", stiffness: 100 }}
-                className='flex p-1.5 rounded-full border border-border bg-surface/80 shadow-lg backdrop-blur-md'
+            <motion.nav
+                initial={{ opacity: 0, y: -12 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.55 }}
+                aria-label="Primary"
             >
-                <ul className='flex flex-wrap items-center justify-center gap-0.5 text-sm font-medium'>
-                    {links.map((link, index) => (
-                        <motion.li
-                            initial={{ y: -30, opacity: 0 }}
-                            animate={{ y: 0, opacity: 1 }}
-                            transition={{ duration: 0.4, delay: index * 0.07 }}
-                            className='flex items-center justify-center relative'
-                            key={link.hash}
-                        >
+                <ul className='flex items-center gap-0.5 text-sm font-medium'>
+                    {links.map((link) => (
+                        <li key={link.hash} className="relative">
                             <button
                                 className={clsx(
-                                    "relative flex items-center justify-center px-4 py-1.5 rounded-full transition-all duration-300 text-sm cursor-pointer",
-                                    {
-                                        "text-white": activeSection === link.hash,
-                                        "text-textMuted hover:text-textSecondary": activeSection !== link.hash,
-                                    }
+                                    "relative px-3.5 py-1.5 transition-colors duration-300 cursor-pointer",
+                                    activeSection === link.hash
+                                        ? "text-textPrimary"
+                                        : "text-textMuted hover:text-textSecondary"
                                 )}
                                 onClick={() => {
                                     smoothScrollTo(link.hash);
@@ -65,32 +56,28 @@ export default function Header({ links }: HeaderProps) {
                                 {link.nameEng}
                                 {link.hash === activeSection && (
                                     <motion.span
-                                        transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                                         layoutId='activeSection'
-                                        className='absolute inset-0 bg-primary rounded-full -z-10'
+                                        className='absolute left-3.5 right-3.5 -bottom-0.5 h-px bg-primary'
+                                        transition={{ type: 'spring', stiffness: 380, damping: 30 }}
                                     />
                                 )}
                             </button>
-                        </motion.li>
+                        </li>
                     ))}
                 </ul>
-            </motion.div>
+            </motion.nav>
 
-            {/* Right CTA */}
-            <motion.div
-                initial={{ x: 60, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                transition={{ duration: 0.6, type: "spring", stiffness: 100 }}
+            <motion.a
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                href='https://calendly.com/sarmad-sarmadirfan/30min'
+                target="_blank"
+                rel="noopener noreferrer"
+                className='text-sm font-semibold text-[color:var(--accent-ink)] bg-primary px-4 py-2 hover:bg-primaryHover transition-colors'
             >
-                <a
-                    href='https://calendly.com/sarmad-sarmadirfan/30min'
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className='flex items-center gap-2 px-4 py-2 rounded-full font-semibold text-sm text-white transition-all bg-primary hover:bg-primaryHover active:scale-[0.97] focus:ring-2 focus:ring-primary/50 focus:outline-none shadow-lg shadow-primary/20'
-                >
-                    Book a Call
-                </a>
-            </motion.div>
+                Book a Call
+            </motion.a>
         </header>
     )
 }
