@@ -6,8 +6,8 @@ export const SITE_URL = "https://sarmadirfan.com";
 
 export const BRAND = {
   name: "Sarmad Irfan",
-  title: "Sarmad Irfan — Fractional CTO & Technical Partner for Founders",
-  role: "Fractional CTO & Technical Partner",
+  title: "Sarmad Irfan — Technical Partner for Early-Stage Founders",
+  role: "Technical Partner for Early-Stage Founders",
   email: "sarmad@sarmadirfan.com",
   github: "https://github.com/sarmad0324",
   linkedin: "https://www.linkedin.com/in/sarmad-irfan-a5126b3b8/",

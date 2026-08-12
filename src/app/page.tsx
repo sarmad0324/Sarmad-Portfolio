@@ -2,9 +2,11 @@ import type { Metadata } from "next";
 import Hero from "@/components/hero";
 import TrustBar from "@/components/trust-bar";
 import WhenFoundersBringMeIn from "@/components/when-founders-bring-me-in";
-import Offers from "@/components/offers";
 import CaseStudies from "@/components/case-studies";
+import Offers from "@/components/offers";
+import HowItWorks from "@/components/how-it-works";
 import ProofSection from "@/components/proof-section";
+import FitFor from "@/components/fit-for";
 import AboutPartner from "@/components/about-partner";
 import FinalCtaBand from "@/components/final-cta-band";
 import Contact from "@/components/Contact";
@@ -13,11 +15,11 @@ import { BRAND, SITE_URL, DEFAULT_OG_IMAGE } from "@/lib/seo";
 export const metadata: Metadata = {
   title: BRAND.title,
   description:
-    "Fractional CTO and technical partner for founders without a technical co-founder. Start with a paid Technical Audit, then ship with hands-on execution.",
+    "Technical Partner for early-stage founders. I help non-technical founders take ownership of stalled or fragile products and get them shipping again — starting with a paid Technical Audit.",
   openGraph: {
     title: BRAND.title,
     description:
-      "I own the technical side so founders can ship. Audit-first engagements, then sprints or ongoing technical partnership.",
+      "I step into stalled, fragile, or half-built products, find what's blocking delivery, and take technical ownership from roadmap through release.",
     url: SITE_URL,
     siteName: BRAND.name,
     images: [{ url: DEFAULT_OG_IMAGE, alt: `${BRAND.name} - ${BRAND.role}`, width: 1200, height: 630 }],
@@ -26,7 +28,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: BRAND.title,
     description:
-      "I own the technical side so founders can ship. Book a strategy call — most engagements start with a paid Technical Audit.",
+      "Technical Partner for founders with a product that needs to move. Start with a paid Technical Audit.",
     images: [DEFAULT_OG_IMAGE],
   },
   alternates: { canonical: SITE_URL },
@@ -38,9 +40,11 @@ export default function Home() {
       <Hero />
       <TrustBar />
       <WhenFoundersBringMeIn />
-      <Offers />
       <CaseStudies />
+      <Offers />
+      <HowItWorks />
       <ProofSection />
+      <FitFor />
       <AboutPartner />
       <FinalCtaBand />
       <Contact />

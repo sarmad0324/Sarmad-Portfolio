@@ -7,11 +7,12 @@ import { EASE } from "@/lib/anim";
 import { FiExternalLink } from "react-icons/fi";
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 import { HiOutlineDocumentText } from "react-icons/hi";
+import { BRAND } from "@/lib/seo";
 import Boy from "../../public/dp.webp";
 
 const credentials = [
-  { label: "Acting CTO trial", detail: "SurfBank · 30 days" },
-  { label: "5+ years", detail: "Production delivery" },
+  { label: "2+ years", detail: "TruckWise ownership" },
+  { label: "Paid audits", detail: "SurfBank Release 2.0" },
   { label: "International", detail: "Dubai · US · Germany" },
 ];
 
@@ -32,7 +33,7 @@ export default function AboutPartner() {
             <Image
               src={Boy}
               fill
-              alt="Sarmad Irfan"
+              alt={BRAND.name}
               className="object-cover object-top"
               sizes="(max-width: 1024px) 100vw, 40vw"
             />
@@ -57,32 +58,29 @@ export default function AboutPartner() {
           <div>
             <p className="section-eyebrow">About</p>
             <h2 className="text-[clamp(2rem,4vw,3.25rem)] font-bold text-textPrimary font-Sora mb-5 tracking-tight leading-[1.05]">
-              Operator first.
-              <span className="block text-textMuted">Developer second.</span>
+              Not tickets.
+              <span className="block text-textMuted">Ownership.</span>
             </h2>
             <p className="text-textSecondary text-base md:text-lg leading-relaxed">
-              I work with founders as a technical partner and fractional CTO — especially teams
-              without a technical co-founder. My job is not to burn tickets. It&apos;s to own the
-              decisions that move the product: what to build, what to cut, how to architect it,
-              and how to ship without stalling.
+              I&apos;ve spent the last several years owning products across logistics, fintech, and
+              digital platforms — from architecture and backend systems to mobile releases and
+              production support. Especially for founders without a technical co-founder.
             </p>
             <p className="text-textSecondary text-base md:text-lg leading-relaxed mt-4">
-              I&apos;ve shipped across logistics, fintech, recovery, and commerce. I ran a CTO-level
-              audit and Release 2.0 strategy for{" "}
-              <span className="text-textPrimary font-semibold">SurfBank</span>, and worked with
-              international teams including{" "}
-              <span className="text-textPrimary font-semibold">Geeks for Growth</span>.
+              My job isn&apos;t to burn tickets. It&apos;s to own the decisions that move the product:
+              what to build, what to cut, how to architect it, and how to ship without stalling.
+              Direct line to me — no account managers, no ticket queues.
             </p>
           </div>
 
           <div className="flex flex-wrap gap-3">
             <a
-              href="https://calendly.com/sarmad-sarmadirfan/30min"
+              href={BRAND.calendly}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-primary !px-5 !py-3"
             >
-              Book a strategy call
+              Book a 20-min fit call
             </a>
             <a
               href="https://drive.google.com/file/d/1F5TVWgadnUpHgqp9Hxkvd7T2LTkELaBg/view?usp=sharing"
@@ -95,7 +93,7 @@ export default function AboutPartner() {
               <FiExternalLink className="text-xs" />
             </a>
             <a
-              href="https://www.linkedin.com/in/sarmad-irfan-a5126b3b8/"
+              href={BRAND.linkedin}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-ghost !px-4 !py-3"
@@ -104,7 +102,7 @@ export default function AboutPartner() {
               LinkedIn
             </a>
             <a
-              href="https://github.com/sarmad0324"
+              href={BRAND.github}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-ghost !px-4 !py-3"

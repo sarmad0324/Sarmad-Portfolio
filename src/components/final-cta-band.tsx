@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { FiArrowRight } from "react-icons/fi";
 import { fadeUp, viewportOnce } from "@/lib/anim";
 import { Magnetic } from "@/components/ui/motion-bits";
+import { BRAND } from "@/lib/seo";
 
 export default function FinalCtaBand() {
   return (
@@ -17,25 +18,24 @@ export default function FinalCtaBand() {
       >
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 items-end">
           <div className="lg:col-span-8">
-            <p className="section-eyebrow">Ready when you are</p>
+            <p className="section-eyebrow">Next step</p>
             <h2 className="text-[clamp(2.2rem,5vw,4.25rem)] font-bold text-textPrimary font-Sora leading-[1.02] tracking-tight max-w-[16ch]">
               If the product is stuck, let&apos;s put an owner on it.
             </h2>
             <p className="mt-6 text-textSecondary text-base md:text-lg leading-relaxed max-w-lg">
-              Book a 20-minute strategy call. We&apos;ll map what&apos;s blocked and whether an Audit,
-              Sprint, or Partner retainer is the right move. Most serious engagements start with
-              the Audit.
+              20 minutes to understand what&apos;s blocked, determine whether I can help, and identify
+              the right next step. Most serious engagements start with a paid Technical Audit.
             </p>
           </div>
           <div className="lg:col-span-4 lg:flex lg:justify-end">
             <Magnetic>
               <a
-                href="https://calendly.com/sarmad-sarmadirfan/30min"
+                href={BRAND.calendly}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-primary group !px-8 !py-4 text-base"
               >
-                Book a strategy call
+                Book a 20-min fit call
                 <FiArrowRight className="group-hover:translate-x-1 transition-transform" />
               </a>
             </Magnetic>

@@ -17,14 +17,14 @@ export default function CaseStudies() {
   });
   const imgY = useTransform(scrollYProgress, [0, 1], ["-6%", "6%"]);
 
-  const featured = projectsData.find((p) => p.slug === "surfbank")!;
+  const featured = projectsData.find((p) => p.slug === "truckwise")!;
   const featuredMetrics = [
-    "30-day Acting CTO trial",
-    "Audited web, backend, mobile & extension",
-    "Search-first AI strategy",
-    "Release 2.0 — modernize, don't rewrite",
+    "2+ years continuous ownership",
+    "5+ user roles in one system",
+    "Mobile + backend + operations",
+    "OCR, contracts, invoicing, dashboards",
   ];
-  const others = ["truckwise", "triangle-wallets", "ezrecova"]
+  const others = ["surfbank", "triangle-wallets", "ezrecova"]
     .map((slug) => projectsData.find((p) => p.slug === slug))
     .filter(Boolean) as typeof projectsData;
 
@@ -41,8 +41,8 @@ export default function CaseStudies() {
           <div className="max-w-2xl">
             <p className="section-eyebrow">Proof of work</p>
             <h2 className="text-[clamp(2rem,4.5vw,3.75rem)] font-bold text-textPrimary font-Sora tracking-tight leading-[1.05]">
-            Case studies
-          </h2>
+              Case studies
+            </h2>
           </div>
           <p className="text-textSecondary max-w-sm md:text-right leading-relaxed">
             What was broken. What I owned. What changed.
@@ -68,22 +68,23 @@ export default function CaseStudies() {
                 priority
               />
             </motion.div>
-            {featured.featuredBadge && (
-              <div className="absolute top-4 left-4 z-10">
-                <span className="text-[11px] font-bold px-3 py-1.5 bg-primary text-[color:var(--accent-ink)]">
-                  {featured.featuredBadge}
-                </span>
-              </div>
-            )}
+            <div className="absolute top-4 left-4 z-10">
+              <span className="text-[11px] font-bold px-3 py-1.5 bg-primary text-[color:var(--accent-ink)]">
+                Featured · Long-term ownership
+              </span>
+            </div>
           </div>
 
           <div className="lg:col-span-5 flex flex-col justify-center">
             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-primary mb-4">
               {featured.role}
             </p>
-            <h3 className="text-3xl md:text-5xl font-bold text-textPrimary font-Sora mb-5 tracking-tight">
+            <h3 className="text-3xl md:text-5xl font-bold text-textPrimary font-Sora mb-3 tracking-tight">
               {featured.title}
             </h3>
+            <p className="text-sm text-textMuted mb-5 font-medium">
+              2 years of product ownership across a complex logistics platform
+            </p>
             <p className="text-textSecondary leading-relaxed mb-8">
               {featured.homepageSummary}
             </p>
@@ -96,7 +97,7 @@ export default function CaseStudies() {
               ))}
             </ul>
             <a
-              href="/case-studies/surfbank"
+              href="/case-studies/truckwise"
               className="inline-flex items-center gap-2 text-sm font-semibold text-textPrimary border-b border-primary pb-1 w-fit hover:text-primary transition-colors group"
             >
               Read full case study

@@ -4,8 +4,8 @@ import { motion } from "framer-motion";
 import { fadeUp, viewportOnce } from "@/lib/anim";
 
 const logos = [
-  "SurfBank",
   "TruckWise",
+  "SurfBank",
   "Triangle Wallets",
   "EZRecova",
   "Geeks for Growth",
@@ -23,7 +23,7 @@ export default function TrustBar() {
         className="max-w-[1400px] mx-auto px-6 md:px-10"
       >
         <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-textMuted mb-6">
-          Trusted on products shipping to real users
+          Products and teams I&apos;ve stepped into
         </p>
         <ul className="flex flex-wrap items-center gap-x-10 gap-y-4">
           {logos.map((name) => (

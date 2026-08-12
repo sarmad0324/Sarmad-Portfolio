@@ -17,7 +17,7 @@ export default function MobileCta() {
         rel="noopener noreferrer"
         className="w-full btn-primary shadow-lg shadow-black/40"
       >
-        Book a strategy call
+        Book a 20-min fit call
       </a>
     </motion.div>
   );

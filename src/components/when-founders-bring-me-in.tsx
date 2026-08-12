@@ -7,23 +7,19 @@ import { fadeUp, viewportOnce, EASE } from "@/lib/anim";
 const moments = [
   {
     title: "No technical owner",
-    text: "You've raised — but nobody owns architecture, delivery, or the hard calls.",
+    text: "Nobody is making the hard product and architecture decisions.",
   },
   {
-    title: "Stuck mid-build",
-    text: "The MVP is half-built. People are hired. Still nothing ships.",
+    title: "The product won't ship",
+    text: "Developers are working, but releases keep slipping.",
   },
   {
-    title: "Production keeps breaking",
-    text: "Incidents pile up and the fix has no single owner.",
+    title: "Production is fragile",
+    text: "Every change introduces another problem.",
   },
   {
-    title: "Delivery never locks",
-    text: "Deadlines slip because scope never settles and leadership is thin.",
-  },
-  {
-    title: "Fragile foundations",
-    text: "Every change breaks something else. Velocity is fake.",
+    title: "The system doesn't fit together",
+    text: "Frontend, backend, mobile, integrations, and infrastructure evolved separately.",
   },
 ];
 
@@ -41,12 +37,12 @@ export default function WhenFoundersBringMeIn() {
             viewport={viewportOnce}
             className="lg:col-span-4 lg:sticky lg:top-28 lg:self-start"
           >
-            <p className="section-eyebrow">Who this is for</p>
+            <p className="section-eyebrow">Buying situations</p>
             <h2 className="text-[clamp(2rem,4vw,3.25rem)] font-bold text-textPrimary font-Sora tracking-tight leading-[1.05]">
-              Founders bring me in when the product is at risk.
+              When founders bring me in
             </h2>
             <p className="mt-5 text-textSecondary leading-relaxed max-w-sm">
-              If one of these is true, a strategy call is worth 20 minutes.
+              If one of these is true, a 20-minute fit call is worth it.
             </p>
           </motion.div>
 

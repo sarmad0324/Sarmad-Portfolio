@@ -44,8 +44,7 @@ export default function ProofSection() {
           <div className="max-w-2xl">
             <p className="section-eyebrow">Client proof</p>
             <h2 className="text-[clamp(2rem,4.5vw,3.5rem)] font-bold text-textPrimary font-Sora tracking-tight leading-[1.05]">
-              Founders don&apos;t hire me for slides.
-              <span className="block text-textMuted">They hire me for movement.</span>
+              Founders hire me for movement.
             </h2>
           </div>
           <p className="text-sm text-textSecondary max-w-xs md:text-right leading-relaxed">

@@ -6,54 +6,76 @@ import { FiArrowRight, FiCheck } from "react-icons/fi";
 import { useSectionInView } from "@/lib/useInView";
 import { fadeUp, viewportOnce, EASE } from "@/lib/anim";
 import { Magnetic } from "@/components/ui/motion-bits";
+import { BRAND } from "@/lib/seo";
 
 const offers = [
   {
     step: "01",
-    tag: "Technical Audit",
+    tag: "Technical Audit & Roadmap",
     headline: "A written diagnosis of what's blocking shipment — and the exact plan to fix it.",
-    price: "$2,000",
+    price: "$1,500",
     term: "fixed · 2–3 weeks",
-    result: "You leave with a prioritized roadmap you own.",
+    result: "You leave with a decision-ready plan you own.",
+    deliverablesLabel: "You leave with",
     points: [
-      "Product, architecture, codebase, and delivery review",
-      "Clear call on what to fix first — and what to ignore",
-      "AI / automation opportunities that actually move the needle",
-      "Decision-ready plan — continue with me or take it in-house",
+      "Technical Risk Map",
+      "Architecture Assessment",
+      "Product / Delivery Bottleneck Analysis",
+      "Prioritized 30 / 60 / 90-Day Roadmap",
+      "Executive Findings Document",
+      "60-minute Findings Call",
     ],
-    cta: "Start with an Audit",
+    paths: null as null | { title: string; text: string }[],
+    note: null as string | null,
+    cta: "Discuss your product",
     entry: true,
   },
   {
     step: "02",
-    tag: "Build & Stabilize Sprint",
-    headline: "Scoped ownership. Weekly delivery. Product that ships.",
-    price: "From $6,000",
-    term: "fixed scope",
-    result: "Fragile or unfinished work becomes production-ready.",
+    tag: "Product Sprint",
+    headline: "Scoped ownership. Weekly delivery. Product that moves.",
+    price: "From $4,000",
+    term: "fixed scope · typically 3–6 weeks",
+    result: "Critical flows ship — or a focused v1 lands.",
+    deliverablesLabel: "What I take on",
     points: [
-      "Stabilize a broken product — or build v1 properly",
-      "Full-stack execution: web, mobile, backend, integrations",
-      "Time-boxed with weekly demos you can show investors",
-      "Engineered to scale, not just to demo",
+      "Time-boxed execution with weekly demos",
+      "Full-stack: web, mobile, backend, integrations",
+      "Built for production, not just a demo",
+      "Clear scope locked before work starts",
     ],
-    cta: "Scope a Sprint",
+    paths: [
+      {
+        title: "Stalled product?",
+        text: "I stabilize critical flows, architecture, and delivery.",
+      },
+      {
+        title: "Need v1?",
+        text: "I scope and ship a focused first release.",
+      },
+    ],
+    note: null,
+    cta: "Discuss your product",
     entry: false,
   },
   {
     step: "03",
-    tag: "Technical Partner / Fractional CTO",
-    headline: "Senior technical leadership embedded in your company — without a full-time hire.",
-    price: "From $4,500",
+    tag: "Technical Partner",
+    headline: "Ongoing technical ownership — without a full-time hire.",
+    price: "From $3,000",
     term: "/ month · retainer",
-    result: "I own delivery, architecture, and technical decisions.",
+    result: "You get a senior technical owner on a defined capacity.",
+    deliverablesLabel: "Includes",
     points: [
-      "Embedded monthly — not tickets, not agencies",
-      "Roadmap, architecture, delivery, and hiring support",
-      "Direct line to me. No account managers.",
-      "The CTO-level ownership early teams usually can't afford yet",
+      "Weekly technical leadership",
+      "Roadmap ownership",
+      "Architecture oversight",
+      "Delivery coordination",
+      "Limited hands-on implementation within retainer capacity",
     ],
-    cta: "Discuss a retainer",
+    paths: null,
+    note: "Fractional CTO engagements available when the product needs broader leadership (hiring, governance, executive cadence). Scope and capacity are confirmed on the fit call — this is not unlimited access.",
+    cta: "Discuss your product",
     entry: false,
   },
 ];
@@ -98,7 +120,7 @@ function OfferRow({
           </span>
           {offer.entry && (
             <span className="text-[10px] font-bold uppercase tracking-wider bg-primary text-[color:var(--accent-ink)] px-2 py-1">
-              Recommended start
+              Start here
             </span>
           )}
         </div>
@@ -120,20 +142,43 @@ function OfferRow({
         <h3 className="text-2xl md:text-[1.75rem] font-bold text-textPrimary font-Sora leading-[1.2]">
           {offer.headline}
         </h3>
-        <ul className="space-y-3">
-          {offer.points.map((point) => (
-            <li key={point} className="flex items-start gap-3 text-sm text-textSecondary leading-relaxed">
-              <FiCheck className="shrink-0 mt-0.5 text-primary" />
-              <span>{point}</span>
-            </li>
-          ))}
-        </ul>
+
+        {offer.paths && (
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {offer.paths.map((path) => (
+              <div key={path.title} className="border border-border p-4 bg-bg/50">
+                <p className="text-sm font-Sora font-bold text-textPrimary mb-1">{path.title}</p>
+                <p className="text-xs text-textSecondary leading-relaxed">{path.text}</p>
+              </div>
+            ))}
+          </div>
+        )}
+
+        <div>
+          <p className="text-[11px] font-semibold uppercase tracking-[0.16em] text-textMuted mb-3">
+            {offer.deliverablesLabel}
+          </p>
+          <ul className="space-y-2.5">
+            {offer.points.map((point) => (
+              <li key={point} className="flex items-start gap-3 text-sm text-textSecondary leading-relaxed">
+                <FiCheck className="shrink-0 mt-0.5 text-primary" />
+                <span>{point}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {offer.note && (
+          <p className="text-xs text-textMuted leading-relaxed border-l border-border pl-3">
+            {offer.note}
+          </p>
+        )}
       </div>
 
       <div className="lg:col-span-3 relative z-10 flex lg:justify-end lg:items-end">
         <Magnetic>
           <a
-            href="https://calendly.com/sarmad-sarmadirfan/30min"
+            href={BRAND.calendly}
             target="_blank"
             rel="noopener noreferrer"
             className={`group inline-flex items-center gap-2 text-sm font-semibold ${
@@ -164,14 +209,13 @@ export default function Offers() {
           viewport={viewportOnce}
           className="mb-6 md:mb-10 max-w-3xl"
         >
-          <p className="section-eyebrow">Engagements</p>
+          <p className="section-eyebrow">How we work</p>
           <h2 className="text-[clamp(2rem,4.5vw,3.75rem)] font-bold text-textPrimary font-Sora tracking-tight leading-[1.05]">
-            Clear offers. Clear outcomes.
-            <span className="block text-textMuted">No vague retainers.</span>
+            Audit → Stabilize / Build → Ongoing ownership
           </h2>
           <p className="mt-6 text-base md:text-lg text-textSecondary leading-relaxed max-w-xl">
-            Most founders start with a paid Audit. From there we sprint — or I stay on as
-            your technical partner.
+            One commercial system. Three ways to engage. The fit call determines which offer
+            matches your product — you don&apos;t have to decide alone.
           </p>
         </motion.div>
 
@@ -182,8 +226,8 @@ export default function Offers() {
         </div>
 
         <p className="mt-10 text-xs text-textMuted max-w-lg">
-          Scope and investment are confirmed after the strategy call. Pricing above is the starting point —
-          complexity and speed can move it.
+          Public starting prices. Final scope confirmed after the fit call. Implementation and
+          retainers use &ldquo;from&rdquo; pricing based on complexity and capacity.
         </p>
       </div>
     </section>

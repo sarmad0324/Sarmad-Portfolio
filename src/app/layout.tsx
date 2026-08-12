@@ -24,9 +24,9 @@ const syne = Syne({
 export const metadata: Metadata = {
   title: { default: BRAND.title, template: `%s | ${BRAND.name}` },
   description:
-    "Technical partner and fractional CTO for early-stage founders without a technical co-founder. Start with a paid Technical Audit, then build, fix, and scale your product across web, mobile, backend, and AI-powered workflows.",
+    "Technical Partner for early-stage founders. I help non-technical founders take ownership of stalled or fragile products and get them shipping again — starting with a paid Technical Audit.",
   keywords:
-    "fractional CTO, technical partner, technical co-founder, technical audit, product engineer, startup CTO, React, React Native, Next.js, Node.js, MVP build, app stabilization",
+    "technical partner, fractional CTO, technical co-founder, technical audit, product ownership, startup technical partner, React, React Native, Next.js, Node.js, MVP stabilize, product sprint",
   authors: [{ name: BRAND.name }],
   creator: BRAND.name,
   publisher: BRAND.name,
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: BRAND.title,
     description:
-      "Technical partner and fractional CTO for early-stage founders. Start with a paid Technical Audit, then build, fix, and scale your product — with someone who owns the execution.",
+      "I step into stalled, fragile, or half-built products, find what's blocking delivery, and take technical ownership from roadmap through release.",
     url: SITE_URL,
     siteName: BRAND.name,
     locale: "en_US",
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: BRAND.title,
     description:
-      "Technical partner and fractional CTO for early-stage founders. Audit-led engagements that turn stalled, fragile, or half-built products into something that ships.",
+      "Technical Partner for founders with a product that needs to move. Start with a paid Technical Audit.",
     images: [DEFAULT_OG_IMAGE],
   },
   alternates: {
