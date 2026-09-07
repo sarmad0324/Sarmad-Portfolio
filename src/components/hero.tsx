@@ -27,30 +27,32 @@ export default function Hero() {
               transition={{ duration: 0.6, ease: EASE }}
               className="text-[11px] font-semibold uppercase tracking-[0.18em] text-primary mb-6"
             >
-              Technical Partner for early-stage founders
+              Technical Partner for early stage founders
             </motion.p>
 
             <p className="font-Sora text-xl sm:text-2xl font-bold text-textPrimary tracking-tight mb-5">
               {BRAND.name}
             </p>
 
-            <h1 className="font-Sora font-bold text-textPrimary text-[clamp(2.25rem,5.2vw,4.6rem)] leading-[1.02] tracking-[-0.04em] max-w-[16ch]">
-              <RevealWords text="I help non-technical founders take ownership of a stalled or fragile product and get it shipping again." />
+            <h1 className="font-Sora font-bold text-textPrimary text-[clamp(2.25rem,5.2vw,4.6rem)] leading-[1.02] tracking-[-0.04em] max-w-[12ch]">
+              <RevealWords text="Your product should have shipped by now." />
             </h1>
 
             <motion.div
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.75, ease: EASE_SOFT }}
+              transition={{ duration: 0.8, delay: 0.55, ease: EASE_SOFT }}
               className="mt-8 md:mt-10 space-y-7 max-w-xl"
             >
               <p className="text-base md:text-lg text-textSecondary leading-relaxed">
-                I step into stalled, fragile, or half-built products, find what&apos;s blocking
-                delivery, and take technical ownership from roadmap through release.
+                I step into products that are stalled, fragile, or half-built, find what is
+                actually blocking delivery, and take technical ownership from architecture
+                through release. Two years running a live multi-role logistics platform across
+                mobile, backend, and production.
               </p>
               <p className="text-sm text-textMuted leading-relaxed">
-                Start with a paid Technical Audit. Fractional CTO engagements available when
-                the product needs ongoing technical leadership.
+                Start with a paid Technical Audit. Ongoing technical leadership when the
+                product needs it.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-3">
