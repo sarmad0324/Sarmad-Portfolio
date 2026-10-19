@@ -85,7 +85,7 @@ export default function Hero() {
             <div className="relative aspect-[4/5] max-w-[320px] lg:max-w-none mx-auto lg:ml-auto overflow-hidden border border-border bg-surface">
               <Image
                 src={Boy}
-                alt={`${BRAND.name} — Technical Partner`}
+                alt={`${BRAND.name}, technical partner and fractional CTO for early-stage founders`}
                 fill
                 priority
                 className="object-cover object-top"

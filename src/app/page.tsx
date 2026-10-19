@@ -10,12 +10,14 @@ import FitFor from "@/components/fit-for";
 import AboutPartner from "@/components/about-partner";
 import FinalCtaBand from "@/components/final-cta-band";
 import Contact from "@/components/Contact";
-import { BRAND, SITE_URL, DEFAULT_OG_IMAGE } from "@/lib/seo";
+import Faq from "@/components/faq";
+import JsonLd from "@/components/json-ld";
+import { BRAND, SITE_URL, DEFAULT_OG_IMAGE, FAQS } from "@/lib/seo";
 
 export const metadata: Metadata = {
-  title: BRAND.title,
+  title: { absolute: BRAND.title },
   description:
-    "Technical Partner for early-stage founders. I help non-technical founders take ownership of stalled or fragile products and get them shipping again — starting with a paid Technical Audit.",
+    "Technical partner and fractional CTO for non-technical founders. I rescue stalled or fragile MVPs, own architecture through release, and start with a fixed-price $1,500 Technical Audit.",
   openGraph: {
     title: BRAND.title,
     description:
@@ -31,12 +33,23 @@ export const metadata: Metadata = {
       "Technical Partner for founders with a product that needs to move. Start with a paid Technical Audit.",
     images: [DEFAULT_OG_IMAGE],
   },
-  alternates: { canonical: SITE_URL },
+  alternates: { canonical: "/" },
+};
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: FAQS.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: { "@type": "Answer", text: item.a },
+  })),
 };
 
 export default function Home() {
   return (
     <main className="flex flex-col">
+      <JsonLd data={faqJsonLd} />
       <Hero />
       <TrustBar />
       <WhenFoundersBringMeIn />
@@ -46,6 +59,7 @@ export default function Home() {
       <ProofSection />
       <FitFor />
       <AboutPartner />
+      <Faq />
       <FinalCtaBand />
       <Contact />
     </main>
