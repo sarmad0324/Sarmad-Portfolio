@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import Script from "next/script";
+import JsonLd from "@/components/json-ld";
 import { notFound } from "next/navigation";
 import { projectsData } from "@/lib/data";
 import { BRAND, SITE_URL } from "@/lib/seo";
@@ -26,8 +26,9 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const pageUrl = `${SITE_URL}/case-studies/${project.slug}`;
   const ogImage = project.imageUrl.startsWith("http") ? project.imageUrl : `${SITE_URL}${project.imageUrl}`;
   return {
-    title: project.title,
+    title: `${project.title} Case Study`,
     description: desc.length > 160 ? desc.slice(0, 157) + "..." : desc,
+    keywords: [...project.tags, "case study", "technical partner", "fractional CTO", BRAND.name],
     openGraph: {
       title: `${project.title} | Case Study | ${BRAND.name}`,
       description: desc,
@@ -60,13 +61,26 @@ export default function CaseStudyDetailPage({ params }: Props) {
     ],
   };
 
+  const pageUrl = `${SITE_URL}/case-studies/${project.slug}`;
+  const articleLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: `${project.title} — ${project.subtitle ?? project.description}`.slice(0, 110),
+    description: project.homepageSummary ?? project.subtitle ?? project.description,
+    image: project.imageUrl.startsWith("http") ? project.imageUrl : `${SITE_URL}${project.imageUrl}`,
+    url: pageUrl,
+    mainEntityOfPage: pageUrl,
+    keywords: project.tags.join(", "),
+    about: project.tags,
+    author: { "@type": "Person", "@id": `${SITE_URL}/#person`, name: BRAND.name, url: SITE_URL },
+    publisher: { "@type": "Person", "@id": `${SITE_URL}/#person`, name: BRAND.name },
+  };
+
   const hasFullCaseStudy = !!(project.overview || project.challenge || project.whatIOwned || project.whatIBuilt);
 
   return (
     <main className="min-h-screen pt-20 pb-24">
-      <Script id="breadcrumb-ld" type="application/ld+json">
-        {JSON.stringify(breadcrumbList)}
-      </Script>
+      <JsonLd data={[breadcrumbList, articleLd]} />
 
       {/* Hero image */}
       {project.imageUrl && (

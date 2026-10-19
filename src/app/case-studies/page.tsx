@@ -4,11 +4,12 @@ import Link from "next/link";
 import { projectsData } from "@/lib/data";
 import { BRAND, SITE_URL, DEFAULT_OG_IMAGE } from "@/lib/seo";
 import { FiArrowRight } from "react-icons/fi";
+import JsonLd from "@/components/json-ld";
 
 export const metadata: Metadata = {
   title: "Case Studies",
   description:
-    "Product execution work across fintech, logistics, recovery platforms, and digital commerce. Featured projects from Sarmad Irfan.",
+    "Fractional CTO and technical partner case studies: a paid technical audit, MVP rescue, logistics platform ownership, fintech mobile delivery, and AI-assisted products — by Sarmad Irfan.",
   openGraph: {
     title: `Case Studies | ${BRAND.name}`,
     description:
@@ -26,9 +27,22 @@ export const metadata: Metadata = {
   alternates: { canonical: `${SITE_URL}/case-studies` },
 };
 
+const itemListLd = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  name: `Case Studies | ${BRAND.name}`,
+  itemListElement: projectsData.map((project, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    name: project.title,
+    url: `${SITE_URL}/case-studies/${project.slug}`,
+  })),
+};
+
 export default function CaseStudiesPage() {
   return (
     <main className="px-6 pt-28 pb-16 md:pb-20 min-h-screen">
+      <JsonLd data={itemListLd} />
       <section className="max-w-7xl mx-auto">
         <div className="mb-12">
           <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-3">
@@ -52,7 +66,7 @@ export default function CaseStudiesPage() {
                 <Image
                   src={project.imageUrl}
                   fill
-                  alt={project.title}
+                  alt={`${project.title} case study — ${project.role ?? project.description}`}
                   className="object-cover group-hover:scale-[1.03] transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-surface/70 to-transparent" />
