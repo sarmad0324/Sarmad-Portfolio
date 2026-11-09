@@ -7,8 +7,8 @@ export const SITE_URL = "https://www.sarmadirfan.com";
 
 export const BRAND = {
   name: "Sarmad Irfan",
-  title: "Sarmad Irfan — Technical Partner & Fractional CTO for Early-Stage Founders",
-  role: "Technical Partner for Early-Stage Founders",
+  title: "Sarmad Irfan — Technical Partner | AI Systems Integration & Product Rescue",
+  role: "Technical Partner · AI Systems Integration · Product Rescue",
   email: "sarmad@sarmadirfan.com",
   github: "https://github.com/sarmad0324",
   linkedin: "https://www.linkedin.com/in/sarmad-irfan-a5126b3b8/",
@@ -21,32 +21,28 @@ export const DEFAULT_OG_IMAGE = "/hero-profile-2.jpeg";
 
 /** One-sentence summary reused in meta descriptions, JSON-LD, and llms.txt. */
 export const SITE_DESCRIPTION =
-  "Sarmad Irfan is a technical partner and fractional CTO for non-technical, early-stage founders. He takes ownership of stalled, fragile, or half-built web and mobile products and gets them shipping again — starting with a fixed-price Technical Audit.";
+  "Technical partner and product engineer with 5+ years of production experience. I help founders and software-driven businesses rescue products, integrate AI into real workflows, and own technical execution end to end.";
 
 /** Target search phrases (founder intent first, then capability/stack terms). */
 export const KEYWORDS = [
   "technical partner for startups",
+  "AI systems integration",
+  "product rescue",
   "fractional CTO",
-  "fractional CTO for startups",
   "technical co-founder alternative",
-  "CTO as a service",
-  "hire a technical co-founder",
   "technical audit",
   "startup technical audit",
-  "code audit for startups",
-  "software architecture review",
   "rescue stalled software project",
   "fix failing MVP",
-  "MVP development for non-technical founders",
-  "product rescue",
+  "production AI integration",
+  "LLM workflow automation",
+  "document intelligence",
+  "software architecture review",
   "technical due diligence",
-  "outsourced CTO",
-  "startup product development",
   "React Native developer",
   "Next.js developer",
   "Node.js developer",
   "full-stack developer",
-  "AI product strategy",
   "fractional CTO Pakistan",
   "fractional CTO Lahore",
   "Sarmad Irfan",
@@ -55,25 +51,32 @@ export const KEYWORDS = [
 /** Service catalogue — mirrors the offers section; used for Service / Offer JSON-LD. */
 export const SERVICES = [
   {
-    name: "Technical Audit & Roadmap",
+    name: "Product Rescue & Production Hardening",
     description:
-      "Fixed-price, 2–3 week written diagnosis of what is blocking delivery: technical risk map, architecture assessment, bottleneck analysis, and a prioritized 30/60/90-day roadmap.",
-    price: "1500",
-    priceLabel: "$1,500 fixed",
-  },
-  {
-    name: "Product Sprint (Build & Stabilize)",
-    description:
-      "Scoped 3–6 week full-stack execution across web, mobile, backend, and integrations to stabilize a stalled product or ship a focused v1, with weekly demos.",
+      "Stabilize stalled, fragile or rapidly built systems: architecture, production issues, technical debt, security and reliability hardening across web, mobile, backend and infrastructure.",
     price: "4000",
     priceLabel: "from $4,000",
   },
   {
-    name: "Technical Partner / Fractional CTO Retainer",
+    name: "AI Systems Integration",
     description:
-      "Ongoing technical ownership without a full-time hire: weekly technical leadership, roadmap ownership, architecture oversight, and delivery coordination.",
+      "Production AI features connected to existing APIs, databases, documents and operational workflows — including automation, document intelligence, human approval loops and monitoring.",
+    price: "3000",
+    priceLabel: "from $3,000",
+  },
+  {
+    name: "Technical Partner Retainer",
+    description:
+      "Senior technical ownership without a full-time hire: roadmap, architecture, delivery, production oversight and developer/vendor coordination.",
     price: "3000",
     priceLabel: "from $3,000 / month",
+  },
+  {
+    name: "Technical Audit & Roadmap",
+    description:
+      "Fixed-price, 2–3 week written diagnosis when the problem is unclear: product/architecture review, priorities and an execution roadmap.",
+    price: "1500",
+    priceLabel: "$1,500 fixed",
   },
 ] as const;
 
@@ -81,7 +84,7 @@ export const SERVICES = [
 export const FAQS = [
   {
     q: "What is a technical partner for a startup?",
-    a: "A technical partner is a senior engineer who takes accountable ownership of your product's technology — architecture, roadmap, and delivery — without you having to give away co-founder equity or hire a full-time CTO. I work with non-technical founders who need one person responsible for getting the product shipped.",
+    a: "A technical partner is a senior engineer who takes accountable ownership of your product's technology — architecture, roadmap, and delivery — without you having to give away co-founder equity or hire a full-time CTO. I work with founders and software-driven businesses that need one person responsible for getting the product shipped, stabilized, or extended with AI.",
   },
   {
     q: "How is this different from hiring a freelancer or an agency?",
@@ -89,22 +92,22 @@ export const FAQS = [
   },
   {
     q: "What does the Technical Audit include and how much does it cost?",
-    a: "The Technical Audit is a fixed $1,500 engagement over 2–3 weeks. You receive a technical risk map, an architecture assessment, a product and delivery bottleneck analysis, a prioritized 30/60/90-day roadmap, an executive findings document, and a 60-minute findings call.",
+    a: "The Technical Audit is a fixed $1,500 engagement over 2–3 weeks when the problem is unclear. You receive a written diagnosis of the product, architecture and delivery situation, priorities, and an execution roadmap. The audit is an entry point — not the identity of the business.",
   },
   {
-    q: "Can you rescue a stalled or failing MVP?",
-    a: "Yes. Most of my work starts with products that are stuck, fragile, or half-built. I diagnose what is actually blocking delivery, stabilize critical flows, and take ownership through release — usually without a full rewrite.",
+    q: "Can you rescue a stalled or failing product?",
+    a: "Yes. Product Rescue & Production Hardening starts from $4,000 fixed scope. I diagnose what is actually broken, stabilize architecture and delivery, and take ownership of getting the product moving again — usually without a full rewrite.",
   },
   {
-    q: "Do you work as a fractional CTO?",
-    a: "Yes. The Technical Partner retainer starts from $3,000 per month and covers weekly technical leadership, roadmap ownership, architecture oversight, and delivery coordination. Broader fractional CTO engagements (hiring, governance, executive cadence) are available when the product needs them.",
+    q: "Do you integrate AI into existing products?",
+    a: "Yes. AI Systems Integration starts from $3,000 fixed scope. I connect models to real APIs, databases, documents and operational workflows — with human approval loops, evaluation and production rollout — not demo chatbots.",
   },
   {
-    q: "Which technologies do you work with?",
-    a: "Web (React, Next.js), mobile (React Native, plus native Android and iOS assessment), backend (Node.js, .NET, REST APIs, MySQL/Postgres), cloud deployment, and AI-powered features such as search, retrieval, and assistants.",
+    q: "Do you work as an ongoing technical partner?",
+    a: "Yes. The Technical Partner retainer starts from $3,000 per month and covers roadmap, architecture, delivery ownership, production oversight and developer/vendor coordination, with direct access to me.",
   },
   {
-    q: "Where are you based, and do you work with international founders?",
-    a: "I'm based in Lahore, Pakistan, and work remotely with founders internationally, with overlap across US, UK, and European time zones available.",
+    q: "Where are you based, and do you work with international clients?",
+    a: "I'm based in Lahore, Pakistan, and work remotely with founders and software-driven businesses internationally, with overlap across US, UK, and European time zones available.",
   },
 ] as const;

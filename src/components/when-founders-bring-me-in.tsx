@@ -6,20 +6,20 @@ import { fadeUp, viewportOnce, EASE } from "@/lib/anim";
 
 const moments = [
   {
-    title: "No technical owner",
-    text: "Nobody is making the hard product and architecture decisions.",
+    title: "Your product exists, but nobody truly owns it.",
+    text: "Architecture, releases, developers and priorities need one accountable technical owner.",
   },
   {
-    title: "The product won't ship",
-    text: "Developers are working, but releases keep slipping.",
+    title: "You want AI inside the real product — not another demo.",
+    text: "I integrate AI with your existing APIs, databases, documents and operational workflows.",
   },
   {
-    title: "Production is fragile",
-    text: "Every change introduces another problem.",
+    title: "Your product is fragile, stalled or becoming difficult to maintain.",
+    text: "I diagnose what is broken, stabilize the architecture and get delivery moving again.",
   },
   {
-    title: "The system doesn't fit together",
-    text: "Frontend, backend, mobile, integrations, and infrastructure evolved separately.",
+    title: "You built quickly and now production is catching up with you.",
+    text: "I harden authentication, data flows, infrastructure, integrations and critical product logic before growth makes the problems worse.",
   },
 ];
 
@@ -37,13 +37,10 @@ export default function WhenFoundersBringMeIn() {
             viewport={viewportOnce}
             className="lg:col-span-4 lg:sticky lg:top-28 lg:self-start"
           >
-            <p className="section-eyebrow">Buying situations</p>
+            <p className="section-eyebrow">When to bring me in</p>
             <h2 className="text-[clamp(2rem,4vw,3.25rem)] font-bold text-textPrimary font-Sora tracking-tight leading-[1.05]">
-              When founders bring me in
+              I&apos;m useful when technical execution has become the bottleneck.
             </h2>
-            <p className="mt-5 text-textSecondary leading-relaxed max-w-sm">
-              If one of these is true, a 20-minute fit call is worth it.
-            </p>
           </motion.div>
 
           <ol className="lg:col-span-7 lg:col-start-6">

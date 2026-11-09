@@ -8,21 +8,20 @@ import { BRAND } from "@/lib/seo";
 const steps = [
   {
     number: "01",
-    title: "Fit call",
-    description:
-      "20 minutes to understand what's blocked, determine whether I can help, and identify the right next step.",
+    title: "Fit",
+    description: "You show me the product, problem and business context.",
   },
   {
     number: "02",
-    title: "Prescribe the offer",
+    title: "Diagnose & Scope",
     description:
-      "Audit, Product Sprint, or Technical Partner — I recommend the engagement that matches your stage and risk.",
+      "If the problem is clear, we scope the implementation directly. If it isn't, we start with a Technical Audit.",
   },
   {
     number: "03",
-    title: "Own the execution",
+    title: "Execute & Own",
     description:
-      "Clear scope, weekly visibility, and one accountable technical lead — from roadmap through release.",
+      "I step in for a focused implementation, product rescue, or ongoing technical partnership and remain accountable through delivery.",
   },
 ];
 
@@ -39,9 +38,9 @@ export default function HowItWorks() {
           viewport={viewportOnce}
           className="mb-12 max-w-2xl"
         >
-          <p className="section-eyebrow">Process</p>
+          <p className="section-eyebrow">How I work</p>
           <h2 className="text-[clamp(2rem,4vw,3.25rem)] font-bold text-textPrimary font-Sora tracking-tight leading-[1.05]">
-            How engagement works
+            Clear problem. Clear ownership. Clear execution.
           </h2>
         </motion.div>
 

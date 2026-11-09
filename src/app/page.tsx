@@ -2,26 +2,22 @@ import type { Metadata } from "next";
 import Hero from "@/components/hero";
 import TrustBar from "@/components/trust-bar";
 import WhenFoundersBringMeIn from "@/components/when-founders-bring-me-in";
-import CaseStudies from "@/components/case-studies";
 import Offers from "@/components/offers";
+import CaseStudies from "@/components/case-studies";
 import HowItWorks from "@/components/how-it-works";
-import ProofSection from "@/components/proof-section";
-import FitFor from "@/components/fit-for";
 import AboutPartner from "@/components/about-partner";
 import FinalCtaBand from "@/components/final-cta-band";
 import Contact from "@/components/Contact";
 import Faq from "@/components/faq";
 import JsonLd from "@/components/json-ld";
-import { BRAND, SITE_URL, DEFAULT_OG_IMAGE, FAQS } from "@/lib/seo";
+import { BRAND, SITE_URL, DEFAULT_OG_IMAGE, FAQS, SITE_DESCRIPTION } from "@/lib/seo";
 
 export const metadata: Metadata = {
   title: { absolute: BRAND.title },
-  description:
-    "Technical partner and fractional CTO for non-technical founders. I rescue stalled or fragile MVPs, own architecture through release, and start with a fixed-price $1,500 Technical Audit.",
+  description: SITE_DESCRIPTION,
   openGraph: {
     title: BRAND.title,
-    description:
-      "I step into stalled, fragile, or half-built products, find what's blocking delivery, and take technical ownership from roadmap through release.",
+    description: SITE_DESCRIPTION,
     url: SITE_URL,
     siteName: BRAND.name,
     images: [{ url: DEFAULT_OG_IMAGE, alt: `${BRAND.name} - ${BRAND.role}`, width: 1200, height: 630 }],
@@ -29,8 +25,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: BRAND.title,
-    description:
-      "Technical Partner for founders with a product that needs to move. Start with a paid Technical Audit.",
+    description: SITE_DESCRIPTION,
     images: [DEFAULT_OG_IMAGE],
   },
   alternates: { canonical: "/" },
@@ -53,11 +48,9 @@ export default function Home() {
       <Hero />
       <TrustBar />
       <WhenFoundersBringMeIn />
-      <CaseStudies />
       <Offers />
+      <CaseStudies />
       <HowItWorks />
-      <ProofSection />
-      <FitFor />
       <AboutPartner />
       <Faq />
       <FinalCtaBand />

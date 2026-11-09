@@ -9,6 +9,13 @@ import { Magnetic, RevealWords } from "@/components/ui/motion-bits";
 import { BRAND } from "@/lib/seo";
 import Boy from "../../public/dp.webp";
 
+const proofStrip = [
+  { value: "5+ Years", label: "Production engineering" },
+  { value: "2+ Years", label: "Continuous product ownership" },
+  { value: "6+ Products", label: "Shipped internationally" },
+  { value: "3 Continents", label: "International clients" },
+];
+
 export default function Hero() {
   const { ref } = useSectionInView("#home", 0.4);
 
@@ -25,37 +32,36 @@ export default function Hero() {
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, ease: EASE }}
-              className="text-[11px] font-semibold uppercase tracking-[0.18em] text-primary mb-6"
+              className="text-[11px] font-semibold uppercase tracking-[0.16em] text-primary mb-6"
             >
-              Technical Partner for early stage founders
+              Technical Partner · AI Systems Integration · Product Rescue
             </motion.p>
 
             <p className="font-Sora text-xl sm:text-2xl font-bold text-textPrimary tracking-tight mb-5">
               {BRAND.name}
             </p>
 
-            <h1 className="font-Sora font-bold text-textPrimary text-[clamp(2.25rem,5.2vw,4.6rem)] leading-[1.02] tracking-[-0.04em] max-w-[12ch]">
-              <RevealWords text="Your product should have shipped by now." />
+            <h1 className="font-Sora font-bold text-textPrimary text-[clamp(2.2rem,5vw,4.4rem)] leading-[1.05] tracking-[-0.04em] max-w-[16ch]">
+              <RevealWords text="I take ownership of products that need to ship, scale, or get smarter with AI." />
             </h1>
 
             <motion.div
               initial={{ opacity: 0, y: 24 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.55, ease: EASE_SOFT }}
-              className="mt-8 md:mt-10 space-y-7 max-w-xl"
+              transition={{ duration: 0.8, delay: 0.65, ease: EASE_SOFT }}
+              className="mt-8 md:mt-10 space-y-5 max-w-xl"
             >
               <p className="text-base md:text-lg text-textSecondary leading-relaxed">
-                I step into products that are stalled, fragile, or half-built, find what is
-                actually blocking delivery, and take technical ownership from architecture
-                through release. Two years running a live multi-role logistics platform across
-                mobile, backend, and production.
+                5+ years building and owning production software across logistics, fintech, SaaS,
+                mobile, and operational systems.
               </p>
-              <p className="text-sm text-textMuted leading-relaxed">
-                Start with a paid Technical Audit. Ongoing technical leadership when the
-                product needs it.
+              <p className="text-base md:text-lg text-textSecondary leading-relaxed">
+                I help founders and software-driven businesses rescue fragile products, integrate
+                AI into real workflows, and own technical execution from architecture through
+                production.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-3">
+              <div className="flex flex-col sm:flex-row gap-3 pt-2">
                 <Magnetic>
                   <a
                     href={BRAND.calendly}
@@ -68,8 +74,8 @@ export default function Hero() {
                   </a>
                 </Magnetic>
                 <Magnetic strength={0.2}>
-                  <a href="/case-studies/truckwise" className="btn-ghost">
-                    See how I work
+                  <a href="#projects" className="btn-ghost">
+                    View case studies
                   </a>
                 </Magnetic>
               </div>
@@ -88,18 +94,9 @@ export default function Hero() {
                 alt={`${BRAND.name}, technical partner and fractional CTO for early-stage founders`}
                 fill
                 priority
-                className="object-cover object-top"
+                className="object-cover object-[center_15%]"
                 sizes="(max-width: 1024px) 320px, 400px"
               />
-              <div className="absolute inset-x-0 bottom-0 p-4 bg-gradient-to-t from-bg via-bg/80 to-transparent">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.14em] text-primary mb-1">
-                  Flagship ownership
-                </p>
-                <p className="text-sm font-Sora font-bold text-textPrimary">TruckWise</p>
-                <p className="text-xs text-textMuted mt-1">
-                  2+ years · multi-role logistics product
-                </p>
-              </div>
             </div>
           </motion.div>
         </div>
@@ -110,12 +107,7 @@ export default function Hero() {
           transition={{ delay: 1.05, duration: 0.7 }}
           className="mt-14 md:mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8 pt-8 border-t border-border"
         >
-          {[
-            { value: "2+ yrs", label: "TruckWise ownership" },
-            { value: "6+", label: "Products shipped" },
-            { value: "3", label: "Continents" },
-            { value: "$1.5k", label: "Audit entry point" },
-          ].map((stat) => (
+          {proofStrip.map((stat) => (
             <div key={stat.label}>
               <p className="font-Sora text-2xl md:text-3xl font-bold text-textPrimary tracking-tight">
                 {stat.value}
@@ -124,10 +116,6 @@ export default function Hero() {
             </div>
           ))}
         </motion.div>
-
-        <p className="mt-6 text-xs text-textMuted tracking-wide">
-          Web · Mobile · Backend · AI-enabled product systems
-        </p>
       </div>
     </section>
   );

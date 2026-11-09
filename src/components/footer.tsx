@@ -1,14 +1,19 @@
 import { FaLinkedinIn, FaGithub, FaWhatsapp } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
 import { FiFileText, FiCalendar } from "react-icons/fi";
+import { BRAND } from "@/lib/seo";
 
 const socialLinks = [
-  { icon: FaLinkedinIn, href: "https://www.linkedin.com/in/sarmad-irfan-a5126b3b8/", label: "LinkedIn" },
-  { icon: FaGithub, href: "https://github.com/sarmad0324", label: "GitHub" },
-  { icon: HiOutlineMail, href: "mailto:sarmad@sarmadirfan.com", label: "Email" },
+  { icon: FaLinkedinIn, href: BRAND.linkedin, label: "LinkedIn" },
+  { icon: FaGithub, href: BRAND.github, label: "GitHub" },
+  { icon: HiOutlineMail, href: `mailto:${BRAND.email}`, label: "Email" },
   { icon: FaWhatsapp, href: "https://wa.me/923368486356", label: "WhatsApp" },
-  { icon: FiCalendar, href: "https://calendly.com/sarmad-sarmadirfan/30min", label: "Book a Call" },
-  { icon: FiFileText, href: "https://drive.google.com/file/d/1F5TVWgadnUpHgqp9Hxkvd7T2LTkELaBg/view?usp=sharing", label: "Resume" },
+  { icon: FiCalendar, href: BRAND.calendly, label: "Book a Call" },
+  {
+    icon: FiFileText,
+    href: "https://drive.google.com/file/d/1F5TVWgadnUpHgqp9Hxkvd7T2LTkELaBg/view?usp=sharing",
+    label: "Resume",
+  },
 ];
 
 export default function Footer() {
@@ -16,24 +21,29 @@ export default function Footer() {
     <footer className="px-6 py-10 border-t border-border">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-          {/* Brand */}
           <div className="space-y-1">
-            <p className="text-textPrimary font-bold text-lg font-Sora">
-              Sarmad Irfan
+            <p className="text-textPrimary font-bold text-lg font-Sora">{BRAND.name}</p>
+            <p className="text-primary text-sm font-semibold">
+              Technical Partner · AI Systems Integration · Product Rescue
             </p>
-            <p className="text-primary text-sm font-semibold">Technical Partner for Early-Stage Founders</p>
-            <p className="text-textMuted text-xs">Based in Lahore — working internationally</p>
+            <p className="text-textMuted text-xs">Based in Lahore · Working internationally</p>
           </div>
 
-          {/* Nav links */}
           <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-textMuted">
-            <a href="/#offers" className="hover:text-textSecondary transition-colors">Offers</a>
-            <a href="/case-studies" className="hover:text-textSecondary transition-colors">Case Studies</a>
-            <a href="/#about" className="hover:text-textSecondary transition-colors">About</a>
-            <a href="/#contact" className="hover:text-textSecondary transition-colors">Contact</a>
+            <a href="/#offers" className="hover:text-textSecondary transition-colors">
+              Offers
+            </a>
+            <a href="/case-studies" className="hover:text-textSecondary transition-colors">
+              Case Studies
+            </a>
+            <a href="/#about" className="hover:text-textSecondary transition-colors">
+              About
+            </a>
+            <a href="/#contact" className="hover:text-textSecondary transition-colors">
+              Contact
+            </a>
           </div>
 
-          {/* Social icons */}
           <div className="flex items-center gap-2">
             {socialLinks.map((link) => (
               <a
@@ -51,12 +61,12 @@ export default function Footer() {
         </div>
 
         <div className="mt-8 pt-6 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-2">
-          <p className="text-textMuted text-xs">© 2026 Sarmad Irfan. All rights reserved.</p>
+          <p className="text-textMuted text-xs">© 2026 {BRAND.name}. All rights reserved.</p>
           <a
-            href="mailto:sarmad@sarmadirfan.com"
+            href={`mailto:${BRAND.email}`}
             className="text-textMuted text-xs hover:text-primary transition-colors"
           >
-            sarmad@sarmadirfan.com
+            {BRAND.email}
           </a>
         </div>
       </div>

@@ -10,12 +10,6 @@ import { HiOutlineDocumentText } from "react-icons/hi";
 import { BRAND } from "@/lib/seo";
 import Boy from "../../public/dp.webp";
 
-const credentials = [
-  { label: "2+ years", detail: "TruckWise ownership" },
-  { label: "Paid audits", detail: "SurfBank Release 2.0" },
-  { label: "International", detail: "Dubai · US · Germany" },
-];
-
 export default function AboutPartner() {
   const { ref } = useSectionInView("#about", 0.45);
 
@@ -34,18 +28,10 @@ export default function AboutPartner() {
               src={Boy}
               fill
               alt={BRAND.name}
-              className="object-cover object-top"
+              className="object-cover object-[center_18%]"
               sizes="(max-width: 1024px) 100vw, 40vw"
             />
           </div>
-          <dl className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4">
-            {credentials.map((c) => (
-              <div key={c.label} className="border-t border-border pt-3">
-                <dt className="text-sm font-Sora font-bold text-textPrimary">{c.label}</dt>
-                <dd className="text-xs text-textMuted mt-1">{c.detail}</dd>
-              </div>
-            ))}
-          </dl>
         </motion.div>
 
         <motion.div
@@ -58,30 +44,29 @@ export default function AboutPartner() {
           <div>
             <p className="section-eyebrow">About</p>
             <h2 className="text-[clamp(2rem,4vw,3.25rem)] font-bold text-textPrimary font-Sora mb-5 tracking-tight leading-[1.05]">
-              Not tickets.
-              <span className="block text-textMuted">Ownership.</span>
+              5+ years building, rescuing and owning production software.
             </h2>
             <p className="text-textSecondary text-base md:text-lg leading-relaxed">
-              I&apos;ve spent the last several years owning products across logistics, fintech, and
-              digital platforms — from architecture and backend systems to mobile releases and
-              production support. Especially for founders without a technical co-founder.
+              I&apos;m Sarmad Irfan, a product engineer and technical partner based in Lahore,
+              working internationally.
             </p>
             <p className="text-textSecondary text-base md:text-lg leading-relaxed mt-4">
-              My job isn&apos;t to burn tickets. It&apos;s to own the decisions that move the product:
-              what to build, what to cut, how to architect it, and how to ship without stalling.
-              Direct line to me — no account managers, no ticket queues.
+              My work has spanned logistics, fintech, SaaS, mobile products and operational
+              software across the UAE, US, Europe and other international markets.
+            </p>
+            <p className="text-textSecondary text-base md:text-lg leading-relaxed mt-4">
+              I&apos;m strongest where product engineering meets ownership: understanding an
+              existing business system, deciding what actually needs to change, implementing it,
+              and staying responsible when the software reaches production.
+            </p>
+            <p className="text-textSecondary text-base md:text-lg leading-relaxed mt-4">
+              Increasingly, that also means helping businesses integrate AI into real systems —
+              not as isolated chatbots, but as production workflows connected to existing data,
+              APIs and business rules.
             </p>
           </div>
 
           <div className="flex flex-wrap gap-3">
-            <a
-              href={BRAND.calendly}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary !px-5 !py-3"
-            >
-              Book a 20-min fit call
-            </a>
             <a
               href="https://drive.google.com/file/d/1F5TVWgadnUpHgqp9Hxkvd7T2LTkELaBg/view?usp=sharing"
               target="_blank"
@@ -93,15 +78,6 @@ export default function AboutPartner() {
               <FiExternalLink className="text-xs" />
             </a>
             <a
-              href={BRAND.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-ghost !px-4 !py-3"
-            >
-              <FaLinkedinIn className="text-base" />
-              LinkedIn
-            </a>
-            <a
               href={BRAND.github}
               target="_blank"
               rel="noopener noreferrer"
@@ -109,6 +85,15 @@ export default function AboutPartner() {
             >
               <FaGithub className="text-base" />
               GitHub
+            </a>
+            <a
+              href={BRAND.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-ghost !px-4 !py-3"
+            >
+              <FaLinkedinIn className="text-base" />
+              LinkedIn
             </a>
           </div>
         </motion.div>

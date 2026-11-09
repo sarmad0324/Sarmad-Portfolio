@@ -155,7 +155,7 @@ const Contact = () => {
             className="lg:col-span-5 bg-surface p-7 md:p-9 flex flex-col"
           >
             <p className="text-sm text-textSecondary leading-relaxed mb-8">
-              Primary CTA: a 20-minute fit call. Most serious engagements start with a paid Technical Audit ($1,500).
+              Prefer a call? Book 20 minutes. If the problem is unclear, we often start with a paid Technical Audit ($1,500).
             </p>
 
             <div className="space-y-0.5 flex-1">
@@ -281,9 +281,10 @@ const Contact = () => {
                   required
                 >
                   <option value="">— Select —</option>
+                  <option value="Product Rescue">Product Rescue & Production Hardening</option>
+                  <option value="AI Systems Integration">AI Systems Integration</option>
+                  <option value="Technical Partner">Technical Partner — retainer</option>
                   <option value="Technical Audit">Technical Audit — $1,500</option>
-                  <option value="Product Sprint">Product Sprint — from $4,000</option>
-                  <option value="Technical Partner">Technical Partner — from $3,000/mo</option>
                   <option value="Not sure">Not sure yet</option>
                 </select>
               </label>

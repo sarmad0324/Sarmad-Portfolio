@@ -8,6 +8,30 @@ import { projectsData } from "@/lib/data";
 import { useSectionInView } from "@/lib/useInView";
 import { fadeUp, viewportOnce, EASE } from "@/lib/anim";
 
+const secondaryCopy: Record<
+  string,
+  { label: string; blurb: string; cta: string }
+> = {
+  surfbank: {
+    label: "Acting CTO / Product Strategy",
+    blurb:
+      "30-day technical leadership engagement covering architecture, AI direction, mobile strategy and a dependency-driven Release 2.0 roadmap.",
+    cta: "Read Case Study",
+  },
+  "triangle-wallets": {
+    label: "Fintech Engineering",
+    blurb:
+      "Production wallet functionality and trust-sensitive mobile flows delivered across a real fintech product.",
+    cta: "View Case Study",
+  },
+  ezrecova: {
+    label: "Product Engineering",
+    blurb:
+      "Subscription workflows, user journeys and AI-assisted product functionality brought together into one production platform.",
+    cta: "View Case Study",
+  },
+};
+
 export default function CaseStudies() {
   const { ref } = useSectionInView("#projects", 0.25);
   const featuredRef = useRef<HTMLElement>(null);
@@ -18,12 +42,6 @@ export default function CaseStudies() {
   const imgY = useTransform(scrollYProgress, [0, 1], ["-6%", "6%"]);
 
   const featured = projectsData.find((p) => p.slug === "truckwise")!;
-  const featuredMetrics = [
-    "2+ years continuous ownership",
-    "5+ user roles in one system",
-    "Mobile + backend + operations",
-    "OCR, contracts, invoicing, dashboards",
-  ];
   const others = ["surfbank", "triangle-wallets", "ezrecova"]
     .map((slug) => projectsData.find((p) => p.slug === slug))
     .filter(Boolean) as typeof projectsData;
@@ -36,16 +54,14 @@ export default function CaseStudies() {
           initial="hidden"
           whileInView="show"
           viewport={viewportOnce}
-          className="mb-14 md:mb-20 flex flex-col md:flex-row md:items-end md:justify-between gap-6"
+          className="mb-14 md:mb-16 max-w-2xl"
         >
-          <div className="max-w-2xl">
-            <p className="section-eyebrow">Proof of work</p>
-            <h2 className="text-[clamp(2rem,4.5vw,3.75rem)] font-bold text-textPrimary font-Sora tracking-tight leading-[1.05]">
-              Case studies
-            </h2>
-          </div>
-          <p className="text-textSecondary max-w-sm md:text-right leading-relaxed">
-            What was broken. What I owned. What changed.
+          <p className="section-eyebrow">Featured case study</p>
+          <h2 className="text-[clamp(2rem,4.5vw,3.75rem)] font-bold text-textPrimary font-Sora tracking-tight leading-[1.05]">
+            TruckWise
+          </h2>
+          <p className="mt-3 text-primary font-semibold text-sm md:text-base tracking-wide">
+            2+ years of continuous technical ownership
           </p>
         </motion.div>
 
@@ -68,87 +84,86 @@ export default function CaseStudies() {
                 priority
               />
             </motion.div>
-            <div className="absolute top-4 left-4 z-10">
-              <span className="text-[11px] font-bold px-3 py-1.5 bg-primary text-[color:var(--accent-ink)]">
-                Featured · Long-term ownership
-              </span>
-            </div>
           </div>
 
-          <div className="lg:col-span-5 flex flex-col justify-center">
-            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-primary mb-4">
-              {featured.role}
+          <div className="lg:col-span-5 flex flex-col justify-center space-y-5">
+            <p className="text-textSecondary leading-relaxed">
+              A multi-role logistics platform spanning web dashboards, React Native applications,
+              backend services, finance workflows and production infrastructure.
             </p>
-            <h3 className="text-3xl md:text-5xl font-bold text-textPrimary font-Sora mb-3 tracking-tight">
-              {featured.title}
-            </h3>
-            <p className="text-sm text-textMuted mb-5 font-medium">
-              2 years of product ownership across a complex logistics platform
+            <p className="text-textSecondary leading-relaxed">
+              I stepped into an increasingly complex product environment and became responsible
+              for ongoing technical execution across the system.
             </p>
-            <p className="text-textSecondary leading-relaxed mb-8">
-              {featured.homepageSummary}
+            <p className="text-textSecondary leading-relaxed">
+              Work has included product stabilization, architecture, backend and mobile
+              development, deployment infrastructure, operational workflows, OCR/document
+              intelligence and AI-assisted document processing.
             </p>
-            <ul className="space-y-3 mb-10">
-              {featuredMetrics.map((metric) => (
-                <li key={metric} className="flex items-start gap-3 text-sm text-textSecondary">
-                  <span className="text-primary mt-0.5">→</span>
-                  {metric}
-                </li>
-              ))}
-            </ul>
+            <p className="text-xs text-textMuted tracking-wide pt-1">
+              Technical ownership · Production systems · AI/document workflows · Web + Mobile ·
+              Infrastructure
+            </p>
             <a
               href="/case-studies/truckwise"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-textPrimary border-b border-primary pb-1 w-fit hover:text-primary transition-colors group"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-textPrimary border-b border-primary pb-1 w-fit hover:text-primary transition-colors group pt-2"
             >
-              Read full case study
+              View TruckWise Case Study
               <FiArrowRight className="group-hover:translate-x-1 transition-transform text-xs" />
             </a>
           </div>
         </motion.article>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border border border-border">
-          {others.map((project, i) => (
-            <motion.a
-              key={project.title}
-              href={`/case-studies/${project.slug}`}
-              initial={{ opacity: 0, y: 28 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={viewportOnce}
-              transition={{ duration: 0.65, delay: i * 0.08, ease: EASE }}
-              className="group bg-bg p-0 flex flex-col hover:bg-surface transition-colors duration-300"
-            >
-              <div className="relative h-44 overflow-hidden">
-                <Image
-                  src={project.imageUrl}
-                  fill
-                  alt={project.title}
-                  className="object-cover group-hover:scale-[1.04] transition-transform duration-700 ease-out"
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                />
-              </div>
-              <div className="p-6 flex flex-col grow">
-                <div className="flex items-start justify-between gap-3 mb-2">
-                  <h3 className="text-lg font-bold text-textPrimary font-Sora">{project.title}</h3>
-                  <FiArrowUpRight className="text-textMuted group-hover:text-primary transition-colors shrink-0 mt-1" />
-                </div>
-                {project.role && (
-                  <p className="text-[11px] font-semibold uppercase tracking-wider text-textMuted mb-3">
-                    {project.role}
-                  </p>
-                )}
-                <p className="text-sm text-textSecondary leading-relaxed">
-                  {project.outcomeShort ?? project.outcome}
-                </p>
-              </div>
-            </motion.a>
-          ))}
-        </div>
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="show"
+          viewport={viewportOnce}
+          className="mb-8"
+        >
+          <p className="section-eyebrow">Other proof</p>
+        </motion.div>
 
-        <div className="flex justify-center mt-12">
-          <a href="/case-studies" className="btn-ghost">
-            View all case studies
-            <FiArrowRight className="text-xs" />
-          </a>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-px bg-border border border-border">
+          {others.map((project, i) => {
+            const copy = secondaryCopy[project.slug] ?? {
+              label: project.role ?? "",
+              blurb: project.outcomeShort ?? project.outcome ?? "",
+              cta: "View Case Study",
+            };
+            return (
+              <motion.a
+                key={project.title}
+                href={`/case-studies/${project.slug}`}
+                initial={{ opacity: 0, y: 28 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={viewportOnce}
+                transition={{ duration: 0.65, delay: i * 0.08, ease: EASE }}
+                className="group bg-bg p-0 flex flex-col hover:bg-surface transition-colors duration-300"
+              >
+                <div className="relative h-44 overflow-hidden">
+                  <Image
+                    src={project.imageUrl}
+                    fill
+                    alt={project.title}
+                    className="object-cover group-hover:scale-[1.04] transition-transform duration-700 ease-out"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
+                </div>
+                <div className="p-6 flex flex-col grow">
+                  <div className="flex items-start justify-between gap-3 mb-2">
+                    <h3 className="text-lg font-bold text-textPrimary font-Sora">{project.title}</h3>
+                    <FiArrowUpRight className="text-textMuted group-hover:text-primary transition-colors shrink-0 mt-1" />
+                  </div>
+                  <p className="text-[11px] font-semibold uppercase tracking-wider text-textMuted mb-3">
+                    {copy.label}
+                  </p>
+                  <p className="text-sm text-textSecondary leading-relaxed flex-1">{copy.blurb}</p>
+                  <span className="mt-4 text-xs font-semibold text-primary">{copy.cta}</span>
+                </div>
+              </motion.a>
+            );
+          })}
         </div>
       </div>
     </section>

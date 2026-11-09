@@ -10,7 +10,7 @@ export function GET() {
     "",
     `> ${SITE_DESCRIPTION}`,
     "",
-    `${BRAND.name} works with early-stage, non-technical founders who have a live or partially built product that is stuck, fragile, or moving too slowly. Based in ${BRAND.location.city}, Pakistan; works remotely with founders internationally. Contact: ${BRAND.email}. Book a 20-minute fit call: ${BRAND.calendly}`,
+    `${BRAND.name} is a technical partner for founders and software-driven businesses: product rescue, AI systems integration, and ongoing technical ownership. Based in ${BRAND.location.city}, Pakistan; works remotely internationally. Contact: ${BRAND.email}. Book a 20-minute fit call: ${BRAND.calendly}`,
     "",
     "## Services",
     "",
