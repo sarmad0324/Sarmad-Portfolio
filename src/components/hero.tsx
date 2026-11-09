@@ -88,14 +88,14 @@ export default function Hero() {
             transition={{ duration: 1.05, delay: 0.35, ease: EASE }}
             className="lg:col-span-5 xl:col-span-4"
           >
-            <div className="relative aspect-[4/5] max-w-[320px] lg:max-w-none mx-auto lg:ml-auto overflow-hidden border border-border bg-surface">
+            <div className="relative aspect-[3/4] w-full max-w-[420px] lg:max-w-none mx-auto lg:ml-auto overflow-hidden border border-border bg-surface">
               <Image
                 src={Boy}
-                alt={`${BRAND.name}, technical partner and fractional CTO for early-stage founders`}
+                alt={`${BRAND.name}, technical partner for AI systems integration and product rescue`}
                 fill
                 priority
-                className="object-cover object-[center_15%]"
-                sizes="(max-width: 1024px) 320px, 400px"
+                className="object-cover object-[center_20%]"
+                sizes="(max-width: 1024px) 420px, 520px"
               />
             </div>
           </motion.div>

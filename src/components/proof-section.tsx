@@ -42,13 +42,13 @@ export default function ProofSection() {
           className="mb-14 md:mb-16 flex flex-col md:flex-row md:items-end md:justify-between gap-6"
         >
           <div className="max-w-2xl">
-            <p className="section-eyebrow">Client proof</p>
+            <p className="section-eyebrow">Client reviews</p>
             <h2 className="text-[clamp(2rem,4.5vw,3.5rem)] font-bold text-textPrimary font-Sora tracking-tight leading-[1.05]">
-              Founders hire me for movement.
+              What clients say after I take ownership.
             </h2>
           </div>
           <p className="text-sm text-textSecondary max-w-xs md:text-right leading-relaxed">
-            Outcome-linked feedback from teams I&apos;ve stepped into.
+            Direct feedback from founders and product teams I&apos;ve worked with.
           </p>
         </motion.div>
 

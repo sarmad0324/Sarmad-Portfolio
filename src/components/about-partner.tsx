@@ -23,13 +23,13 @@ export default function AboutPartner() {
           viewport={{ once: true, margin: "-80px" }}
           className="lg:col-span-5"
         >
-          <div className="relative aspect-[4/5] overflow-hidden border border-border">
+          <div className="relative aspect-[3/4] overflow-hidden border border-border">
             <Image
               src={Boy}
               fill
               alt={BRAND.name}
-              className="object-cover object-[center_18%]"
-              sizes="(max-width: 1024px) 100vw, 40vw"
+              className="object-cover object-[center_20%]"
+              sizes="(max-width: 1024px) 100vw, 520px"
             />
           </div>
         </motion.div>

@@ -117,16 +117,16 @@ textarea:focus-visible,
   .btn-primary {
     @apply inline-flex items-center justify-center gap-2 px-7 py-4 font-semibold text-sm
       bg-primary hover:bg-primaryHover active:scale-[0.98]
-      transition-all duration-300 ease-out rounded-none;
+      transition-all duration-300 ease-out rounded-none whitespace-nowrap;
     color: var(--accent-ink);
   }
   .btn-ghost {
     @apply inline-flex items-center justify-center gap-2 px-7 py-4 font-semibold text-sm
-      border border-border text-textSecondary hover:text-textPrimary
-      active:scale-[0.98] transition-all duration-300 ease-out rounded-none;
+      border border-white/25 text-textPrimary hover:text-textPrimary
+      active:scale-[0.98] transition-all duration-300 ease-out rounded-none whitespace-nowrap;
   }
   .btn-ghost:hover {
-    border-color: color-mix(in srgb, var(--accent) 45%, var(--border));
+    border-color: color-mix(in srgb, var(--accent) 55%, white 20%);
     background-color: var(--accent-soft);
   }
   .section-eyebrow {

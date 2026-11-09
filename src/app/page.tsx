@@ -6,6 +6,7 @@ import Offers from "@/components/offers";
 import CaseStudies from "@/components/case-studies";
 import HowItWorks from "@/components/how-it-works";
 import AboutPartner from "@/components/about-partner";
+import ProofSection from "@/components/proof-section";
 import FinalCtaBand from "@/components/final-cta-band";
 import Contact from "@/components/Contact";
 import Faq from "@/components/faq";
@@ -52,6 +53,7 @@ export default function Home() {
       <CaseStudies />
       <HowItWorks />
       <AboutPartner />
+      <ProofSection />
       <Faq />
       <FinalCtaBand />
       <Contact />
