@@ -8,7 +8,6 @@ import { FiExternalLink } from "react-icons/fi";
 import { FaLinkedinIn, FaGithub } from "react-icons/fa";
 import { HiOutlineDocumentText } from "react-icons/hi";
 import { BRAND } from "@/lib/seo";
-import Boy from "../../public/dp.webp";
 
 export default function AboutPartner() {
   const { ref } = useSectionInView("#about", 0.45);
@@ -23,13 +22,13 @@ export default function AboutPartner() {
           viewport={{ once: true, margin: "-80px" }}
           className="lg:col-span-5"
         >
-          <div className="relative aspect-[3/4] overflow-hidden border border-border">
+          <div className="relative aspect-[4/5] w-full max-w-[360px] overflow-hidden border border-white/[0.08]">
             <Image
-              src={Boy}
+              src="/portrait-suit.jpg"
               fill
               alt={BRAND.name}
-              className="object-cover object-[center_20%]"
-              sizes="(max-width: 1024px) 100vw, 520px"
+              className="object-cover object-top"
+              sizes="360px"
             />
           </div>
         </motion.div>
