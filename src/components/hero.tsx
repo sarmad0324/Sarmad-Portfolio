@@ -103,14 +103,14 @@ export default function Hero() {
             transition={{ duration: 0.8, delay: 0.14, ease: EASE }}
             className="lg:col-span-5 order-2 flex justify-center lg:justify-end"
           >
-            <div className="relative aspect-[4/5] w-full max-w-[260px] sm:max-w-[300px] lg:max-w-[340px] xl:max-w-[360px] overflow-hidden border border-white/[0.08]">
+            <div className="relative aspect-[4/5] w-full max-w-[220px] sm:max-w-[240px] lg:max-w-[260px] xl:max-w-[280px] overflow-hidden border border-white/[0.08]">
               <Image
                 src="/portrait-suit.jpg"
                 alt={`${BRAND.name}, technical partner for AI systems integration and product rescue`}
                 fill
                 priority
-                className="object-cover object-top"
-                sizes="(max-width: 640px) 260px, (max-width: 1024px) 300px, 360px"
+                className="object-cover object-[center_18%]"
+                sizes="(max-width: 640px) 220px, (max-width: 1024px) 240px, 280px"
               />
             </div>
           </motion.div>
